@@ -14,6 +14,11 @@
 |Select View|`현주`|
 |ToDo View|`주민`|
 
+
+- 첫번째 Select View : 현주 - UI완성, 서버 연결 성공 - Collection View FlowLayout을 통해 해당 캐릭터를 선택할 수 있도록 구현
+- 두번째 Todo View : 주민 - UI 완성, 서버 부분 연결 성공 - 내 캐릭터가 아닌 다른 캐릭터와 관련된 TodoList 구현
+- 세번째 Result View : 태현 - UI 완성 - 그 동안 경험해봤던 캐릭터를 모아볼 수 있는 View
+
 <br />
 
 ### 🗒 코드 컨벤션
@@ -168,34 +173,6 @@ dev-taehyeon
 |
 +------🗂 Result/
 ```
-
-
-
-----
-### 🌱2차과제 인증🌱
-
-
-### [각자 맡은 부부 구현정도]
-- 첫번째 Select View : 현주 - UI 완성, 서버 연결성공
-- 두번째 Todo View : 주민 - UI 완성, 서버 부분 연결 성공
-- 세번째 Result View : 태현 - UI 완성
-
-
-
-### 프로젝트
-1) 각각 뷰별로 레이아웃 잡혀있는지 유무 : All Clear✨
-2) 팀원 모두가 프로젝틍 참여했는지 유무 : All Clear✨
-3) 서버 연결하는 코드와 받으 데이터 사용 코드 유무 : All Clear✨
-4) 화면전환, UI 요소들이 정상적으로 표기되는지 유무 : All Clear✨
-
-
-### 서비스 시연 영상(30초 이상 ~ 1분 30초)
-
-
-
-
-
-
 
 
 
