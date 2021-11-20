@@ -41,7 +41,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_sky" translatesAutoresizingMaskIntoConstraints="NO" id="LoL-WY-TYL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgWind2" translatesAutoresizingMaskIntoConstraints="NO" id="LoL-WY-TYL">
                                 <rect key="frame" x="48" y="195" width="279" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="WPf-4i-qMz"/>
@@ -260,7 +260,7 @@
     <resources>
         <image name="icHistory" width="48" height="48"/>
         <image name="icRefresh" width="48" height="48"/>
-        <image name="img_sky" width="234" height="234"/>
+        <image name="imgWind2" width="234" height="234"/>
         <image name="property1Able" width="24" height="24"/>
         <image name="property1CheckboxSelected" width="24" height="24"/>
         <namedColor name="bg_darkgrey">

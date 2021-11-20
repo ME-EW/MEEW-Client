@@ -12,5 +12,7 @@ import Foundation
 
 enum APIConstants {
     // Base url
-    static let baseURL = "https://"
+    static let baseURL = "https://asia-northeast3-sopt-hackathon.cloudfunctions.net/api"
+    
+    static let todoURL = baseURL + "/user/1"
 }
