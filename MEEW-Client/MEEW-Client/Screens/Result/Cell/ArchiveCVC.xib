@@ -75,7 +75,6 @@
             </view>
             <color key="backgroundColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="bbC-bT-dnS" firstAttribute="leading" secondItem="Pki-HQ-wms" secondAttribute="trailing" constant="54.329999999999998" id="5Kn-OS-RKl"/>
                 <constraint firstItem="BaX-jV-kYI" firstAttribute="top" secondItem="Rby-GE-Rgh" secondAttribute="top" constant="30" id="AVX-Zz-5Os"/>
                 <constraint firstItem="BaX-jV-kYI" firstAttribute="leading" secondItem="Rby-GE-Rgh" secondAttribute="trailing" constant="16" id="BgM-kv-cxv"/>
                 <constraint firstAttribute="bottom" secondItem="Rby-GE-Rgh" secondAttribute="bottom" constant="8" id="Bgt-iX-dVi"/>
@@ -85,6 +84,7 @@
                 <constraint firstAttribute="bottom" secondItem="fQo-yz-5Og" secondAttribute="bottom" constant="16" id="WB5-Io-MSu"/>
                 <constraint firstItem="Pki-HQ-wms" firstAttribute="leading" secondItem="Rby-GE-Rgh" secondAttribute="trailing" constant="16" id="c91-U0-jzb"/>
                 <constraint firstItem="bbC-bT-dnS" firstAttribute="centerY" secondItem="Pki-HQ-wms" secondAttribute="centerY" id="kri-pp-PQl"/>
+                <constraint firstAttribute="trailing" secondItem="bbC-bT-dnS" secondAttribute="trailing" constant="16" id="m2Y-Zw-i2c"/>
                 <constraint firstItem="Rby-GE-Rgh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="maC-po-iJc"/>
                 <constraint firstItem="Rby-GE-Rgh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="tF8-ia-5ca"/>
             </constraints>

@@ -7,16 +7,60 @@
 
 import UIKit
 
+struct ArchiveDummyModel {
+    var image: UIImage
+    var day: String
+    var characterName: String
+    var percent: CGFloat
+    
+    static func loadDummy() -> [ArchiveDummyModel] {
+        return [
+            ArchiveDummyModel(image: UIImage(named: "img_wind")!,
+                              day: "SAT",
+                              characterName: "즉흥적인 바람이",
+                              percent: 70),
+            ArchiveDummyModel(image: UIImage(named: "img_sky")!,
+                              day: "FRI",
+                              characterName: "참을성 있는 하늘이",
+                              percent: 50),
+            ArchiveDummyModel(image: UIImage(named: "img_honest")!,
+                              day: "THU",
+                              characterName: "성실한 정직이",
+                              percent: 30),
+            ArchiveDummyModel(image: UIImage(named: "img_sun")!,
+                              day: "WED",
+                              characterName: "적극적인 태양이",
+                              percent: 90),
+        ]
+    }
+}
+
 class ResultVC: BaseVC {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var resultTitleLabel: UILabel!
     @IBOutlet weak var resultDescriptionLabel: UILabel!
     
+    var dummyData: [ArchiveDummyModel] = ArchiveDummyModel.loadDummy() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    var images: [String] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setCV()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     private func setup() {
@@ -38,14 +82,14 @@ class ResultVC: BaseVC {
 
 extension ResultVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        dummyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArchiveCVC.reuseIdentifier, for: indexPath) as? ArchiveCVC else {
             return UICollectionViewCell()
         }
-        
+        cell.configure(data: dummyData[indexPath.row])
         return cell
     }
 }

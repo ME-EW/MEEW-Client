@@ -51,10 +51,14 @@ class ToDoVC: BaseVC {
     }
     
     @IBAction func inforButtonTapped(_ sender: Any) {
-        MEEWPopUp.loadFromXib()
-            .setTitle("귀여운 캐릭터 이름")
-            .setDescription("캐릭터 설명, 캐릭터 설명, 캐릭터 설명, 캐릭터 설명")
-            .present()
+        
+        if let name = inforButton.titleLabel?.text {
+            MEEWPopUp.loadFromXib()
+                .setTitle(name)
+                .setDescription("\(name)로 살아볼까요?")
+                .present()
+        }
+
     }
     
     @IBAction func originalButtonTapped(_ sender: Any) {   //오늘은나로살게요 버튼 - 수정하기

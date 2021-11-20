@@ -47,6 +47,7 @@ class MEEWPopUp: UIView {
 
     func setDescription(_ text: String) -> Self {
         descriptionLabel.isHidden = false
+        descriptionLabel.text = text
         return self
     }
     
