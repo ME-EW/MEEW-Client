@@ -47,6 +47,7 @@ class ToDoVC: BaseVC {
     }
     //새로고침 버튼
     @IBAction func againButton(_ sender: Any) {
+        viewWillAppear(true)
     }
     //정보창 버튼
     @IBAction func inforButtonTapped(_ sender: Any) {
@@ -79,6 +80,9 @@ class ToDoVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("새로고침")
     }
     
     // MARK: - Custom Method
