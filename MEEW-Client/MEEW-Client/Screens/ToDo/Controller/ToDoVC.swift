@@ -62,6 +62,7 @@ class ToDoVC: BaseVC {
         guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "VCVC") as? VCVC else { return }
         vc.modalPresentationStyle = .fullScreen
         vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
         
     }
