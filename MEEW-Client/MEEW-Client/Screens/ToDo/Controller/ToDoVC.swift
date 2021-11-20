@@ -50,9 +50,28 @@ class ToDoVC: BaseVC {
     }
     //정보창 버튼
     @IBAction func inforButtonTapped(_ sender: Any) {
+        MEEWPopUp.loadFromXib()
+            .setTitle("귀여운 캐릭터 이름")
+            .setDescription("캐릭터 설명, 캐릭터 설명, 캐릭터 설명, 캐릭터 설명")
+            .present()
     }
     //오늘은나로살게요 버튼
     @IBAction func originalButtonTapped(_ sender: Any) {
+    }
+    
+    // MARK: - 체크박스 구현
+    
+    @IBAction func checkBox1Tapped(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    @IBAction func checkBox2Tapped(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    @IBAction func checkBox3Tapped(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    @IBAction func checkBox4Tapped(_ sender: UIButton) {
+        sender.isSelected.toggle()
     }
     
     // MARK: - Life Cycle Part
