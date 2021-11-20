@@ -14,7 +14,8 @@ class ToDoVC: BaseVC {
     let yourAttributes: [NSAttributedString.Key: Any] = [
           .foregroundColor: UIColor.lightGrey1,
           .underlineStyle: NSUnderlineStyle.single.rawValue
-      ]
+    ]
+    
     
     // MARK: - @IBOutlet
     
@@ -39,30 +40,24 @@ class ToDoVC: BaseVC {
     
     // MARK: - @IBAction
     
-    //메뉴 버튼
-    @IBAction func touchUpToGoArchive(_ sender: Any) {
-    }
-    //오늘캐릭터끝내기 버튼
     @IBAction func touchUpToGoResult(_ sender: Any) {
-        guard let vc = UIStoryboard(name: "ResultVC", bundle: nil).instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {
-            return
-        }
+        guard let vc = UIStoryboard(name: "ResultVC", bundle: nil).instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else { return }
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
-    //새로고침 버튼 - 수정하기
+    
     @IBAction func againButton(_ sender: Any) {
-        viewWillAppear(true)
+        requestData()
     }
-    //정보창 버튼
+    
     @IBAction func inforButtonTapped(_ sender: Any) {
         MEEWPopUp.loadFromXib()
             .setTitle("귀여운 캐릭터 이름")
             .setDescription("캐릭터 설명, 캐릭터 설명, 캐릭터 설명, 캐릭터 설명")
             .present()
     }
-    //오늘은나로살게요 버튼
-    @IBAction func originalButtonTapped(_ sender: Any) {
+    
+    @IBAction func originalButtonTapped(_ sender: Any) {   //오늘은나로살게요 버튼 - 수정하기
     }
     
     // MARK: - 체크박스 구현
@@ -85,6 +80,7 @@ class ToDoVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        requestData()
     }
     override func viewWillAppear(_ animated: Bool) {
         //
@@ -104,4 +100,40 @@ class ToDoVC: BaseVC {
         originalButton.setAttributedTitle(attributeString, for: .normal)
         inforButton.layer.cornerRadius = 16
     }
+    
+    func requestData() {
+        GetToDoService.shared.getToDoInfo { (response) in
+            switch(response) {
+            case .success(let todoData):
+                if let data = todoData as? DataClass {
+                    //라벨 - for문 수정
+                    self.missionLabel1.text = data.todoLists[0].todo
+                    self.missionLabel2.text = data.todoLists[1].todo
+                    self.missionLabel3.text = data.todoLists[2].todo
+                    self.missionLabel4.text = data.todoLists[3].todo
+                    //이미지
+                    let url = URL(string: data.images[1])
+                    do {
+                        let data = try Data(contentsOf: url!)
+                        self.imageView.image = UIImage(data: data)
+                    }
+                    catch{
+                    }
+                    //캐릭터이름
+                    let name = ["성실한 정직이", "적극적인 태양이", "참을성있는 하늘이", "즉흥적인 바림이"].randomElement()
+                    self.inforButton.setTitle(name, for: .normal)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    
 }
