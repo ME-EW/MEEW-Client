@@ -32,6 +32,7 @@ class ResultVC: BaseVC {
     }
     
     @IBAction func closeButtonClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
