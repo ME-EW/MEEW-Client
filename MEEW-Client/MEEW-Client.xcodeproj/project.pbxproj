@@ -10,6 +10,7 @@
 		6A090CA306EA49226DDC0A01 /* Pods_MEEW_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98BEA8BD86C29D64B7CA220D /* Pods_MEEW_Client.framework */; };
 		6F257EEC2749A3E00055EE43 /* GetToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F257EEB2749A3E00055EE43 /* GetToDoService.swift */; };
 		6F257EEE2749A54B0055EE43 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F257EED2749A54B0055EE43 /* DataModel.swift */; };
+		6F257EF02749B86F0055EE43 /* VCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F257EEF2749B86F0055EE43 /* VCVC.swift */; };
 		BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0227493ABF00021E91 /* AppDelegate.swift */; };
 		BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0427493ABF00021E91 /* SceneDelegate.swift */; };
 		BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD339A0827493ABF00021E91 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		092457F45C406AD811590023 /* Pods-MEEW-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.debug.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.debug.xcconfig"; sourceTree = "<group>"; };
 		6F257EEB2749A3E00055EE43 /* GetToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToDoService.swift; sourceTree = "<group>"; };
 		6F257EED2749A54B0055EE43 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		6F257EEF2749B86F0055EE43 /* VCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCVC.swift; sourceTree = "<group>"; };
 		98BEA8BD86C29D64B7CA220D /* Pods_MEEW_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEEW_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3399FF27493ABF00021E91 /* MEEW-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEEW-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD339A0227493ABF00021E91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				BD45C418274947F100229D35 /* ToDoVC.storyboard */,
+				6F257EEF2749B86F0055EE43 /* VCVC.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
 				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
+				6F257EF02749B86F0055EE43 /* VCVC.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
 				BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */,
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
