@@ -22,7 +22,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="290" height="366"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVU-4G-jzA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVU-4G-jzA">
                         <rect key="frame" x="24" y="24" width="242" height="242"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="242" id="J0O-Dq-hcS"/>
@@ -30,10 +30,10 @@
                             <constraint firstAttribute="height" constant="242" id="Vup-pN-c3r"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufl-PV-2AH">
-                        <rect key="frame" x="24" y="310" width="214" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufl-PV-2AH">
+                        <rect key="frame" x="24" y="310" width="242" height="47"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="29" id="tLd-gL-ocC"/>
+                            <constraint firstAttribute="height" constant="47" id="Fet-dA-yRL"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
                         <nil key="textColor"/>
@@ -54,9 +54,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Jza-Pg-LZ6" firstAttribute="leading" secondItem="UVU-4G-jzA" secondAttribute="leading" id="5fZ-q3-nYz"/>
+                <constraint firstItem="Ufl-PV-2AH" firstAttribute="trailing" secondItem="UVU-4G-jzA" secondAttribute="trailing" id="AaL-qg-48b"/>
                 <constraint firstItem="Ufl-PV-2AH" firstAttribute="leading" secondItem="Jza-Pg-LZ6" secondAttribute="leading" id="FwJ-kc-HHM"/>
                 <constraint firstItem="Ufl-PV-2AH" firstAttribute="top" secondItem="Jza-Pg-LZ6" secondAttribute="bottom" constant="8" id="Nno-Bp-mGi"/>
-                <constraint firstAttribute="trailing" secondItem="Ufl-PV-2AH" secondAttribute="trailing" constant="52" id="S56-3k-J7c"/>
                 <constraint firstItem="Jza-Pg-LZ6" firstAttribute="top" secondItem="UVU-4G-jzA" secondAttribute="bottom" constant="16" id="vm9-hc-Ikn"/>
                 <constraint firstItem="UVU-4G-jzA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="wsE-sf-fGd"/>
                 <constraint firstAttribute="trailing" secondItem="UVU-4G-jzA" secondAttribute="trailing" constant="24" id="yBh-rN-oFg"/>

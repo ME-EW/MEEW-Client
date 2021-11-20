@@ -33,9 +33,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ODW-uT-sP7">
-                                <rect key="frame" x="0.0" y="221.66666666666663" width="375" height="366"/>
+                                <rect key="frame" x="0.0" y="221.66666666666663" width="375" height="370"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="366" id="T2R-e5-7sC"/>
+                                    <constraint firstAttribute="height" constant="370" id="T2R-e5-7sC"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i81-X0-3sK">
                                     <size key="itemSize" width="128" height="128"/>
@@ -55,7 +55,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSQ-VS-lrc">
-                                <rect key="frame" x="42" y="635.66666666666663" width="290" height="48"/>
+                                <rect key="frame" x="42" y="639.66666666666663" width="290" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1Vf-Tg-qZD"/>
@@ -63,7 +63,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-UJ-HdM">
-                                <rect key="frame" x="42" y="635.66666666666663" width="290" height="48"/>
+                                <rect key="frame" x="42" y="639.66666666666663" width="290" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="SeN-yM-3qJ"/>
                                     <constraint firstAttribute="width" constant="290" id="pSl-1g-Elg"/>

@@ -40,7 +40,7 @@ class SelectVC: BaseVC {
           let insetX = (20/375) * screenWidth
           let layout = selectCV.collectionViewLayout as! UICollectionViewFlowLayout
           
-          layout.itemSize = CGSize(width: 290, height: 366)
+          layout.itemSize = CGSize(width: 290, height: 370)
           layout.minimumLineSpacing = 12
           
           layout.scrollDirection = .horizontal
@@ -60,11 +60,11 @@ class SelectVC: BaseVC {
     
     func initEventDataList(){
         characterList.append(contentsOf: [
-            SelectCharacterDataModel(image: "img_1", name: "귀여운 캐릭터 이름", info: "캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다."),
-            SelectCharacterDataModel(image: "img_2", name: "귀여운 캐릭터 이름", info: "캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다."),
-            SelectCharacterDataModel(image: "img_3", name: "귀여운 캐릭터 이름", info: "캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다."),
-            SelectCharacterDataModel(image: "img_4", name: "귀여운 캐릭터 이름", info: "캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다."),
-            SelectCharacterDataModel(image: "img_5", name: "귀여운 캐릭터 이름", info: "캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다. 캐릭터설명 입니다.")
+            SelectCharacterDataModel(image: "img_heart", name: "마음이", info: "마음이는 늘 상대방의 마음을 먼저 생각해요. \n항상 타인의 말에 웃어주고, 공감해주고, 양보할 줄 알아요."),
+            SelectCharacterDataModel(image: "img_honest", name: "정직이", info: "정직이의 하루는 남들보다 빠르게 시작돼요. 건강하고, 규칙적이고, 계획적인 성격을 가지고 있죠."),
+            SelectCharacterDataModel(image: "img_sun", name: "태양이", info: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
+            SelectCharacterDataModel(image: "img_sky", name: "하늘이", info: "하늘이는 넓은 마음씨를 가지고 있어요. 그래서 대부분의 상황에서 참을성있게 행동할 줄 알아요."),
+            SelectCharacterDataModel(image: "img_wind", name: "바람이", info: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠.")
         ])
      }
     
@@ -98,7 +98,7 @@ extension SelectVC: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       let screenWidth = UIScreen.main.bounds.width
       let cellWidth = screenWidth * (290/375)
-      let cellHeight = cellWidth * (366/290)
+      let cellHeight = cellWidth * (370/290)
       return CGSize(width: cellWidth, height: cellHeight)
 //        return CGSize(width: 290, height: 366)
   }
