@@ -18,7 +18,11 @@ class ArchiveCVC: UICollectionViewCell {
 
     @IBOutlet weak var gageConstraint: NSLayoutConstraint!
     
-    var percent: CGFloat = 70
+    var percent: CGFloat = 70 {
+        didSet {
+            setGage()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,5 +42,12 @@ class ArchiveCVC: UICollectionViewCell {
         let ratio  = percent / 100
         gageConstraint.constant = archiveGageBackgroundView.frame.width * ratio
         self.layoutSubviews()
+    }
+    
+    func configure(data: ArchiveDummyModel) {
+        archiveImageView.image = data.image
+        archiveTitleLabel.text = data.characterName
+        archiveDayLabel.text = data.day
+        self.percent = data.percent
     }
 }
