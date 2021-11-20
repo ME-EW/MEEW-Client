@@ -17,7 +17,11 @@ class SelectCharacterCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setUI()
+    }
+    
+    func setUI() {
+        self.layer.cornerRadius = 16
     }
     
     func setData(appData: SelectCharacterDataModel){

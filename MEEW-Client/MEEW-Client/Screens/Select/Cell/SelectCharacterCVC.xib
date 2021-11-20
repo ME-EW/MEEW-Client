@@ -22,20 +22,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="290" height="366"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVU-4G-jzA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVU-4G-jzA">
                         <rect key="frame" x="24" y="24" width="242" height="242"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="242" id="J0O-Dq-hcS"/>
                             <constraint firstAttribute="width" secondItem="UVU-4G-jzA" secondAttribute="height" multiplier="1:1" id="M3M-ca-MRp"/>
+                            <constraint firstAttribute="height" constant="242" id="Vup-pN-c3r"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufl-PV-2AH">
                         <rect key="frame" x="24" y="310" width="214" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="tLd-gL-ocC"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="귀여운 캐릭터 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jza-Pg-LZ6">
                         <rect key="frame" x="24" y="282" width="125" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="hv6-Dc-ZZf"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
