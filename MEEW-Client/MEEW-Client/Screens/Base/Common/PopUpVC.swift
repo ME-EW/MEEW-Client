@@ -15,10 +15,10 @@ class PopUpVC: UIViewController {
         view.backgroundColor = .systemBackground
         view.endEditing(true)
         
-        MEEWPopUp.loadFromXib()
-            .setTitle("귀여운 캐릭터 이름")
-            .setDescription("캐릭터 설명, 캐릭터 설명, 캐릭터 설명, 캐릭터 설명")
-            .present()
+//        MEEWPopUp.loadFromXib()
+//            .setTitle("귀여운 캐릭터 이름")
+//            .setDescription("캐릭터 설명, 캐릭터 설명, 캐릭터 설명, 캐릭터 설명")
+//            .present()
     }
 
 }
