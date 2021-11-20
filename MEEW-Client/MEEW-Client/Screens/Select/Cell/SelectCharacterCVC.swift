@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SelectCharacterCVC: UICollectionViewCell {
 
@@ -25,7 +26,8 @@ class SelectCharacterCVC: UICollectionViewCell {
     }
     
     func setData(appData: SelectCharacterDataModel){
-        characterImageView.image = appData.makeItemImage()
+        let url = URL(string: appData.image)
+        characterImageView.kf.setImage(with: url)
         characterName.text = appData.name
         characterInfo.text = appData.info
     }

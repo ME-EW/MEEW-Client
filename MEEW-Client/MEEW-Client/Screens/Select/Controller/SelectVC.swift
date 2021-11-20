@@ -16,8 +16,9 @@ class SelectVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCharacterData()
         registerCVC()
-        initEventDataList()
+//        initEventDataList()
         setUI()
     }
     
@@ -60,11 +61,22 @@ class SelectVC: BaseVC {
      }
 
     @IBAction func touchUpToGoToDoView(_ sender: Any) {
-        //데이터 전달하면서 화면 전환
-        guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true, completion: nil)
+ 
+        
+        CompletePopUp.loadFromXib()
+            .setDescription("나의 캐릭터가 마음이로 선택되었어요!")
+            .present()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            guard let self = self else { return }
+            //데이터 전달하면서 화면 전환
+            guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+        
     }
 }
 
@@ -134,4 +146,45 @@ extension SelectVC : UIScrollViewDelegate {
     targetContentOffset.pointee = offSet
 //    self.pageControl.currentPage = Int(roundedIndex)
   }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let count = 5
+        
+        //cell의 x 값 / 우리의 기기의 *  count ==> 인덱스 번호
+    }
+    
+}
+
+
+
+extension SelectVC {
+    func getCharacterData() {
+        CharacterListService.shared.readCharacterData { responseData in
+            switch  responseData {
+            case .success(let successResponse):
+                guard let response = successResponse as? CharacterRequestData else { return }
+                self.characterList = []
+                 //설정해주는 부분
+                if let userData = response.data {
+                    for charactor in userData{
+                        let charData = SelectCharacterDataModel(image: charactor.images[0],
+                                                                name: charactor.name,
+                                                                info: charactor.description)
+                        self.characterList.append(charData)
+                    }
+                    
+                    self.selectCV.reloadData()
+                    print(userData)
+                }
+            case .requestErr(let msg):
+                print("requestERR \(msg)")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
 }
