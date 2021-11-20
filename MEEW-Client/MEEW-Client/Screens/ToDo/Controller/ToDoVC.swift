@@ -44,6 +44,11 @@ class ToDoVC: BaseVC {
     }
     //오늘캐릭터끝내기 버튼
     @IBAction func touchUpToGoResult(_ sender: Any) {
+        guard let vc = UIStoryboard(name: "ResultVC", bundle: nil).instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {
+            return
+        }
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     //새로고침 버튼 - 수정하기
     @IBAction func againButton(_ sender: Any) {
