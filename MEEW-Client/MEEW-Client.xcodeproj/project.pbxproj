@@ -34,6 +34,8 @@
 		BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42927496A8700229D35 /* AppDelegate+.swift */; };
 		BD45C42C27496BA000229D35 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42B27496BA000229D35 /* UIView+.swift */; };
 		BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42D27496C4700229D35 /* PopUpVC.swift */; };
+		BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4302749796900229D35 /* ArchiveCVC.swift */; };
+		BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4312749796900229D35 /* ArchiveCVC.xib */; };
 		F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39F8274962CD00805FE3 /* Color.xcassets */; };
 		F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */; };
 		F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FC2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf */; };
@@ -73,6 +75,8 @@
 		BD45C42927496A8700229D35 /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
 		BD45C42B27496BA000229D35 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		BD45C42D27496C4700229D35 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
+		BD45C4302749796900229D35 /* ArchiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCVC.swift; sourceTree = "<group>"; };
+		BD45C4312749796900229D35 /* ArchiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveCVC.xib; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 			children = (
 				BD45C421274948BA00229D35 /* Controller */,
 				BD45C420274948B300229D35 /* Storyboard */,
+				BD45C42F274978C900229D35 /* Cell */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -350,6 +355,15 @@
 				BD45C42D27496C4700229D35 /* PopUpVC.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		BD45C42F274978C900229D35 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BD45C4302749796900229D35 /* ArchiveCVC.swift */,
+				BD45C4312749796900229D35 /* ArchiveCVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EF375EDFD0003B058BCD97D5 /* Pods */ = {
@@ -426,6 +440,7 @@
 				F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */,
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
 				F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */,
+				BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
 				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
@@ -495,6 +510,7 @@
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
 				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
+				BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */,
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
@@ -659,7 +675,7 @@
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = BaseVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = ResultVC;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -690,7 +706,7 @@
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = BaseVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = ResultVC;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
