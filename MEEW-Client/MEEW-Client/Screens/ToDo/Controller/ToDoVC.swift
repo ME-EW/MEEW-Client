@@ -50,7 +50,7 @@ class ToDoVC: BaseVC {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
-    //새로고침 버튼
+    //새로고침 버튼 - 수정하기
     @IBAction func againButton(_ sender: Any) {
         viewWillAppear(true)
     }
@@ -87,6 +87,7 @@ class ToDoVC: BaseVC {
         setView()
     }
     override func viewWillAppear(_ animated: Bool) {
+        //
         print("새로고침")
     }
     
