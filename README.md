@@ -8,16 +8,13 @@
 <br />
 
 ### 📺 개발 담당 부분
-|담당 뷰와 기능|담당자|
+|담당 뷰와 기능|담당자|구현 정도와 뷰 설명|
 |--|--|
-|Result View|`태현`|
-|Select View|`현주`|
-|ToDo View|`주민`|
+|Result View|`태현`|UI 완성, 서버 연결 시도 - 그 동안 경험해봤던 캐릭터를 모아볼 수 있는 View|
+|Select View|`현주`|UI완성, 서버 연결 성공 - Collection View FlowLayout을 통해 해당 캐릭터를 선택할 수 있도록 구현|
+|ToDo View|`주민`|UI 완성, 서버 부분 연결 성공 - 내 캐릭터가 아닌 다른 캐릭터와 관련된 TodoList 구현|
 
 
-- 첫번째 Select View : 현주 - UI완성, 서버 연결 성공 - Collection View FlowLayout을 통해 해당 캐릭터를 선택할 수 있도록 구현
-- 두번째 Todo View : 주민 - UI 완성, 서버 부분 연결 성공 - 내 캐릭터가 아닌 다른 캐릭터와 관련된 TodoList 구현
-- 세번째 Result View : 태현 - UI 완성 - 그 동안 경험해봤던 캐릭터를 모아볼 수 있는 View
 
 <br />
 
