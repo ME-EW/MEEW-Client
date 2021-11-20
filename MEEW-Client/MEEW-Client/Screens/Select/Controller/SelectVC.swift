@@ -23,4 +23,6 @@ class SelectVC: BaseVC {
     func setUI(){
         backgroundView.layer.cornerRadius = 8
     }
+    
+    
 }
