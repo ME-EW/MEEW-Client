@@ -8,7 +8,19 @@
 import UIKit
 
 class SelectVC: BaseVC {
+    
+    
+    @IBOutlet weak var selectCV: UICollectionView!
+    
+    @IBOutlet weak var backgroundView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+    }
+    
+    
+    func setUI(){
+        backgroundView.layer.cornerRadius = 8
     }
 }
