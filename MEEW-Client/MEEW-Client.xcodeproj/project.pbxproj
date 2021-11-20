@@ -47,6 +47,8 @@
 		F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */; };
 		F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */; };
 		F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */; };
+		F2EC3A0F2749A1D400805FE3 /* CharacterListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0E2749A1D400805FE3 /* CharacterListService.swift */; };
+		F2EC3A112749A47B00805FE3 /* CharacterRequestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A102749A47B00805FE3 /* CharacterRequestDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCVC.swift; sourceTree = "<group>"; };
 		F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCharacterCVC.xib; sourceTree = "<group>"; };
 		F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharcterDataModel.swift; sourceTree = "<group>"; };
+		F2EC3A0E2749A1D400805FE3 /* CharacterListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListService.swift; sourceTree = "<group>"; };
+		F2EC3A102749A47B00805FE3 /* CharacterRequestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRequestDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				BD339A3627493F3A00021E91 /* GenericResponse.swift */,
+				F2EC3A102749A47B00805FE3 /* CharacterRequestDataModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				BD339A3427493EEB00021E91 /* NetworkResult.swift */,
+				F2EC3A0E2749A1D400805FE3 /* CharacterListService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -530,10 +536,12 @@
 				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
 				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
+				F2EC3A112749A47B00805FE3 /* CharacterRequestDataModel.swift in Sources */,
 				BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
 				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
 				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
+				F2EC3A0F2749A1D400805FE3 /* CharacterListService.swift in Sources */,
 				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
 				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
@@ -698,7 +706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3FAK98S72C;
+				DEVELOPMENT_TEAM = L9D5M5DM3Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -729,7 +737,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3FAK98S72C;
+				DEVELOPMENT_TEAM = L9D5M5DM3Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
