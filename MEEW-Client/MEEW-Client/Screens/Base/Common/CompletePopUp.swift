@@ -37,6 +37,7 @@ class CompletePopUp: UIView {
 
     func setDescription(_ text: String) -> Self {
         completeDescriptionLabel.isHidden = false
+        completeDescriptionLabel.text = text
         return self
     }
     

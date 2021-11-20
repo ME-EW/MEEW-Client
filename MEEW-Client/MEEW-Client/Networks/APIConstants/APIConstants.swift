@@ -13,4 +13,9 @@ import Foundation
 enum APIConstants {
     // Base url
     static let baseURL = "https://asia-northeast3-sopt-hackathon.cloudfunctions.net/api"
+    
+    //MARK: - SelectURL
+    static let readCharacterURL = baseURL + "/character/list"
+    
+    
 }
