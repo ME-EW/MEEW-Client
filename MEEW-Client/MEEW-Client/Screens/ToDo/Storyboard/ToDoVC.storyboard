@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_sky" translatesAutoresizingMaskIntoConstraints="NO" id="LoL-WY-TYL">
-                                <rect key="frame" x="48" y="204" width="279" height="250"/>
+                                <rect key="frame" x="48" y="195" width="279" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="WPf-4i-qMz"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6G-He-dcz">
-                                <rect key="frame" x="122.66666666666669" y="497.66666666666669" width="130" height="18.000000000000057"/>
+                                <rect key="frame" x="122.66666666666669" y="488.66666666666669" width="130" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="SKY-rd-wBp"/>
                                 </constraints>
@@ -92,13 +92,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaL-4R-TMF">
-                                <rect key="frame" x="83.999999999999986" y="560.66666666666663" width="241.66666666666663" height="14"/>
+                                <rect key="frame" x="83.999999999999986" y="543.66666666666663" width="241.66666666666663" height="14"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pme-aj-ly5">
-                                <rect key="frame" x="50" y="555.66666666666663" width="22" height="22"/>
+                                <rect key="frame" x="50" y="538.66666666666663" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="K9W-Ls-L0h"/>
                                     <constraint firstAttribute="height" constant="22" id="RH0-dt-Fb4"/>
@@ -114,13 +114,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYv-lm-yFZ">
-                                <rect key="frame" x="83.999999999999986" y="587.66666666666663" width="241.66666666666663" height="15.333333333333371"/>
+                                <rect key="frame" x="83.999999999999986" y="570.66666666666663" width="241.66666666666663" height="15.333333333333371"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-5g-WMd">
-                                <rect key="frame" x="50" y="583" width="22" height="22"/>
+                                <rect key="frame" x="50" y="566" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="dnh-NU-8lM"/>
                                     <constraint firstAttribute="height" constant="22" id="nyy-u8-0QS"/>
@@ -136,13 +136,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa4-Tq-nJQ">
-                                <rect key="frame" x="83.999999999999986" y="616" width="241.66666666666663" height="14.666666666666629"/>
+                                <rect key="frame" x="83.999999999999986" y="599" width="241.66666666666663" height="14.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-0S-abw">
-                                <rect key="frame" x="50" y="610.33333333333337" width="22" height="22"/>
+                                <rect key="frame" x="50" y="593.33333333333337" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="1bm-o5-SR7"/>
                                     <constraint firstAttribute="width" constant="22" id="q9m-Pe-SRW"/>
@@ -158,13 +158,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-hh-Oxj">
-                                <rect key="frame" x="83.999999999999986" y="643.66666666666663" width="241.66666666666663" height="14.666666666666629"/>
+                                <rect key="frame" x="83.999999999999986" y="626.66666666666663" width="241.66666666666663" height="14.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwS-VT-IL0">
-                                <rect key="frame" x="50" y="637.66666666666663" width="22" height="22"/>
+                                <rect key="frame" x="50" y="620.66666666666663" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="T5T-Dy-fij"/>
                                     <constraint firstAttribute="height" constant="22" id="qys-lC-DgB"/>
@@ -180,7 +180,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bch-nQ-3QK">
-                                <rect key="frame" x="128.66666666666666" y="450.66666666666669" width="118" height="31"/>
+                                <rect key="frame" x="128.66666666666666" y="441.66666666666669" width="118" height="31"/>
                                 <color key="backgroundColor" red="0.83137254901960778" green="0.83137254901960778" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="PYg-0v-4ff"/>
@@ -202,7 +202,7 @@
                             <constraint firstItem="a6G-He-dcz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="122.7" id="964-XY-4OT"/>
                             <constraint firstItem="cKr-5g-WMd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="BPN-ia-nXb"/>
                             <constraint firstItem="yLi-hh-Oxj" firstAttribute="trailing" secondItem="tYv-lm-yFZ" secondAttribute="trailing" id="Cjc-Lf-It5"/>
-                            <constraint firstItem="GaL-4R-TMF" firstAttribute="top" secondItem="a6G-He-dcz" secondAttribute="bottom" constant="44.999999999999886" id="DC1-5e-vhp"/>
+                            <constraint firstItem="GaL-4R-TMF" firstAttribute="top" secondItem="a6G-He-dcz" secondAttribute="bottom" constant="37" id="DC1-5e-vhp"/>
                             <constraint firstItem="GaL-4R-TMF" firstAttribute="leading" secondItem="pme-aj-ly5" secondAttribute="trailing" constant="12" id="DGt-FR-CD8"/>
                             <constraint firstItem="yLi-hh-Oxj" firstAttribute="leading" secondItem="tYv-lm-yFZ" secondAttribute="leading" id="F9C-aZ-y1C"/>
                             <constraint firstItem="YU2-mT-z24" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="56" id="KCD-Aa-KQO"/>
@@ -210,7 +210,7 @@
                             <constraint firstItem="PYj-bl-5fd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="MyS-Ts-zVT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="a6G-He-dcz" secondAttribute="trailing" constant="122.3" id="OAm-Of-Qqe"/>
                             <constraint firstItem="yLi-hh-Oxj" firstAttribute="leading" secondItem="Aa4-Tq-nJQ" secondAttribute="leading" id="P5y-vC-tzz"/>
-                            <constraint firstItem="LoL-WY-TYL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="160" id="PAm-40-KD9"/>
+                            <constraint firstItem="LoL-WY-TYL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="151" id="PAm-40-KD9"/>
                             <constraint firstItem="Aa4-Tq-nJQ" firstAttribute="leading" secondItem="tz4-0S-abw" secondAttribute="trailing" constant="12" id="TL9-8C-eCZ"/>
                             <constraint firstItem="Zed-QJ-eyw" firstAttribute="top" secondItem="x8g-iT-go0" secondAttribute="bottom" constant="40" id="UgP-y1-XTF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zed-QJ-eyw" secondAttribute="trailing" constant="33" id="Vsn-4J-kgb"/>
@@ -218,7 +218,7 @@
                             <constraint firstItem="pme-aj-ly5" firstAttribute="centerY" secondItem="GaL-4R-TMF" secondAttribute="centerY" constant="-1" id="XOZ-7q-6gR"/>
                             <constraint firstItem="YU2-mT-z24" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="96" id="Xhv-q8-3wq"/>
                             <constraint firstItem="x8g-iT-go0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="307" id="ZBO-2a-qDh"/>
-                            <constraint firstItem="bch-nQ-3QK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="406.60000610351562" id="cjc-pg-5NS"/>
+                            <constraint firstItem="bch-nQ-3QK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="397.60000610351562" id="cjc-pg-5NS"/>
                             <constraint firstItem="x8g-iT-go0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fVA-45-C2S"/>
                             <constraint firstItem="kwS-VT-IL0" firstAttribute="top" secondItem="tz4-0S-abw" secondAttribute="bottom" constant="5.4000000000000004" id="iuU-IA-b9w"/>
                             <constraint firstItem="tYv-lm-yFZ" firstAttribute="top" secondItem="GaL-4R-TMF" secondAttribute="bottom" constant="13" id="ivp-Ha-KEE"/>

@@ -45,7 +45,7 @@ class ToDoVC: BaseVC {
     //오늘캐릭터끝내기 버튼
     @IBAction func touchUpToGoResult(_ sender: Any) {
     }
-    //새로고침 버튼
+    //새로고침 버튼 - 수정하기
     @IBAction func againButton(_ sender: Any) {
         viewWillAppear(true)
     }
@@ -82,6 +82,7 @@ class ToDoVC: BaseVC {
         setView()
     }
     override func viewWillAppear(_ animated: Bool) {
+        //
         print("새로고침")
     }
     
