@@ -34,8 +34,9 @@
 		F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FE2749637400805FE3 /* Spoqa Han Sans Neo Thin.otf */; };
 		F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FF2749637400805FE3 /* Spoqa Han Sans Neo Medium.otf */; };
 		F2EC3A032749637400805FE3 /* Spoqa Han Sans Neo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC3A002749637400805FE3 /* Spoqa Han Sans Neo Regular.otf */; };
-		F2EC3A0727496AA000805FE3 /* SelectCharcterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0527496AA000805FE3 /* SelectCharcterCVC.swift */; };
-		F2EC3A0827496AA000805FE3 /* SelectCharcterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EC3A0627496AA000805FE3 /* SelectCharcterCVC.xib */; };
+		F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */; };
+		F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */; };
+		F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,8 +71,9 @@
 		F2EC39FE2749637400805FE3 /* Spoqa Han Sans Neo Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Thin.otf"; sourceTree = "<group>"; };
 		F2EC39FF2749637400805FE3 /* Spoqa Han Sans Neo Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Medium.otf"; sourceTree = "<group>"; };
 		F2EC3A002749637400805FE3 /* Spoqa Han Sans Neo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Regular.otf"; sourceTree = "<group>"; };
-		F2EC3A0527496AA000805FE3 /* SelectCharcterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharcterCVC.swift; sourceTree = "<group>"; };
-		F2EC3A0627496AA000805FE3 /* SelectCharcterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCharcterCVC.xib; sourceTree = "<group>"; };
+		F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCVC.swift; sourceTree = "<group>"; };
+		F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCharacterCVC.xib; sourceTree = "<group>"; };
+		F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharcterDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,8 +345,9 @@
 		F2EC3A0427496A8200805FE3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F2EC3A0527496AA000805FE3 /* SelectCharcterCVC.swift */,
-				F2EC3A0627496AA000805FE3 /* SelectCharcterCVC.xib */,
+				F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */,
+				F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */,
+				F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -413,7 +416,7 @@
 				F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */,
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
 				F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */,
-				F2EC3A0827496AA000805FE3 /* SelectCharcterCVC.xib in Resources */,
+				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
 				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
@@ -479,7 +482,8 @@
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
 				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
-				F2EC3A0727496AA000805FE3 /* SelectCharcterCVC.swift in Sources */,
+				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
+				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
