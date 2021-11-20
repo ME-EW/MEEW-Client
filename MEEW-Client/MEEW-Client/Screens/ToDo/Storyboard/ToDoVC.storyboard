@@ -96,7 +96,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pme-aj-ly5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pme-aj-ly5">
                                 <rect key="frame" x="50" y="557" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="K9W-Ls-L0h"/>
@@ -107,6 +107,10 @@
                                 <state key="normal" title="Button" image="property1Able">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="selected" image="property1CheckboxSelected"/>
+                                <connections>
+                                    <action selector="checkBox1Tapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="buC-Q7-8dR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYv-lm-yFZ">
                                 <rect key="frame" x="83.999999999999986" y="589" width="241.66666666666663" height="15.333333333333371"/>
@@ -114,7 +118,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-5g-WMd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-5g-WMd">
                                 <rect key="frame" x="50" y="584.33333333333337" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="dnh-NU-8lM"/>
@@ -125,6 +129,10 @@
                                 <state key="normal" title="Button" image="property1Able">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="selected" image="property1CheckboxSelected"/>
+                                <connections>
+                                    <action selector="checkBox2Tapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qMy-BZ-1bs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa4-Tq-nJQ">
                                 <rect key="frame" x="83.999999999999986" y="617.33333333333337" width="241.66666666666663" height="14.666666666666629"/>
@@ -132,7 +140,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-0S-abw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-0S-abw">
                                 <rect key="frame" x="50" y="611.66666666666663" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="1bm-o5-SR7"/>
@@ -143,6 +151,10 @@
                                 <state key="normal" title="Button" image="property1Able">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="selected" image="property1CheckboxSelected"/>
+                                <connections>
+                                    <action selector="checkBox3Tapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="d5C-W7-Xws"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션입니다. 미션입니다. 미션입니다. 미션입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-hh-Oxj">
                                 <rect key="frame" x="83.999999999999986" y="645" width="241.66666666666663" height="14.666666666666629"/>
@@ -150,7 +162,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwS-VT-IL0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwS-VT-IL0">
                                 <rect key="frame" x="50" y="639.33333333333337" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="T5T-Dy-fij"/>
@@ -161,6 +173,10 @@
                                 <state key="normal" title="Button" image="property1Able">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="selected" image="property1CheckboxSelected"/>
+                                <connections>
+                                    <action selector="checkBox4Tapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0wr-z9-f9g"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bch-nQ-3QK">
                                 <rect key="frame" x="128.66666666666666" y="450.66666666666669" width="118" height="32.333333333333314"/>
@@ -218,7 +234,7 @@
                     </view>
                     <connections>
                         <outlet property="archiveButton" destination="x8g-iT-go0" id="qWW-sH-hN9"/>
-                        <outlet property="checkBoxButton1" destination="pme-aj-ly5" id="3Ao-1T-p6p"/>
+                        <outlet property="checkBoxButton1" destination="pme-aj-ly5" id="3nB-MI-EQf"/>
                         <outlet property="checkBoxButton2" destination="cKr-5g-WMd" id="5FT-zV-11v"/>
                         <outlet property="checkBoxButton3" destination="tz4-0S-abw" id="8fv-gR-3U0"/>
                         <outlet property="checkBoxButton4" destination="kwS-VT-IL0" id="r7o-fm-Rag"/>
@@ -242,5 +258,6 @@
         <image name="icHistory" width="48" height="48"/>
         <image name="icRefresh" width="48" height="48"/>
         <image name="property1Able" width="24" height="24"/>
+        <image name="property1CheckboxSelected" width="24" height="24"/>
     </resources>
 </document>
