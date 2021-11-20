@@ -8,11 +8,9 @@
 import UIKit
 
 class SelectVC: BaseVC {
-    
-    
+
     @IBOutlet weak var selectCV: UICollectionView!
     @IBOutlet weak var backgroundView: UIView!
-    
     
     var characterList:[SelectCharacterDataModel] = []
     
@@ -21,17 +19,12 @@ class SelectVC: BaseVC {
         registerCVC()
         initEventDataList()
         setUI()
-        
-        
-        
     }
-    
     
     func setUI(){
         backgroundView.layer.cornerRadius = 8
         selectCV.backgroundColor = .clear
 //        selectCV.isPagingEnabled = true
-        
           
           let screenWidth = UIScreen.main.bounds.width
 //          let cellWidth = (290/375) * screenWidth
@@ -46,9 +39,7 @@ class SelectVC: BaseVC {
           layout.scrollDirection = .horizontal
             selectCV.contentInset = UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
             selectCV.decelerationRate = .fast
-
     }
-    
     
     func registerCVC() {
         selectCV.dataSource = self
@@ -67,17 +58,15 @@ class SelectVC: BaseVC {
             SelectCharacterDataModel(image: "img_wind", name: "바람이", info: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠.")
         ])
      }
-    
-    
+
     @IBAction func touchUpToGoToDoView(_ sender: Any) {
         //데이터 전달하면서 화면 전환
-        
+        guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
-    
-    
-    
 }
-
 
 // MARK: - Extension Part
 extension SelectVC: UICollectionViewDataSource {
@@ -118,9 +107,6 @@ extension SelectVC: UICollectionViewDelegateFlowLayout {
       else {
           return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
       }
-      
-      
-      
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -131,8 +117,6 @@ extension SelectVC: UICollectionViewDelegateFlowLayout {
       16
   }
 }
-
-
 
 extension SelectVC : UIScrollViewDelegate {
 
@@ -150,6 +134,4 @@ extension SelectVC : UIScrollViewDelegate {
     targetContentOffset.pointee = offSet
 //    self.pageControl.currentPage = Int(roundedIndex)
   }
-
-
 }
