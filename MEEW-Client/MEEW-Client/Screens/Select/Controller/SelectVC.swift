@@ -60,11 +60,22 @@ class SelectVC: BaseVC {
      }
 
     @IBAction func touchUpToGoToDoView(_ sender: Any) {
-        //데이터 전달하면서 화면 전환
-        guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true, completion: nil)
+ 
+        
+        CompletePopUp.loadFromXib()
+            .setDescription("텍스트 텍스트 텍스트")
+            .present()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            guard let self = self else { return }
+            //데이터 전달하면서 화면 전환
+            guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+        
     }
 }
 

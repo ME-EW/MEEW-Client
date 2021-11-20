@@ -36,6 +36,8 @@
 		BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42D27496C4700229D35 /* PopUpVC.swift */; };
 		BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4302749796900229D35 /* ArchiveCVC.swift */; };
 		BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4312749796900229D35 /* ArchiveCVC.xib */; };
+		BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4342749937A00229D35 /* CompletePopUp.xib */; };
+		BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4362749938400229D35 /* CompletePopUp.swift */; };
 		F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39F8274962CD00805FE3 /* Color.xcassets */; };
 		F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */; };
 		F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FC2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf */; };
@@ -80,6 +82,8 @@
 		BD45C42D27496C4700229D35 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		BD45C4302749796900229D35 /* ArchiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCVC.swift; sourceTree = "<group>"; };
 		BD45C4312749796900229D35 /* ArchiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveCVC.xib; sourceTree = "<group>"; };
+		BD45C4342749937A00229D35 /* CompletePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletePopUp.xib; sourceTree = "<group>"; };
+		BD45C4362749938400229D35 /* CompletePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUp.swift; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				BD45C423274962F300229D35 /* MEEWPopUp.xib */,
 				BD45C425274962FA00229D35 /* MEEWPopUp.swift */,
 				BD45C42D27496C4700229D35 /* PopUpVC.swift */,
+				BD45C4342749937A00229D35 /* CompletePopUp.xib */,
+				BD45C4362749938400229D35 /* CompletePopUp.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
 				BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
+				BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
 				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
 				F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */,
@@ -523,6 +530,7 @@
 				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
 				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
+				BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
 				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
 				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
