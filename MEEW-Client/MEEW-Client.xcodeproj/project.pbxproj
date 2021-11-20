@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0227493ABF00021E91 /* AppDelegate.swift */; };
+		BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0427493ABF00021E91 /* SceneDelegate.swift */; };
+		BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD339A0827493ABF00021E91 /* Main.storyboard */; };
+		BD339A0C27493AC300021E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD339A0B27493AC300021E91 /* Assets.xcassets */; };
+		BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD339A0D27493AC300021E91 /* LaunchScreen.storyboard */; };
+		BD339A1C27493B9200021E91 /* BaseVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD339A1B27493B9200021E91 /* BaseVC.storyboard */; };
+		BD339A1F27493B9E00021E91 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A1E27493B9E00021E91 /* BaseVC.swift */; };
+		BD339A2827493C5600021E91 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A2727493C5600021E91 /* Palette.swift */; };
+		BD339A2A27493C6200021E91 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A2927493C6100021E91 /* Font.swift */; };
+		BD339A2C27493C6700021E91 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A2B27493C6700021E91 /* Image.swift */; };
+		BD339A3027493D6500021E91 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A2F27493D6500021E91 /* Reusable.swift */; };
+		BD339A3327493E5700021E91 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A3227493E5700021E91 /* APIConstants.swift */; };
+		BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A3427493EEB00021E91 /* NetworkResult.swift */; };
+		BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A3627493F3A00021E91 /* GenericResponse.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD3399FF27493ABF00021E91 /* MEEW-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEEW-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD339A0227493ABF00021E91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD339A0427493ABF00021E91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BD339A0927493ABF00021E91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD339A0B27493AC300021E91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD339A0E27493AC300021E91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD339A1027493AC300021E91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD339A1B27493B9200021E91 /* BaseVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseVC.storyboard; sourceTree = "<group>"; };
+		BD339A1E27493B9E00021E91 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		BD339A2727493C5600021E91 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		BD339A2927493C6100021E91 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		BD339A2B27493C6700021E91 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BD339A2F27493D6500021E91 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		BD339A3227493E5700021E91 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		BD339A3427493EEB00021E91 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		BD339A3627493F3A00021E91 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD3399FC27493ABF00021E91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD3399F627493ABF00021E91 = {
+			isa = PBXGroup;
+			children = (
+				BD339A0127493ABF00021E91 /* MEEW-Client */,
+				BD339A0027493ABF00021E91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD339A0027493ABF00021E91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD3399FF27493ABF00021E91 /* MEEW-Client.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD339A0127493ABF00021E91 /* MEEW-Client */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A1827493B4F00021E91 /* Networks */,
+				BD339A1727493B4C00021E91 /* Global */,
+				BD339A1627493B4600021E91 /* Screens */,
+				BD339A1027493AC300021E91 /* Info.plist */,
+			);
+			path = "MEEW-Client";
+			sourceTree = "<group>";
+		};
+		BD339A1627493B4600021E91 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A1A27493B8800021E91 /* Base */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BD339A1727493B4C00021E91 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2D27493C6C00021E91 /* Extensions */,
+				BD339A2027493BEB00021E91 /* Resources */,
+				BD339A1927493B7900021E91 /* Supports */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		BD339A1827493B4F00021E91 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2627493C1F00021E91 /* APIServices */,
+				BD339A2527493C1B00021E91 /* APIModels */,
+				BD339A2427493C1200021E91 /* APIConstants */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		BD339A1927493B7900021E91 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A0827493ABF00021E91 /* Main.storyboard */,
+				BD339A0D27493AC300021E91 /* LaunchScreen.storyboard */,
+				BD339A0227493ABF00021E91 /* AppDelegate.swift */,
+				BD339A0427493ABF00021E91 /* SceneDelegate.swift */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		BD339A1A27493B8800021E91 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A1B27493B9200021E91 /* BaseVC.storyboard */,
+				BD339A1E27493B9E00021E91 /* BaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BD339A2027493BEB00021E91 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2327493BF800021E91 /* Colors */,
+				BD339A2227493BF600021E91 /* Fonts */,
+				BD339A2127493BF100021E91 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD339A2127493BF100021E91 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A0B27493AC300021E91 /* Assets.xcassets */,
+				BD339A2B27493C6700021E91 /* Image.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BD339A2227493BF600021E91 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2927493C6100021E91 /* Font.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BD339A2327493BF800021E91 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2727493C5600021E91 /* Palette.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		BD339A2427493C1200021E91 /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A3227493E5700021E91 /* APIConstants.swift */,
+			);
+			path = APIConstants;
+			sourceTree = "<group>";
+		};
+		BD339A2527493C1B00021E91 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A3627493F3A00021E91 /* GenericResponse.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
+		BD339A2627493C1F00021E91 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A3427493EEB00021E91 /* NetworkResult.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		BD339A2D27493C6C00021E91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2E27493D5700021E91 /* Reusable */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BD339A2E27493D5700021E91 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				BD339A2F27493D6500021E91 /* Reusable.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD3399FE27493ABF00021E91 /* MEEW-Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD339A1327493AC300021E91 /* Build configuration list for PBXNativeTarget "MEEW-Client" */;
+			buildPhases = (
+				BD3399FB27493ABF00021E91 /* Sources */,
+				BD3399FC27493ABF00021E91 /* Frameworks */,
+				BD3399FD27493ABF00021E91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MEEW-Client";
+			productName = "MEEW-Client";
+			productReference = BD3399FF27493ABF00021E91 /* MEEW-Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD3399F727493ABF00021E91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					BD3399FE27493ABF00021E91 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = BD3399FA27493ABF00021E91 /* Build configuration list for PBXProject "MEEW-Client" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD3399F627493ABF00021E91;
+			productRefGroup = BD339A0027493ABF00021E91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD3399FE27493ABF00021E91 /* MEEW-Client */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD3399FD27493ABF00021E91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD339A1C27493B9200021E91 /* BaseVC.storyboard in Resources */,
+				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
+				BD339A0C27493AC300021E91 /* Assets.xcassets in Resources */,
+				BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD3399FB27493ABF00021E91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
+				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
+				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
+				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
+				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
+				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
+				BD339A3327493E5700021E91 /* APIConstants.swift in Sources */,
+				BD339A1F27493B9E00021E91 /* BaseVC.swift in Sources */,
+				BD339A2827493C5600021E91 /* Palette.swift in Sources */,
+				BD339A3027493D6500021E91 /* Reusable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD339A0827493ABF00021E91 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD339A0927493ABF00021E91 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD339A0D27493AC300021E91 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD339A0E27493AC300021E91 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD339A1127493AC300021E91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BD339A1227493AC300021E91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD339A1427493AC300021E91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W895YM7ZMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MEEW-Client/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = BaseVC;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.meewcorp.MEEW-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BD339A1527493AC300021E91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W895YM7ZMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MEEW-Client/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = BaseVC;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.meewcorp.MEEW-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD3399FA27493ABF00021E91 /* Build configuration list for PBXProject "MEEW-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD339A1127493AC300021E91 /* Debug */,
+				BD339A1227493AC300021E91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD339A1327493AC300021E91 /* Build configuration list for PBXNativeTarget "MEEW-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD339A1427493AC300021E91 /* Debug */,
+				BD339A1527493AC300021E91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD3399F727493ABF00021E91 /* Project object */;
+}
