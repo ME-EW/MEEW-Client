@@ -1,0 +1,19 @@
+//
+//  SelectCharcterDataModel.swift
+//  MEEW-Client
+//
+//  Created by 안현주 on 2021/11/21.
+//
+import UIKit
+
+struct SelectCharacterDataModel {
+    
+    var image : String
+    var name : String
+    var info : String
+
+    func makeItemImage() -> UIImage? {
+        return UIImage(named: image)
+    }
+    
+}

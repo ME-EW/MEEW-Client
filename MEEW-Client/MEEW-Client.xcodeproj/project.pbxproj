@@ -42,6 +42,9 @@
 		F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FE2749637400805FE3 /* Spoqa Han Sans Neo Thin.otf */; };
 		F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FF2749637400805FE3 /* Spoqa Han Sans Neo Medium.otf */; };
 		F2EC3A032749637400805FE3 /* Spoqa Han Sans Neo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC3A002749637400805FE3 /* Spoqa Han Sans Neo Regular.otf */; };
+		F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */; };
+		F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */; };
+		F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		F2EC39FE2749637400805FE3 /* Spoqa Han Sans Neo Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Thin.otf"; sourceTree = "<group>"; };
 		F2EC39FF2749637400805FE3 /* Spoqa Han Sans Neo Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Medium.otf"; sourceTree = "<group>"; };
 		F2EC3A002749637400805FE3 /* Spoqa Han Sans Neo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Regular.otf"; sourceTree = "<group>"; };
+		F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCVC.swift; sourceTree = "<group>"; };
+		F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCharacterCVC.xib; sourceTree = "<group>"; };
+		F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharcterDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +280,7 @@
 		BD45C40D274946BF00229D35 /* Select */ = {
 			isa = PBXGroup;
 			children = (
+				F2EC3A0427496A8200805FE3 /* Cell */,
 				BD45C413274947BC00229D35 /* Controller */,
 				BD45C4102749476200229D35 /* Storyboard */,
 			);
@@ -375,6 +382,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F2EC3A0427496A8200805FE3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */,
+				F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */,
+				F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,6 +457,7 @@
 				F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */,
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
 				F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */,
+				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
 				BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
@@ -506,6 +524,8 @@
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
 				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
+				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
+				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
 				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
 				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
