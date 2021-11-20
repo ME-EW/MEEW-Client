@@ -10,5 +10,7 @@ import UIKit
 class ToDoVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .bgDarkgrey
     }
+    
 }
