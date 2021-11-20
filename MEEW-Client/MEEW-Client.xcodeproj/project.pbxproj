@@ -28,6 +28,12 @@
 		BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41A274947FA00229D35 /* ToDoVC.swift */; };
 		BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C41C2749482100229D35 /* ResultVC.storyboard */; };
 		BD45C41F2749482800229D35 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41E2749482800229D35 /* ResultVC.swift */; };
+		BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C423274962F300229D35 /* MEEWPopUp.xib */; };
+		BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C425274962FA00229D35 /* MEEWPopUp.swift */; };
+		BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C427274968FB00229D35 /* UIApplication+.swift */; };
+		BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42927496A8700229D35 /* AppDelegate+.swift */; };
+		BD45C42C27496BA000229D35 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42B27496BA000229D35 /* UIView+.swift */; };
+		BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42D27496C4700229D35 /* PopUpVC.swift */; };
 		F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39F8274962CD00805FE3 /* Color.xcassets */; };
 		F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */; };
 		F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FC2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf */; };
@@ -61,6 +67,12 @@
 		BD45C41A274947FA00229D35 /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
 		BD45C41C2749482100229D35 /* ResultVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultVC.storyboard; sourceTree = "<group>"; };
 		BD45C41E2749482800229D35 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		BD45C423274962F300229D35 /* MEEWPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MEEWPopUp.xib; path = "MEEW-Client/Screens/Result/MEEWPopUp.xib"; sourceTree = SOURCE_ROOT; };
+		BD45C425274962FA00229D35 /* MEEWPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MEEWPopUp.swift; path = "MEEW-Client/Screens/Result/MEEWPopUp.swift"; sourceTree = SOURCE_ROOT; };
+		BD45C427274968FB00229D35 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		BD45C42927496A8700229D35 /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
+		BD45C42B27496BA000229D35 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		BD45C42D27496C4700229D35 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
@@ -164,6 +176,7 @@
 		BD339A1A27493B8800021E91 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BD45C4222749629100229D35 /* Common */,
 				BD339A1B27493B9200021E91 /* BaseVC.storyboard */,
 				BD339A1E27493B9E00021E91 /* BaseVC.swift */,
 			);
@@ -239,6 +252,9 @@
 			isa = PBXGroup;
 			children = (
 				BD339A2E27493D5700021E91 /* Reusable */,
+				BD45C427274968FB00229D35 /* UIApplication+.swift */,
+				BD45C42927496A8700229D35 /* AppDelegate+.swift */,
+				BD45C42B27496BA000229D35 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +342,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BD45C4222749629100229D35 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BD45C423274962F300229D35 /* MEEWPopUp.xib */,
+				BD45C425274962FA00229D35 /* MEEWPopUp.swift */,
+				BD45C42D27496C4700229D35 /* PopUpVC.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		EF375EDFD0003B058BCD97D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */,
 				BD339A1C27493B9200021E91 /* BaseVC.storyboard in Resources */,
 				F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */,
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
@@ -464,8 +491,13 @@
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
 				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
+				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
+				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
+				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
+				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
+				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
 				BD339A3327493E5700021E91 /* APIConstants.swift in Sources */,
 				BD339A1F27493B9E00021E91 /* BaseVC.swift in Sources */,

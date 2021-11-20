@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Neo Medium.otf">
+            <string>SpoqaHanSansNeo-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MEEWPopUp" customModule="MEEW_Client" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-bb-uI8">
+                    <rect key="frame" x="24.666666666666657" y="378" width="326" height="104.33333333333331"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="귀여운 캐릭터 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="848-gP-9cz">
+                            <rect key="frame" x="24" y="24" width="278" height="19.333333333333329"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다. 캐릭터 설명입니다." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-jJ-TCd">
+                            <rect key="frame" x="24" y="51.333333333333314" width="214" height="29"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfH-WM-ZYf">
+                            <rect key="frame" x="272" y="6" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="4aO-HS-W1K"/>
+                                <constraint firstAttribute="width" constant="48" id="KX9-eC-byc"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="icCloseBlack"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="848-gP-9cz" secondAttribute="trailing" constant="24" id="05B-mi-gxU"/>
+                        <constraint firstAttribute="trailing" secondItem="n3e-jJ-TCd" secondAttribute="trailing" constant="88" id="BKZ-R4-Lfp"/>
+                        <constraint firstItem="848-gP-9cz" firstAttribute="leading" secondItem="Glp-bb-uI8" secondAttribute="leading" constant="24" id="JYK-ZB-WOi"/>
+                        <constraint firstAttribute="trailing" secondItem="vfH-WM-ZYf" secondAttribute="trailing" constant="6" id="T2q-OE-e7t"/>
+                        <constraint firstAttribute="bottom" secondItem="n3e-jJ-TCd" secondAttribute="bottom" constant="24" id="dAv-nd-o0q"/>
+                        <constraint firstAttribute="width" constant="326" id="gdh-XF-Y1o"/>
+                        <constraint firstItem="n3e-jJ-TCd" firstAttribute="top" secondItem="848-gP-9cz" secondAttribute="bottom" constant="8" id="iYX-tB-ZBl"/>
+                        <constraint firstItem="n3e-jJ-TCd" firstAttribute="leading" secondItem="848-gP-9cz" secondAttribute="leading" id="nfq-Ld-7vS"/>
+                        <constraint firstItem="vfH-WM-ZYf" firstAttribute="top" secondItem="Glp-bb-uI8" secondAttribute="top" constant="6" id="uwf-xP-Y08"/>
+                        <constraint firstItem="848-gP-9cz" firstAttribute="top" secondItem="Glp-bb-uI8" secondAttribute="top" constant="24" id="z48-lq-EPf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Glp-bb-uI8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RLh-yz-goI"/>
+                <constraint firstItem="Glp-bb-uI8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="334" id="jy8-ce-8NB"/>
+            </constraints>
+            <connections>
+                <outlet property="closeButton" destination="vfH-WM-ZYf" id="2kE-xb-76O"/>
+                <outlet property="containerView" destination="Glp-bb-uI8" id="Fe4-ej-235"/>
+                <outlet property="descriptionLabel" destination="n3e-jJ-TCd" id="YsA-Ua-g3e"/>
+                <outlet property="titleLabel" destination="848-gP-9cz" id="2TZ-2j-sdz"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="147"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icCloseBlack" width="48" height="48"/>
+    </resources>
+</document>
