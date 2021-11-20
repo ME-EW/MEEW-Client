@@ -9,7 +9,7 @@ import UIKit
 extension UIFont {
 
   class var head1: UIFont {
-    return UIFont(name: "Spoqa HanSansNeo-Bold", size: 24.0)!
+    return UIFont(name: "SpoqaHanSansNeo-Bold", size: 24.0)!
   }
 
   class var head2: UIFont {
