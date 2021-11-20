@@ -57,7 +57,13 @@ class ToDoVC: BaseVC {
             .present()
     }
     
-    @IBAction func originalButtonTapped(_ sender: Any) {   //오늘은나로살게요 버튼 - 수정하기
+    @IBAction func originalButtonTapped(_ sender: Any) {
+        //오늘은나로살게요 버튼 - 수정하기
+        guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "VCVC") as? VCVC else { return }
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+        
     }
     
     // MARK: - 체크박스 구현
