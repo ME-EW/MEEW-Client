@@ -9,11 +9,11 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Spoqa Han Sans Neo Bold</string>
-		<string>Spoqa Han Sans Neo Light</string>
-		<string>Spoqa Han Sans Neo Medium</string>
-		<string>Spoqa Han Sans Neo Regular</string>
-		<string>Spoqa Han Sans Neo Thin</string>
+		<string>Spoqa Han Sans Neo Bold.otf</string>
+		<string>Spoqa Han Sans Neo Light.otf</string>
+		<string>Spoqa Han Sans Neo Medium.otf</string>
+		<string>Spoqa Han Sans Neo Regular.otf</string>
+		<string>Spoqa Han Sans Neo Thin.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -29,7 +29,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>ResultVC</string>
+					<string>ToDoVC</string>
 				</dict>
 			</array>
 		</dict>
