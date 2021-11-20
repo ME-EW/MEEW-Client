@@ -30,6 +30,7 @@
 		BD45C41F2749482800229D35 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41E2749482800229D35 /* ResultVC.swift */; };
 		BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C423274962F300229D35 /* MEEWPopUp.xib */; };
 		BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C425274962FA00229D35 /* MEEWPopUp.swift */; };
+		BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C427274968FB00229D35 /* UIApplication+.swift */; };
 		F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39F8274962CD00805FE3 /* Color.xcassets */; };
 		F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */; };
 		F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FC2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf */; };
@@ -65,6 +66,7 @@
 		BD45C41E2749482800229D35 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		BD45C423274962F300229D35 /* MEEWPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MEEWPopUp.xib; path = "MEEW-Client/Screens/Result/MEEWPopUp.xib"; sourceTree = SOURCE_ROOT; };
 		BD45C425274962FA00229D35 /* MEEWPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MEEWPopUp.swift; path = "MEEW-Client/Screens/Result/MEEWPopUp.swift"; sourceTree = SOURCE_ROOT; };
+		BD45C427274968FB00229D35 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				BD339A2E27493D5700021E91 /* Reusable */,
+				BD45C427274968FB00229D35 /* UIApplication+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
+				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
