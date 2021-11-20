@@ -29,7 +29,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>ToDoVC</string>
+					<string>SelectVC</string>
 				</dict>
 			</array>
 		</dict>
