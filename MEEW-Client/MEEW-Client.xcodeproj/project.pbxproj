@@ -99,7 +99,7 @@
 		F2EC39FE2749637400805FE3 /* Spoqa Han Sans Neo Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Thin.otf"; sourceTree = "<group>"; };
 		F2EC39FF2749637400805FE3 /* Spoqa Han Sans Neo Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Medium.otf"; sourceTree = "<group>"; };
 		F2EC3A002749637400805FE3 /* Spoqa Han Sans Neo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Regular.otf"; sourceTree = "<group>"; };
-		F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterCVC.swift; sourceTree = "<group>"; };
+		F2EC3A0527496AA000805FE3 /* SelectCharacterCVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCharacterCVC.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F2EC3A0627496AA000805FE3 /* SelectCharacterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCharacterCVC.xib; sourceTree = "<group>"; };
 		F2EC3A0927496CD200805FE3 /* SelectCharcterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharcterDataModel.swift; sourceTree = "<group>"; };
 		F2EC3A0E2749A1D400805FE3 /* CharacterListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListService.swift; sourceTree = "<group>"; };
