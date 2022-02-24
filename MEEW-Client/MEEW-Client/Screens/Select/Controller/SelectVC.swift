@@ -16,9 +16,11 @@ class SelectVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCharacterData()
+      //✅ 서버연결 시 사용할 원래 코드
+//        getCharacterData()
         registerCVC()
-//        initEventDataList()
+      //❌ UI 점검용으로 사용할 코드
+        initEventDataList()
         setUI()
     }
     
@@ -50,6 +52,7 @@ class SelectVC: BaseVC {
         selectCV.register(xib, forCellWithReuseIdentifier: SelectCharacterCVC.identifier)
     }
     
+  //❌ UI 점검용으로 사용할 코드
     func initEventDataList(){
         characterList.append(contentsOf: [
             SelectCharacterDataModel(image: "img_heart", name: "마음이", info: "마음이는 늘 상대방의 마음을 먼저 생각해요. \n항상 타인의 말에 웃어주고, 공감해주고, 양보할 줄 알아요."),
@@ -61,15 +64,13 @@ class SelectVC: BaseVC {
      }
 
     @IBAction func touchUpToGoToDoView(_ sender: Any) {
- 
-        
         CompletePopUp.loadFromXib()
             .setDescription("나의 캐릭터가 마음이로 선택되었어요!")
             .present()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
             guard let self = self else { return }
-            //데이터 전달하면서 화면 전환
+            //데이터 전달하면서 화면 전환 해야함..!
             guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .crossDissolve
@@ -96,42 +97,41 @@ extension SelectVC: UICollectionViewDataSource {
 }
 
 extension SelectVC: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let screenWidth = UIScreen.main.bounds.width
-      let cellWidth = screenWidth * (290/375)
-      let cellHeight = cellWidth * (370/290)
-      return CGSize(width: cellWidth, height: cellHeight)
-//        return CGSize(width: 290, height: 366)
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-      let screenWidth = UIScreen.main.bounds.width
-      let cellWidth = screenWidth * (290/375)
-
-      let cellInset = (screenWidth - cellWidth)/4
-
-      if section == 0 {
-          return UIEdgeInsets(top: 0, left: cellInset, bottom: 0, right: 0)
-      }
-      else if section == (characterList.count - 1) {
-          return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cellInset)
-      }
-      else {
-          return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-      }
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      16
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-      16
-  }
+  //❌3D Carousel을 위한 FlowLayout 적용으로 인한 아래의 코드 삭제...!
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//      let screenWidth = UIScreen.main.bounds.width
+//      let cellWidth = screenWidth * (290/375)
+//      let cellHeight = cellWidth * (370/290)
+//      return CGSize(width: cellWidth, height: cellHeight)
+//  }
+//
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//      let screenWidth = UIScreen.main.bounds.width
+//      let cellWidth = screenWidth * (290/375)
+//
+//      let cellInset = (screenWidth - cellWidth)/4
+//
+//      if section == 0 {
+//          return UIEdgeInsets(top: 0, left: cellInset, bottom: 0, right: 0)
+//      }
+//      else if section == (characterList.count   ) {
+//          return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cellInset)
+//      }
+//      else {
+//          return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//      }
+//  }
+//
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//      16
+//  }
+//
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//      16
+//  }
 }
 
 extension SelectVC : UIScrollViewDelegate {
-
   func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //    let page = Int(targetContentOffset.pointee.x / self.frame.width)
     let layout = selectCV.collectionViewLayout as! UICollectionViewFlowLayout
