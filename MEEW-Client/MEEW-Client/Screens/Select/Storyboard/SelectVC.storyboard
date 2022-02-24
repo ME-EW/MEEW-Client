@@ -97,6 +97,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SelectCVCHeightConstraint" destination="T2R-e5-7sC" id="M7N-84-ARe"/>
                         <outlet property="backgroundView" destination="dSQ-VS-lrc" id="1x4-hE-H8R"/>
                         <outlet property="selectCV" destination="ODW-uT-sP7" id="oq9-sS-zYK"/>
                     </connections>
