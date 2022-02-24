@@ -25,6 +25,8 @@ class SelectVC: BaseVC {
     }
     
     func setUI(){
+        selectCV.collectionViewLayout = SelectCarouselLayout()
+      
         backgroundView.layer.cornerRadius = 8
         selectCV.backgroundColor = .clear
 //        selectCV.isPagingEnabled = true
@@ -35,13 +37,16 @@ class SelectVC: BaseVC {
 //
           let insetX = (20/375) * screenWidth
           let layout = selectCV.collectionViewLayout as! UICollectionViewFlowLayout
-          
+        
+        
+        //Fix 한거 수정하기..!
+        
           layout.itemSize = CGSize(width: 290, height: 370)
-          layout.minimumLineSpacing = 12
+//          layout.minimumLineSpacing = 12
           
           layout.scrollDirection = .horizontal
-            selectCV.contentInset = UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
-            selectCV.decelerationRate = .fast
+//          selectCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+          selectCV.decelerationRate = .fast
     }
     
     func registerCVC() {

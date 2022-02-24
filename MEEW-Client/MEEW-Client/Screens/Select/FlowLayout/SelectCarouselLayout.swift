@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 class SelectCarouselLayout: UICollectionViewFlowLayout {
-  public var sideItemScale: CGFloat = 0.5
-  public var sideItemAlpha: CGFloat = 0.5
+  public var sideItemScale: CGFloat = 0.8 //크기 작아졌다가 커지는 정도
+  public var sideItemAlpha: CGFloat = 0.5 //그림자 효과 ?
   public var spacing: CGFloat = 10
   
   public var isPagingEnabled: Bool = false
@@ -32,13 +32,18 @@ class SelectCarouselLayout: UICollectionViewFlowLayout {
     
     let collectionViewSize = collectionView.bounds.size
     
-    let xInset = (collectionViewSize.width - self.itemSize.width) / 2
-    let yInset = (collectionViewSize.height - self.itemSize.height) / 2
+    print("CollectionViewWidth : ", collectionViewSize.width)
+    print("CollectionViewHeight : ", collectionViewSize.height)
+    print("ItemSizeWidth : ", self.itemSize.width)
+    print("ItemSizeHeight : ", self.itemSize.height)
     
-    self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
+    let xInset = (collectionViewSize.width - self.itemSize.width) / 2
+//    let yInset = (collectionViewSize.height - self.itemSize.h        eight) / 2
+    
+    self.sectionInset = UIEdgeInsets(top: 0, left: xInset, bottom: 0, right: xInset)
     
     let itemWidth = self.itemSize.width
-    
+    print("itemWidth: ", itemWidth)
     //변경전
     //    let scaledItemOffset =  (itemWidth - itemWidth*self.sideItemScale) / 2
     //    self.minimumLineSpacing = spacing - scaledItemOffset
@@ -46,8 +51,10 @@ class SelectCarouselLayout: UICollectionViewFlowLayout {
     
     //변경 후
     let scaledItemOffset =  (itemWidth - (itemWidth*(self.sideItemScale + (1 - self.sideItemScale)/2))) / 2
-    print(scaledItemOffset)
+    print("ScaledItemOffset : ", scaledItemOffset)
+    print("spacing : ", spacing)
     self.minimumLineSpacing = spacing - scaledItemOffset
+    //16
     
     self.scrollDirection = .horizontal
   }
@@ -67,6 +74,7 @@ class SelectCarouselLayout: UICollectionViewFlowLayout {
     /// 이를 attributes에 다시 매핑하여 UICollectionViewLayoutAttributes로 반환한다
     return attributes.map({ self.transformLayoutAttributes(attributes: $0) })
   }
+  
   //3D 할 경우 수정 해야할 코드
   private func transformLayoutAttributes(attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
     
