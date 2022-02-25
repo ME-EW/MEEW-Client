@@ -11,15 +11,12 @@ class SelectVC: BaseVC {
     
     @IBOutlet weak var selectCV: UICollectionView!
     @IBOutlet weak var backgroundView: UIView!
-  @IBOutlet weak var SelectCVCHeightConstraint: NSLayoutConstraint!{
-    didSet {
-      let screenWidth = UIScreen.main.bounds.width
-      let cellWidth = (290/375) * screenWidth
-      let cellHeight = cellWidth * (366/290)
-      SelectCVCHeightConstraint.constant = cellHeight + 20
+    @IBOutlet weak var SelectCVCHeightConstraint: NSLayoutConstraint!{
+        didSet {
+            updateConstraint()
+        }
     }
-  }
-  
+    
     var characterList:[SelectCharacterDataModel] = []
     
     override func viewDidLoad() {
@@ -32,7 +29,14 @@ class SelectVC: BaseVC {
         setUI()
     }
     
-    func setUI(){
+    private func updateConstraint(){
+        let screenWidth = UIScreen.main.bounds.width
+        let cellWidth = (290/375) * screenWidth
+        let cellHeight = cellWidth * (366/290)
+        SelectCVCHeightConstraint.constant = cellHeight + 20
+    }
+    
+    private func setUI(){
         selectCV.collectionViewLayout = SelectCarouselLayout()
         
         backgroundView.layer.cornerRadius = 8
@@ -53,7 +57,7 @@ class SelectVC: BaseVC {
         let itemHeight = itemWidth * (370/290)
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
-//        layout.itemSize = CGSize(width: 290, height: 370)
+        //        layout.itemSize = CGSize(width: 290, height: 370)
         //          layout.minimumLineSpacing = 12
         
         layout.scrollDirection = .horizontal
@@ -61,7 +65,7 @@ class SelectVC: BaseVC {
         selectCV.decelerationRate = .fast
     }
     
-    func registerCVC() {
+    private func registerCVC() {
         selectCV.dataSource = self
         selectCV.delegate = self
         
@@ -70,7 +74,7 @@ class SelectVC: BaseVC {
     }
     
     //❌ UI 점검용으로 사용할 코드
-    func initEventDataList(){
+    private func initEventDataList(){
         characterList.append(contentsOf: [
             SelectCharacterDataModel(image: "img_heart", name: "마음이", info: "마음이는 늘 상대방의 마음을 먼저 생각해요. \n항상 타인의 말에 웃어주고, 공감해주고, 양보할 줄 알아요."),
             SelectCharacterDataModel(image: "img_honest", name: "정직이", info: "정직이의 하루는 남들보다 빠르게 시작돼요. 건강하고, 규칙적이고, 계획적인 성격을 가지고 있죠."),
