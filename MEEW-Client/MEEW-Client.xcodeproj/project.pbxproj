@@ -94,7 +94,7 @@
 		BD45C4342749937A00229D35 /* CompletePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletePopUp.xib; sourceTree = "<group>"; };
 		BD45C4362749938400229D35 /* CompletePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUp.swift; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
-		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; };
+		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
 		F2EC39FC2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Light.otf"; sourceTree = "<group>"; };
