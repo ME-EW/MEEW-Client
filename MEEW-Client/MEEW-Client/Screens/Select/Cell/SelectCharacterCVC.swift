@@ -21,7 +21,7 @@ class SelectCharacterCVC: UICollectionViewCell {
         setUI()
     }
     
-    func setUI() {
+    private func setUI() {
         self.layer.cornerRadius = 16
         characterImageView.layer.cornerRadius = 16
     }
