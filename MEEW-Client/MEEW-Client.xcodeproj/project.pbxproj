@@ -318,7 +318,7 @@
 			children = (
 				BD45C421274948BA00229D35 /* Controller */,
 				BD45C420274948B300229D35 /* Storyboard */,
-				BD45C42F274978C900229D35 /* Cell */,
+				BD45C42F274978C900229D35 /* View */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -384,11 +384,11 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		BD45C42F274978C900229D35 /* Cell */ = {
+		BD45C42F274978C900229D35 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		EF375EDFD0003B058BCD97D5 /* Pods */ = {
