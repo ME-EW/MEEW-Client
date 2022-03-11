@@ -37,8 +37,6 @@
 		BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42927496A8700229D35 /* AppDelegate+.swift */; };
 		BD45C42C27496BA000229D35 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42B27496BA000229D35 /* UIView+.swift */; };
 		BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42D27496C4700229D35 /* PopUpVC.swift */; };
-		BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4302749796900229D35 /* ArchiveCVC.swift */; };
-		BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4312749796900229D35 /* ArchiveCVC.xib */; };
 		BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4342749937A00229D35 /* CompletePopUp.xib */; };
 		BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4362749938400229D35 /* CompletePopUp.swift */; };
 		F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */; };
@@ -89,8 +87,6 @@
 		BD45C42927496A8700229D35 /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
 		BD45C42B27496BA000229D35 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		BD45C42D27496C4700229D35 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
-		BD45C4302749796900229D35 /* ArchiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCVC.swift; sourceTree = "<group>"; };
-		BD45C4312749796900229D35 /* ArchiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveCVC.xib; sourceTree = "<group>"; };
 		BD45C4342749937A00229D35 /* CompletePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletePopUp.xib; sourceTree = "<group>"; };
 		BD45C4362749938400229D35 /* CompletePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUp.swift; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -391,8 +387,6 @@
 		BD45C42F274978C900229D35 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C4302749796900229D35 /* ArchiveCVC.swift */,
-				BD45C4312749796900229D35 /* ArchiveCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -490,7 +484,6 @@
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
 				F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */,
 				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
-				BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
@@ -568,7 +561,6 @@
 				F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */,
 				6F257EF02749B86F0055EE43 /* VCVC.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
-				BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */,
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
