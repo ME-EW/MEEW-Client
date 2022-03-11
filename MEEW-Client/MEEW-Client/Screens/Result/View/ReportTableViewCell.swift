@@ -8,16 +8,19 @@
 import UIKit
 
 class ReportTableViewCell: UITableViewCell {
+    
+    static let identifier = "ReportTableViewCell"
 
+    @IBOutlet weak var progressContainerView: UIView!
+    @IBOutlet weak var progressView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        setupUI()
     }
     
+    private func setupUI() {
+        progressContainerView.layer.cornerRadius = progressContainerView.bounds.height / 2
+        progressView.layer.cornerRadius = progressView.bounds.height / 2
+    }
 }

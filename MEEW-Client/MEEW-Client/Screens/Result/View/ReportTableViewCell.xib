@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -52,13 +51,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-b3-lsH">
                                 <rect key="frame" x="0.0" y="0.0" width="165" height="8"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" red="0.67843137254901964" green="0.37254901960784315" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="neB-4k-SET"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yRL-b3-lsH" secondAttribute="bottom" id="0Te-Ax-Kyb"/>
                             <constraint firstAttribute="width" constant="192" id="C69-c2-LXe"/>
@@ -67,9 +66,17 @@
                             <constraint firstAttribute="height" constant="8" id="iYY-2o-Vfc"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlI-gW-BxA" userLabel="lineView">
+                        <rect key="frame" x="0.0" y="122.5" width="335" height="0.5"/>
+                        <color key="backgroundColor" red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="DF1-JL-CeW"/>
+                        </constraints>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="rlI-gW-BxA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1si-NX-Yg9"/>
+                    <constraint firstAttribute="trailing" secondItem="rlI-gW-BxA" secondAttribute="trailing" id="3Wh-oB-3VC"/>
                     <constraint firstItem="xPk-AS-t6N" firstAttribute="top" secondItem="s2S-gb-pLV" secondAttribute="bottom" constant="10" id="3yp-sO-Ffz"/>
                     <constraint firstItem="XoW-XM-y6w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DPR-BC-yOd"/>
                     <constraint firstItem="XoW-XM-y6w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="Dgm-Q2-k2n"/>
@@ -81,16 +88,19 @@
                     <constraint firstItem="4wu-bn-UCf" firstAttribute="centerY" secondItem="s2S-gb-pLV" secondAttribute="centerY" id="XG4-6H-Q8u"/>
                     <constraint firstItem="xPk-AS-t6N" firstAttribute="leading" secondItem="s2S-gb-pLV" secondAttribute="leading" id="aX5-ok-2s4"/>
                     <constraint firstItem="s2S-gb-pLV" firstAttribute="leading" secondItem="vGK-0z-QWe" secondAttribute="leading" id="kL0-yp-r0i"/>
+                    <constraint firstAttribute="bottom" secondItem="rlI-gW-BxA" secondAttribute="bottom" id="w1Z-AL-BaA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="progressContainerView" destination="xPk-AS-t6N" id="SjF-UQ-o8a"/>
+                <outlet property="progressView" destination="yRL-b3-lsH" id="aSE-x3-5Aa"/>
+            </connections>
             <point key="canvasLocation" x="131.15942028985509" y="157.70089285714286"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="img_character_recent" width="100" height="100"/>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
