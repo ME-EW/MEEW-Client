@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,9 +33,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ODW-uT-sP7">
-                                <rect key="frame" x="0.0" y="221.66666666666663" width="375" height="370"/>
+                                <rect key="frame" x="0.0" y="201.66666666666663" width="375" height="396"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="370" id="T2R-e5-7sC"/>
+                                    <constraint firstAttribute="height" constant="396" id="T2R-e5-7sC"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i81-X0-3sK">
                                     <size key="itemSize" width="128" height="128"/>
@@ -55,22 +55,22 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSQ-VS-lrc">
-                                <rect key="frame" x="42" y="639.66666666666663" width="290" height="48"/>
+                                <rect key="frame" x="20" y="679" width="335" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="1Vf-Tg-qZD"/>
-                                    <constraint firstAttribute="width" constant="290" id="Uwh-3E-rDC"/>
+                                    <constraint firstAttribute="width" constant="335" id="6f5-YB-iR5"/>
+                                    <constraint firstAttribute="height" constant="54" id="9X1-Rm-Vmm"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-UJ-HdM">
-                                <rect key="frame" x="42" y="639.66666666666663" width="290" height="48"/>
+                                <rect key="frame" x="20" y="679" width="335" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="SeN-yM-3qJ"/>
-                                    <constraint firstAttribute="width" constant="290" id="pSl-1g-Elg"/>
+                                    <constraint firstAttribute="width" constant="335" id="0Mw-Rq-qgz"/>
+                                    <constraint firstAttribute="height" constant="54" id="hPW-cM-jNH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="이 캐릭터로 할게요!">
+                                <state key="normal" title="다음">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -82,17 +82,17 @@
                         <color key="backgroundColor" name="bg_darkgrey"/>
                         <constraints>
                             <constraint firstItem="RbE-7u-qr4" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="116" id="3sd-PY-EMz"/>
-                            <constraint firstItem="ODW-uT-sP7" firstAttribute="top" secondItem="RbE-7u-qr4" secondAttribute="bottom" constant="48" id="9zA-c6-n1x"/>
-                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="trailing" secondItem="dSQ-VS-lrc" secondAttribute="trailing" id="UHg-ce-8F2"/>
-                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="bottom" secondItem="dSQ-VS-lrc" secondAttribute="bottom" id="cJx-Ae-0Wl"/>
-                            <constraint firstItem="dSQ-VS-lrc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="42" id="gdP-e7-SVV"/>
-                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="leading" secondItem="dSQ-VS-lrc" secondAttribute="leading" id="kOR-cd-mQM"/>
+                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="leading" secondItem="dSQ-VS-lrc" secondAttribute="leading" id="7yz-V6-HHe"/>
+                            <constraint firstItem="ODW-uT-sP7" firstAttribute="top" secondItem="RbE-7u-qr4" secondAttribute="bottom" constant="28" id="9zA-c6-n1x"/>
+                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="top" secondItem="dSQ-VS-lrc" secondAttribute="top" id="K2h-ah-Rx9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ODW-uT-sP7" secondAttribute="trailing" id="Lh3-Xk-aDW"/>
+                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="trailing" secondItem="dSQ-VS-lrc" secondAttribute="trailing" id="MmO-6N-hEg"/>
+                            <constraint firstItem="dSQ-VS-lrc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WOg-d7-z9p"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dSQ-VS-lrc" secondAttribute="trailing" constant="20" id="XvU-bI-gj7"/>
+                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="bottom" secondItem="dSQ-VS-lrc" secondAttribute="bottom" id="j2q-1i-scN"/>
                             <constraint firstItem="ODW-uT-sP7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l5I-Mo-Kn6"/>
-                            <constraint firstItem="dSQ-VS-lrc" firstAttribute="top" secondItem="ODW-uT-sP7" secondAttribute="bottom" constant="48" id="l86-DE-t79"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ODW-uT-sP7" secondAttribute="trailing" id="npQ-jW-EJk"/>
                             <constraint firstItem="RbE-7u-qr4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="74" id="qY1-kP-2tw"/>
-                            <constraint firstItem="3NW-UJ-HdM" firstAttribute="top" secondItem="dSQ-VS-lrc" secondAttribute="top" id="wu0-fI-DsB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dSQ-VS-lrc" secondAttribute="trailing" constant="43" id="yu4-eV-GCv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="dSQ-VS-lrc" secondAttribute="bottom" constant="45" id="z4l-oo-XAB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RbE-7u-qr4" secondAttribute="trailing" constant="74" id="zws-FJ-ZdO"/>
                         </constraints>
                     </view>

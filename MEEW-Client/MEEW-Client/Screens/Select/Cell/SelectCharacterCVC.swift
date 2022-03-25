@@ -24,6 +24,8 @@ class SelectCharacterCVC: UICollectionViewCell {
     private func setUI() {
         self.layer.cornerRadius = 16
         characterImageView.layer.cornerRadius = 16
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor.grey2.cgColor
     }
     
     func setData(appData: SelectCharacterDataModel){

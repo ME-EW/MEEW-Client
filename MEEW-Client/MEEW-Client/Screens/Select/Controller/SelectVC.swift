@@ -31,8 +31,8 @@ class SelectVC: BaseVC {
     
     private func updateConstraint(){
         let screenWidth = UIScreen.main.bounds.width
-        let cellWidth = (290/375) * screenWidth
-        let cellHeight = cellWidth * (366/290)
+        let cellWidth = (315/375) * screenWidth
+        let cellHeight = cellWidth * (396/315)
         SelectCVCHeightConstraint.constant = cellHeight + 20
     }
     
@@ -41,27 +41,20 @@ class SelectVC: BaseVC {
         
         backgroundView.layer.cornerRadius = 8
         selectCV.backgroundColor = .clear
-        //        selectCV.isPagingEnabled = true
         
         let screenWidth = UIScreen.main.bounds.width
-        //          let cellWidth = (290/375) * screenWidth
-        //          let cellHeight = cellWidth * (366/290)
-        //
+
         let insetX = (20/375) * screenWidth
         let layout = selectCV.collectionViewLayout as! UICollectionViewFlowLayout
         
         
         //Fix 한거 수정하기..!
-        
-        let itemWidth = (290/375) * screenWidth
-        let itemHeight = itemWidth * (370/290)
+        let itemWidth = (315/375) * screenWidth
+        let itemHeight = itemWidth * (396/315)
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
-        //        layout.itemSize = CGSize(width: 290, height: 370)
-        //          layout.minimumLineSpacing = 12
-        
+
         layout.scrollDirection = .horizontal
-        //          selectCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         selectCV.decelerationRate = .fast
     }
     
@@ -76,15 +69,18 @@ class SelectVC: BaseVC {
     //❌ UI 점검용으로 사용할 코드
     private func initEventDataList(){
         characterList.append(contentsOf: [
-            SelectCharacterDataModel(image: "img_heart", name: "마음이", info: "마음이는 늘 상대방의 마음을 먼저 생각해요. \n항상 타인의 말에 웃어주고, 공감해주고, 양보할 줄 알아요."),
-            SelectCharacterDataModel(image: "img_honest", name: "정직이", info: "정직이의 하루는 남들보다 빠르게 시작돼요. 건강하고, 규칙적이고, 계획적인 성격을 가지고 있죠."),
-            SelectCharacterDataModel(image: "img_sun", name: "태양이", info: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
-            SelectCharacterDataModel(image: "img_sky", name: "하늘이", info: "하늘이는 넓은 마음씨를 가지고 있어요. 그래서 대부분의 상황에서 참을성있게 행동할 줄 알아요."),
-            SelectCharacterDataModel(image: "img_wind", name: "바람이", info: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠.")
+            SelectCharacterDataModel(image: "img_taeyang_select", name: "태양이", info: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
+            SelectCharacterDataModel(image: "img_maeum_select", name: "마음이", info: "마음이는 기여웡!"),
+            SelectCharacterDataModel(image: "img_jungjik_select", name: "정직이", info: "정직이도 기여웡!"),
+            SelectCharacterDataModel(image: "img_haneul_select", name: "하늘이", info: "하늘이는 넓은 마음씨를 가지고 있어요. 그래서 대부분의 상황에서 참을성있게 행동할 줄 알아요."),
+            SelectCharacterDataModel(image: "img_gureum_select", name: "구름이", info: "구름이도 기여웡!"),
+            SelectCharacterDataModel(image: "img_baram_select", name: "바람이", info: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠."),
+            SelectCharacterDataModel(image: "img_banghyang_select", name: "방향이", info: "방향이도 기여웡!")
         ])
     }
     
     @IBAction func touchUpToGoToDoView(_ sender: Any) {
+        //싹 다 닉네임뷰로 이동하는걸로 변경해야함
         CompletePopUp.loadFromXib()
             .setDescription("나의 캐릭터가 마음이로 선택되었어요!")
             .present()
@@ -118,38 +114,38 @@ extension SelectVC: UICollectionViewDataSource {
 }
 
 extension SelectVC: UICollectionViewDelegateFlowLayout {
-    //❌3D Carousel을 위한 FlowLayout 적용으로 인한 아래의 코드 삭제...!
-    //  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //      let screenWidth = UIScreen.main.bounds.width
-    //      let cellWidth = screenWidth * (290/375)
-    //      let cellHeight = cellWidth * (370/290)
-    //      return CGSize(width: cellWidth, height: cellHeight)
-    //  }
-    //
-    //  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //      let screenWidth = UIScreen.main.bounds.width
-    //      let cellWidth = screenWidth * (290/375)
-    //
-    //      let cellInset = (screenWidth - cellWidth)/4
-    //
-    //      if section == 0 {
-    //          return UIEdgeInsets(top: 0, left: cellInset, bottom: 0, right: 0)
-    //      }
-    //      else if section == (characterList.count   ) {
-    //          return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cellInset)
-    //      }
-    //      else {
-    //          return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    //      }
-    //  }
-    //
-    //  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //      16
-    //  }
-    //
-    //  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //      16
-    //  }
+//      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//          let screenWidth = UIScreen.main.bounds.width
+//          let cellWidth = screenWidth * (315/375)
+//          let cellHeight = cellWidth * (396/315)
+//          return CGSize(width: cellWidth, height: cellHeight)
+//      }
+//
+//      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//          let screenWidth = UIScreen.main.bounds.width
+//          let cellWidth = screenWidth * (315/396)
+//          let cellInset = (screenWidth - cellWidth)/2
+//
+//          return UIEdgeInsets(top: 0, left: cellInset, bottom: 0, right: cellInset)
+          
+//          if section == 0 {
+//              return UIEdgeInsets(top: 0, left: cellInset, bottom: 0, right: 0)
+//          }
+//          else if section == (characterList.count ) {
+//              return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cellInset)
+//          }
+//          else {
+//              return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//          }
+//      }
+//
+//      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//          10
+//      }
+//
+//      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//          0
+//      }
 }
 
 extension SelectVC : UIScrollViewDelegate {
