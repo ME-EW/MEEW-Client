@@ -108,12 +108,17 @@ extension SelectVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCharacterCVC.identifier, for: indexPath) as? SelectCharacterCVC else {return UICollectionViewCell()}
         
+        if indexPath.item == 0 {
+            cell.isSelected = true
+        }
+        
         cell.setData(appData: characterList[indexPath.row])
         return cell
     }
 }
 
 extension SelectVC: UICollectionViewDelegateFlowLayout {
+    
 //      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //          let screenWidth = UIScreen.main.bounds.width
 //          let cellWidth = screenWidth * (315/375)

@@ -9,12 +9,26 @@ import UIKit
 import Kingfisher
 
 class SelectCharacterCVC: UICollectionViewCell {
-
+    
     static let identifier = "SelectCharacterCVC"
     
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterInfo: UILabel!
+    @IBOutlet weak var checkImageView: UIImageView!
+    
+    override var isSelected: Bool {
+        didSet{
+            if isSelected {
+                self.layer.backgroundColor = UIColor.darkgrey2.cgColor
+                self.layer.borderColor = UIColor.lightgrey2.cgColor
+            }
+            else {
+                self.layer.backgroundColor = .none
+                self.layer.borderColor = UIColor.grey2.cgColor
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,15 +44,15 @@ class SelectCharacterCVC: UICollectionViewCell {
     
     func setData(appData: SelectCharacterDataModel){
         //✅ 서버연결 시 사용할 원래 코드
-//        let url = URL(string: appData.image)
-//        characterImageView.kf.setImage(with: url)
-//        characterName.text = appData.name
-//        characterInfo.text = appData.info
+        //        let url = URL(string: appData.image)
+        //        characterImageView.kf.setImage(with: url)
+        //        characterName.text = appData.name
+        //        characterInfo.text = appData.info
         
         //❌ UI 점검용으로 사용할 코드
         characterImageView.image = appData.makeItemImage()
         characterName.text = appData.name
         characterInfo.text = appData.info
     }
-
+    
 }

@@ -78,6 +78,7 @@
                 <outlet property="characterImageView" destination="UVU-4G-jzA" id="JDE-YB-efC"/>
                 <outlet property="characterInfo" destination="Ufl-PV-2AH" id="fbC-GX-lJq"/>
                 <outlet property="characterName" destination="Jza-Pg-LZ6" id="iNI-Tq-0XW"/>
+                <outlet property="checkImageView" destination="81d-L1-EuH" id="kkV-Tb-Kr2"/>
             </connections>
             <point key="canvasLocation" x="136.95652173913044" y="113.83928571428571"/>
         </collectionViewCell>
