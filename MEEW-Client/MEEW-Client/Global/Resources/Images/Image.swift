@@ -17,5 +17,7 @@ struct ImageLiterals{
     static let blueCheckIcon = UIImage(named: "icn_check_blue")!
     static let pinkCheckIcon = UIImage(named: "icn_check_pink")!
     static let purpleCheckIcon = UIImage(named: "icn_check_purple")!
+    static let greenCheckIcon = UIImage(named: "icn_check_green")!
+    static let lightpinkCheckIcon = UIImage(named: "icn_check_lightpink")!
   }
 }
