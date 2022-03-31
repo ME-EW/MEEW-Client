@@ -72,6 +72,8 @@ class SelectCharacterCVC: UICollectionViewCell {
             return checkIconColor = ImageLiterals.checkIcon.purpleCheckIcon
         case "방향이" :
             return checkIconColor = ImageLiterals.checkIcon.greenCheckIcon
+        case "꽃님이" :
+            return checkIconColor = ImageLiterals.checkIcon.orangeCheckIcon
         case .none:
             return checkIconColor = ImageLiterals.checkIcon.redCheckIcon
         case .some(_):
