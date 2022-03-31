@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -71,7 +70,7 @@
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="touchUpToGoToDoView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IbD-NH-zha"/>
@@ -79,7 +78,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="bg_darkgrey"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RbE-7u-qr4" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="116" id="3sd-PY-EMz"/>
                             <constraint firstItem="3NW-UJ-HdM" firstAttribute="leading" secondItem="dSQ-VS-lrc" secondAttribute="leading" id="7yz-V6-HHe"/>
@@ -99,6 +98,7 @@
                     <connections>
                         <outlet property="SelectCVCHeightConstraint" destination="T2R-e5-7sC" id="M7N-84-ARe"/>
                         <outlet property="backgroundView" destination="dSQ-VS-lrc" id="1x4-hE-H8R"/>
+                        <outlet property="nextBtn" destination="3NW-UJ-HdM" id="3mG-ex-1oW"/>
                         <outlet property="selectCV" destination="ODW-uT-sP7" id="oq9-sS-zYK"/>
                     </connections>
                 </viewController>
@@ -108,12 +108,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="bg_darkgrey">
-            <color red="0.18799999356269836" green="0.18799999356269836" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,7 +10,18 @@ import UIKit
 class SelectVC: BaseVC {
     
     @IBOutlet weak var selectCV: UICollectionView!
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var backgroundView: UIView!{
+        didSet{
+            backgroundView.layer.cornerRadius = 8
+            backgroundView.backgroundColor = .gray100
+        }
+    }
+    @IBOutlet weak var nextBtn: UIButton!{
+        didSet {
+            nextBtn.isEnabled = false
+            nextBtn.titleLabel?.textColor = .gray300
+        }
+    }
     @IBOutlet weak var SelectCVCHeightConstraint: NSLayoutConstraint!{
         didSet {
             updateConstraint()
@@ -39,11 +50,10 @@ class SelectVC: BaseVC {
     private func setUI(){
         selectCV.collectionViewLayout = SelectCarouselLayout()
         
-        backgroundView.layer.cornerRadius = 8
         selectCV.backgroundColor = .clear
         
         let screenWidth = UIScreen.main.bounds.width
-
+        
         let insetX = (20/375) * screenWidth
         let layout = selectCV.collectionViewLayout as! UICollectionViewFlowLayout
         
@@ -53,7 +63,7 @@ class SelectVC: BaseVC {
         let itemHeight = itemWidth * (396/315)
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
-
+        
         layout.scrollDirection = .horizontal
         selectCV.decelerationRate = .fast
     }
@@ -67,7 +77,7 @@ class SelectVC: BaseVC {
     }
     
     //❌ UI 점검용으로 사용할 코드
-    private func initEventDataList(){ 
+    private func initEventDataList(){
         characterList.append(contentsOf: [
             SelectCharacterDataModel(image: "img_taeyang_select", name: "태양이", info: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
             SelectCharacterDataModel(image: "img_maeum_select", name: "마음이", info: "마음이는 기여웡!"),
@@ -102,9 +112,9 @@ class SelectVC: BaseVC {
 // MARK: - Extension Part
 extension SelectVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.selectedIndexPath = indexPath
+        //        self.selectedIndexPath = indexPath
         
-            
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -115,9 +125,9 @@ extension SelectVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCharacterCVC.identifier, for: indexPath) as? SelectCharacterCVC else {return UICollectionViewCell()}
         
-//        if indexPath.item == 0 {
-//            cell.isSelected = true
-//        }
+        //        if indexPath.item == 0 {
+        //            cell.isSelected = true
+        //        }
         
         cell.setData(appData: characterList[indexPath.row])
         // switch case 써서 indexPath 0이면 빨간 체크 그거 , 1이면 노란놈체크로 이런식..? 아우씨 귀찮네
