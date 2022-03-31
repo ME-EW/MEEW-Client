@@ -11,6 +11,7 @@ import Kingfisher
 class SelectCharacterCVC: UICollectionViewCell {
     
     static let identifier = "SelectCharacterCVC"
+    var checkIconColor = ImageLiterals.checkIcon.redCheckIcon
     
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterName: UILabel!
@@ -22,10 +23,12 @@ class SelectCharacterCVC: UICollectionViewCell {
             if isSelected {
                 self.layer.backgroundColor = UIColor.darkgrey2.cgColor
                 self.layer.borderColor = UIColor.lightgrey2.cgColor
+                self.checkImageView.image = checkIconColor
             }
             else {
                 self.layer.backgroundColor = .none
                 self.layer.borderColor = UIColor.grey2.cgColor
+                self.checkImageView.image = UIImage(named: "icn_roundcheck")
             }
         }
     }
@@ -53,6 +56,27 @@ class SelectCharacterCVC: UICollectionViewCell {
         characterImageView.image = appData.makeItemImage()
         characterName.text = appData.name
         characterInfo.text = appData.info
+        
+        switch(characterName.text) {
+        case "태양이" :
+            return checkIconColor = ImageLiterals.checkIcon.redCheckIcon
+        case "마음이" :
+            return checkIconColor = ImageLiterals.checkIcon.yellowCheckIcon
+        case "정직이" :
+            return checkIconColor = ImageLiterals.checkIcon.purpleCheckIcon
+        case "하늘이" :
+            return checkIconColor = ImageLiterals.checkIcon.blueCheckIcon
+        case "구름이" :
+            return checkIconColor = ImageLiterals.checkIcon.lightpinkCheckIcon
+        case "바람이" :
+            return checkIconColor = ImageLiterals.checkIcon.purpleCheckIcon
+        case "방향이" :
+            return checkIconColor = ImageLiterals.checkIcon.greenCheckIcon
+        case .none:
+            return checkIconColor = ImageLiterals.checkIcon.redCheckIcon
+        case .some(_):
+            return checkIconColor = ImageLiterals.checkIcon.redCheckIcon
+        }
     }
     
 }
