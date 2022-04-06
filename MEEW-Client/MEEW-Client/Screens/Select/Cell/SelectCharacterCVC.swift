@@ -21,13 +21,20 @@ class SelectCharacterCVC: UICollectionViewCell {
         setUI()
     }
     
-    func setUI() {
+    private func setUI() {
         self.layer.cornerRadius = 16
+        characterImageView.layer.cornerRadius = 16
     }
     
     func setData(appData: SelectCharacterDataModel){
-        let url = URL(string: appData.image)
-        characterImageView.kf.setImage(with: url)
+        //✅ 서버연결 시 사용할 원래 코드
+//        let url = URL(string: appData.image)
+//        characterImageView.kf.setImage(with: url)
+//        characterName.text = appData.name
+//        characterInfo.text = appData.info
+        
+        //❌ UI 점검용으로 사용할 코드
+        characterImageView.image = appData.makeItemImage()
         characterName.text = appData.name
         characterInfo.text = appData.info
     }
