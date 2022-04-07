@@ -13,6 +13,7 @@
 		6F257EF02749B86F0055EE43 /* VCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F257EEF2749B86F0055EE43 /* VCVC.swift */; };
 		6F8A3B7427FEDD36000FBABE /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A3B7227FEDD36000FBABE /* JoinVC.swift */; };
 		6F8A3B7527FEDD36000FBABE /* JoinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8A3B7327FEDD36000FBABE /* JoinVC.xib */; };
+		6F8A3B7927FEE48E000FBABE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */; };
 		BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0227493ABF00021E91 /* AppDelegate.swift */; };
 		BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0427493ABF00021E91 /* SceneDelegate.swift */; };
 		BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD339A0827493ABF00021E91 /* Main.storyboard */; };
@@ -64,7 +65,7 @@
 		6F257EEF2749B86F0055EE43 /* VCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCVC.swift; sourceTree = "<group>"; };
 		6F8A3B7227FEDD36000FBABE /* JoinVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinVC.swift; path = ../../../../../.Trash/Join/JoinVC.swift; sourceTree = "<group>"; };
 		6F8A3B7327FEDD36000FBABE /* JoinVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JoinVC.xib; path = ../../../../../.Trash/Join/JoinVC.xib; sourceTree = "<group>"; };
-		6F8A3B7727FEE20A000FBABE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		98BEA8BD86C29D64B7CA220D /* Pods_MEEW_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEEW_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3399FF27493ABF00021E91 /* MEEW-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEEW-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD339A0227493ABF00021E91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,7 +249,7 @@
 		BD339A2227493BF600021E91 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				6F8A3B7727FEE20A000FBABE /* Montserrat-Bold.ttf */,
+				6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */,
 				F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */,
 				F2EC39FC2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf */,
 				F2EC39FF2749637400805FE3 /* Spoqa Han Sans Neo Medium.otf */,
@@ -513,6 +514,7 @@
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
 				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
 				F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */,
+				6F8A3B7927FEE48E000FBABE /* Montserrat-Bold.ttf in Resources */,
 				BD339A0C27493AC300021E91 /* Assets.xcassets in Resources */,
 				F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */,
 				BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */,
