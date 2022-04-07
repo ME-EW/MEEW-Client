@@ -9,6 +9,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Montserrat-Bold.ttf</string>
 		<string>Spoqa Han Sans Neo Bold.otf</string>
 		<string>Spoqa Han Sans Neo Light.otf</string>
 		<string>Spoqa Han Sans Neo Medium.otf</string>

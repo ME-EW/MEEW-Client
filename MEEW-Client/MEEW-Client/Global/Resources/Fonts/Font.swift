@@ -35,5 +35,9 @@ extension UIFont {
   class var body4: UIFont {
     return UIFont(name: "SpoqaHanSansNeo-Regular", size: 10.0)!
   }
+  
+//  class var join1: UIFont {
+//    return UIFont(name: "Montserrat-Bold", size: 24.0)!
+//  }
 
 }
