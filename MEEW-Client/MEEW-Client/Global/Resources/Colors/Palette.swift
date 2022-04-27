@@ -38,19 +38,19 @@ extension UIColor {
   @nonobjc class var grey700: UIColor {
     return UIColor(displayP3Red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
   }
-  @nonobjc class var gray600: UIColor {
+  @nonobjc class var grey600: UIColor {
     return UIColor(displayP3Red: 55/255, green: 55/255, blue: 55/255, alpha: 1)
   }
-  @nonobjc class var gray500: UIColor {
+  @nonobjc class var grey500: UIColor {
     return UIColor(displayP3Red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
   }
-  @nonobjc class var gray400: UIColor {
+  @nonobjc class var grey400: UIColor {
     return UIColor(displayP3Red: 152/255, green: 152/255, blue: 152/255, alpha: 1)
   }
-  @nonobjc class var gray300: UIColor {
+  @nonobjc class var grey300: UIColor {
     return UIColor(displayP3Red: 198/255, green: 198/255, blue: 198/255, alpha: 1)
   }
-  @nonobjc class var gray200: UIColor {
+  @nonobjc class var grey200: UIColor {
     return UIColor(displayP3Red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
   }
   

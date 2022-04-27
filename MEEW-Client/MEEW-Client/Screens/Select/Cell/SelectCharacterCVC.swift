@@ -21,13 +21,13 @@ class SelectCharacterCVC: UICollectionViewCell {
     override var isSelected: Bool {
         didSet{
             if isSelected {
-                self.layer.backgroundColor = UIColor.darkgrey2.cgColor
-                self.layer.borderColor = UIColor.lightgrey2.cgColor
+                self.layer.backgroundColor = UIColor.grey600.cgColor
+                self.layer.borderColor = UIColor.grey300.cgColor
                 self.checkImageView.image = checkIconColor
             }
             else {
                 self.layer.backgroundColor = .none
-                self.layer.borderColor = UIColor.grey2.cgColor
+                self.layer.borderColor = UIColor.grey500.cgColor
                 self.checkImageView.image = UIImage(named: "icn_roundcheck")
             }
         }
@@ -39,10 +39,10 @@ class SelectCharacterCVC: UICollectionViewCell {
     }
     
     private func setUI() {
-        self.layer.cornerRadius = 16
-        characterImageView.layer.cornerRadius = 16
+        self.layer.cornerRadius = 8
+        characterImageView.layer.cornerRadius = 8
         self.layer.borderWidth = 1.5
-        self.layer.borderColor = UIColor.grey2.cgColor
+        self.layer.borderColor = UIColor.grey500.cgColor
     }
     
     func setData(appData: SelectCharacterDataModel){

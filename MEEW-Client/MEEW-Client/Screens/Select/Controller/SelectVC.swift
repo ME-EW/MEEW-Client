@@ -13,13 +13,13 @@ class SelectVC: BaseVC {
     @IBOutlet weak var backgroundView: UIView!{
         didSet{
             backgroundView.layer.cornerRadius = 8
-            backgroundView.backgroundColor = .gray100
+            backgroundView.backgroundColor = .grey600
         }
     }
     @IBOutlet weak var nextBtn: UIButton!{
         didSet {
             nextBtn.isEnabled = false
-            nextBtn.titleLabel?.textColor = .gray300
+            nextBtn.titleLabel?.textColor = .grey400
         }
     }
     @IBOutlet weak var SelectCVCHeightConstraint: NSLayoutConstraint!{
