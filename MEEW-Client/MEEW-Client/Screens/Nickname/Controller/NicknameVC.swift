@@ -141,7 +141,7 @@ class NicknameVC: UIViewController {
         print("글자수")
         self.successBtn.isEnabled = false
 //        countNicknameLabel.textColor = UIColor.red
-        nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+        nicknameUnderBar.backgroundColor = UIColor.red
         isNicknameValid = false
         self.checkNicknameLabel.isHidden = true
         break
@@ -152,7 +152,7 @@ class NicknameVC: UIViewController {
         checkNicknameLabel.textColor = UIColor.red
         checkNicknameLabel.text = "특수문자를 사용할 수 없습니다."
 
-        nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+        nicknameUnderBar.backgroundColor = UIColor.red
         isNicknameValid = false
         self.checkNicknameLabel.isHidden = false
         break
@@ -163,7 +163,7 @@ class NicknameVC: UIViewController {
         checkNicknameLabel.textColor = UIColor.red
         //        nicknameCheckLabel.text = I18N.SignUp.StrangeChar.errorAlert
 
-        nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+        nicknameUnderBar.backgroundColor = UIColor.red
         isNicknameValid = false
         self.checkNicknameLabel.isHidden = true
         break
@@ -176,7 +176,7 @@ class NicknameVC: UIViewController {
         isNicknameValid = true
         
  
-        nicknameUnderBar.layer.borderColor = UIColor.grey500.cgColor
+        nicknameUnderBar.backgroundColor = UIColor.grey500
         
         self.checkNicknameLabel.isHidden = true
         break
@@ -231,12 +231,14 @@ class NicknameVC: UIViewController {
   
   // MARK: - @objc Function Part
   @objc func textFieldDidChange() {
-    //15개 이상 입력 안되도록
+    //10개 이상 입력 안되도록
     cutMaxLabel()
     //case나눈것
     alertNicknameStatus()
     //    checkMaxLabelCount() //글자수 체크 , 한글이나 이것저것
     setCountLabel() //글자수 값 바뀌는거 실시간으로
+    countNicknameLabel.textColor = UIColor.white
+    nicknameUnderBar.backgroundColor = UIColor.white
   }
   
 }
@@ -249,9 +251,10 @@ extension NicknameVC : UITextFieldDelegate{
       nicknameInputTextField.text = ""
       nicknameInputTextField.textColor = .black
       countNicknameLabel.textColor = UIColor.white
-      nicknameUnderBar.tintColor = UIColor.white
+      nicknameUnderBar.backgroundColor = UIColor.white
     }
-    nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+    nicknameUnderBar.backgroundColor = UIColor.red
+    
   }
   
   private func textViewDidEndEditing(_ textField: UITextField) {
@@ -260,7 +263,7 @@ extension NicknameVC : UITextFieldDelegate{
       textField.text = "ex. 딱새우회"
       textField.textColor = .black
     }
-    nicknameUnderBar.layer.borderColor = UIColor.grey500.cgColor
+    nicknameUnderBar.backgroundColor = UIColor.grey500
     countNicknameLabel.textColor = UIColor.grey500
   }
 }
