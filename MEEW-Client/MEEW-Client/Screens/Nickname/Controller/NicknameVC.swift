@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum nicknameStatus{
+  case specialCharErr
+  case strangeCharErr
+  case countLetterErr
+  case normal
+}
+
 class NicknameVC: UIViewController {
   
   private var isNicknameValid: Bool = false {
@@ -18,7 +25,7 @@ class NicknameVC: UIViewController {
   // MARK: - UI Component Part
   @IBOutlet weak var nicknameInputTextField: UITextField!
   @IBOutlet weak var nicknameUnderBar: UIView!
-  @IBOutlet weak var countNickname: UILabel!
+  @IBOutlet weak var countNicknameLabel: UILabel!
   @IBOutlet weak var checkNicknameLabel: UILabel!{
     didSet {
       checkNicknameLabel.isHidden = true
@@ -43,14 +50,6 @@ class NicknameVC: UIViewController {
     
   }
   
-  private func setTextField() {
-    nicknameInputTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-  }
-  
-  private func setBtnStatus() {
-    successBtn.isEnabled = false
-  }
-  
   private func setSuccessBtnStatus(){
     if isNicknameValid{
       successBtn.backgroundColor = UIColor.white
@@ -63,29 +62,123 @@ class NicknameVC: UIViewController {
     }
   }
   
-  //정규식
-  private func isValidNickname(nickname: String?) -> Bool {
-    guard nickname != nil else { return false }
-    
-    let nicknameRegEx = "[가-힣A-Za-z0-9]{2,10}"
-    
-    let pred = NSPredicate(format:"SELF MATCHES %@", nicknameRegEx)
-    return pred.evaluate(with: nickname)
+  private func setBtnStatus() {
+    successBtn.isEnabled = false
   }
   
-  private func checkMaxLabelCount(){
+  private func setTextField() {
+    nicknameInputTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+  }
+  
+  
+  private func setCountLabel(){
+    if let count = nicknameInputTextField.text?.count{
+      countNicknameLabel.text = String(count) + "/10"
+    }
+  }
+  
+  
+  private func cutMaxLabel() {
     if let text = nicknameInputTextField.text {
-      //닉네임 정규식에 맞으면
-      if isValidNickname(nickname: nicknameInputTextField.text){
-        isNicknameValid = true //successBtn관련
-        nicknameInputTextField.layer.borderColor = UIColor.grey400.cgColor
-        checkNicknameLabel.isHidden = true
+      if text.count > 10{
+        let maxIndex = text.index(text.startIndex, offsetBy: 10)
+        let newString = String(text[text.startIndex..<maxIndex])
+        nicknameInputTextField.text = newString
+      }
+    }
+  }
+  
+  
+  private func isValidNickname(nickname: String?) -> nicknameStatus {
+    if !checkMaxLabelCount(nickname: nickname) { //글자수
+      return .countLetterErr
+    } else if !checkSpecialChar(nickname: nickname){ //특수 문자 있으면 true
+      return .specialCharErr
+    } else if !checkNormalChar(nickname: nickname) { //정규식에 안 맞으면 !false ㅇㄹ
+      return .strangeCharErr
+    } else {
+      return .normal
+    }
+  }
+  
+  private func checkSpecialChar(nickname: String?) -> Bool {
+    guard nickname != nil else { return false }
+    
+    let nickRegEx = "[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9]{2,10}"
+    
+    let pred = NSPredicate(format:"SELF MATCHES %@", nickRegEx)
+    return pred.evaluate(with: nickname) //특수문자는 false
+  }
+  
+  private func checkNormalChar(nickname: String?) -> Bool {
+    guard nickname != nil else { return false }
+    
+    let nickRegEx = "[가-힣A-Za-z0-9]{2,10}"
+    
+    let pred = NSPredicate(format:"SELF MATCHES %@", nickRegEx)
+    return pred.evaluate(with: nickname) //정규식에 맞으면 true
+  }
+  
+  private func checkMaxLabelCount(nickname: String?) -> Bool {
+    if let text = nicknameInputTextField.text {
+      if text.count > 10 || text.count < 2{ //문제 있으면 false
+        return false
+      } else{
+        return true
+      }
+    }
+    return false
+  }
+  
+  
+  //토탈로 검사하는 함수 구현
+  private func alertNicknameStatus(){
+    if let nickname = nicknameInputTextField.text {
+      switch(isValidNickname(nickname: nickname)){
+      case .countLetterErr:
+        //글자수 문제 있을 경우
+        print("글자수")
+        self.successBtn.isEnabled = false
+//        countNicknameLabel.textColor = UIColor.red
+        nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+        isNicknameValid = false
+        self.checkNicknameLabel.isHidden = true
+        break
         
-      }else{ //문제 있음 중복임
-        checkNicknameLabel.text = "닉네임 형식이 올바르지 않습니다."
-        nicknameInputTextField.layer.borderColor = UIColor.red.cgColor
-        isNicknameValid = false //successBtn관련
-        checkNicknameLabel.isHidden = false
+      case .specialCharErr:
+        print("특수문자")
+        self.successBtn.isEnabled = true
+        checkNicknameLabel.textColor = UIColor.red
+        checkNicknameLabel.text = "특수문자를 사용할 수 없습니다."
+
+        nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+        isNicknameValid = false
+        self.checkNicknameLabel.isHidden = false
+        break
+        
+      case .strangeCharErr:
+        print("이상한문자 ex)ㅇㄹ")
+        self.successBtn.isEnabled = true
+        checkNicknameLabel.textColor = UIColor.red
+        //        nicknameCheckLabel.text = I18N.SignUp.StrangeChar.errorAlert
+
+        nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
+        isNicknameValid = false
+        self.checkNicknameLabel.isHidden = true
+        break
+        
+        
+      case .normal :
+        //세팅들
+        print("정상")
+        self.successBtn.isEnabled = true
+        isNicknameValid = true
+        
+ 
+        nicknameUnderBar.layer.borderColor = UIColor.grey500.cgColor
+        
+        self.checkNicknameLabel.isHidden = true
+        break
         
       }
     }
@@ -96,23 +189,53 @@ class NicknameVC: UIViewController {
     self.navigationController?.pushViewController(todoVC, animated: true)
   }
   
+//  private func postNickNameData(nickName: String) {
+//    BaseService.default.postNickNameCheck(nickName: nickName) { result in
+//      result.success { [weak self] data in
+//        if let data = data {
+//
+//          if !data.duplicated { // w
+//
+//            self?.pushSignUpEmailVC()
+//            self?.nextBtn.isEnabled = true //되돌아왔을때 pop 했을때 버튼 비활되어 있어서 다시 true해주기
+//
+//          } else { //중복 돠면 중복된 멘트 뜨게 해야하는데
+//            // 빨간 테투리 뜨는 걸로
+//            self?.nicknameCheckLabel.isHidden = false
+//            //회원가입 버튼 비활
+//            self?.setBtnStatus()
+//            self?.nicknameCheckLabel.text = I18N.SignUp.NickName.errorAlert
+//            self?.nicknameInputTextField.layer.borderColor = UIColor.alertRed.cgColor
+//          }
+//        }
+//      }.catch {error in
+//        //        self.pushSignUPVC(socialToken: socialToken, socialType: socialType)
+//
+//      }
+//    }
+//  }
+  
   
   // MARK: - IBAction
   @IBAction func gotoTodoView(_ sender: Any) {
     successBtn.isEnabled = false //버튼 여러번 눌리는거 해결
+    
     if let nicknameInputTextField = self.nicknameInputTextField.text {
-      //        self.postEmailData(email: emailInputTextField)
-      //이거를 TOSVC에 전달하기만 하면 될듯? 서버 연결 할거 없음 중복 검사도 안하니까?
-      
+//      self.postNickNameData(nickName: nicknameInputTextField) // 서버 통신해서 중복 여부 체크 함수
       self.pushTodoView()
-      self.successBtn.isEnabled = true //되돌아왔을때 pop 했을때 버튼 비활되어 있어서 다시 true해주기
     }
+    
   }
   
   
   // MARK: - @objc Function Part
   @objc func textFieldDidChange() {
-    checkMaxLabelCount()
+    //15개 이상 입력 안되도록
+    cutMaxLabel()
+    //case나눈것
+    alertNicknameStatus()
+    //    checkMaxLabelCount() //글자수 체크 , 한글이나 이것저것
+    setCountLabel() //글자수 값 바뀌는거 실시간으로
   }
   
 }
@@ -124,6 +247,8 @@ extension NicknameVC : UITextFieldDelegate{
     if textField.text == "ex. 딱새우회"{
       nicknameInputTextField.text = ""
       nicknameInputTextField.textColor = .black
+      countNicknameLabel.textColor = UIColor.white
+      nicknameUnderBar.tintColor = UIColor.white
     }
     nicknameUnderBar.layer.borderColor = UIColor.red.cgColor
   }
@@ -135,6 +260,7 @@ extension NicknameVC : UITextFieldDelegate{
       textField.textColor = .black
     }
     nicknameUnderBar.layer.borderColor = UIColor.grey500.cgColor
+    countNicknameLabel.textColor = UIColor.grey500
   }
   
   

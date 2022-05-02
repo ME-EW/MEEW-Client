@@ -103,7 +103,7 @@
                     </view>
                     <connections>
                         <outlet property="checkNicknameLabel" destination="p89-VQ-pHa" id="vGb-hP-JIf"/>
-                        <outlet property="countNickname" destination="D8i-8b-cXT" id="Qgz-sE-Tlj"/>
+                        <outlet property="countNicknameLabel" destination="D8i-8b-cXT" id="Qgz-sE-Tlj"/>
                         <outlet property="nicknameInputTextField" destination="Rnd-1r-9Kq" id="yuv-d0-WYh"/>
                         <outlet property="nicknameUnderBar" destination="cV3-dL-FeV" id="kl7-TG-Q9k"/>
                         <outlet property="successBtn" destination="hSx-3w-L9q" id="61V-qD-wt7"/>
