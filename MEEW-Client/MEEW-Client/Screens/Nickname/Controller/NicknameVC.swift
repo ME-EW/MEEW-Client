@@ -23,7 +23,11 @@ class NicknameVC: UIViewController {
   }
   
   // MARK: - UI Component Part
-  @IBOutlet weak var nicknameInputTextField: UITextField!
+  @IBOutlet weak var nicknameInputTextField: UITextField!{
+    didSet{
+      nicknameInputTextField.delegate = self
+    }
+  }
   @IBOutlet weak var nicknameUnderBar: UIView!
   @IBOutlet weak var countNicknameLabel: UILabel!
   @IBOutlet weak var checkNicknameLabel: UILabel!{
@@ -40,6 +44,8 @@ class NicknameVC: UIViewController {
     setUI()
     setTextField()
     setSuccessBtnStatus()
+    nicknameInputTextField.delegate = self
+    hideKeyboard()
   }
   
   // MARK: - Custom Method Part
@@ -140,8 +146,8 @@ class NicknameVC: UIViewController {
         //글자수 문제 있을 경우
         print("글자수")
         self.successBtn.isEnabled = false
-//        countNicknameLabel.textColor = UIColor.red
-        nicknameUnderBar.backgroundColor = UIColor.red
+        countNicknameLabel.textColor = UIColor.white
+        nicknameUnderBar.backgroundColor = UIColor.white
         isNicknameValid = false
         self.checkNicknameLabel.isHidden = true
         break
@@ -151,6 +157,7 @@ class NicknameVC: UIViewController {
         self.successBtn.isEnabled = true
         checkNicknameLabel.textColor = UIColor.red
         checkNicknameLabel.text = "특수문자를 사용할 수 없습니다."
+        countNicknameLabel.textColor = UIColor.grey500
 
         nicknameUnderBar.backgroundColor = UIColor.red
         isNicknameValid = false
@@ -162,10 +169,12 @@ class NicknameVC: UIViewController {
         self.successBtn.isEnabled = true
         checkNicknameLabel.textColor = UIColor.red
         //        nicknameCheckLabel.text = I18N.SignUp.StrangeChar.errorAlert
-
+        checkNicknameLabel.text = "닉네임형식이 올바르지 않습니다."
+        countNicknameLabel.textColor = UIColor.grey500
+        
         nicknameUnderBar.backgroundColor = UIColor.red
         isNicknameValid = false
-        self.checkNicknameLabel.isHidden = true
+        self.checkNicknameLabel.isHidden = false
         break
         
         
@@ -175,8 +184,10 @@ class NicknameVC: UIViewController {
         self.successBtn.isEnabled = true
         isNicknameValid = true
         
- 
-        nicknameUnderBar.backgroundColor = UIColor.grey500
+        countNicknameLabel.textColor = UIColor.white
+        nicknameUnderBar.backgroundColor = UIColor.white
+        
+//        nicknameUnderBar.backgroundColor = UIColor.grey500
         
         self.checkNicknameLabel.isHidden = true
         break
@@ -237,32 +248,38 @@ class NicknameVC: UIViewController {
     alertNicknameStatus()
     //    checkMaxLabelCount() //글자수 체크 , 한글이나 이것저것
     setCountLabel() //글자수 값 바뀌는거 실시간으로
-    countNicknameLabel.textColor = UIColor.white
-    nicknameUnderBar.backgroundColor = UIColor.white
+    
+    //여기서 if else 나누기
   }
   
 }
 
 // MARK: - Extension Part
 extension NicknameVC : UITextFieldDelegate{
-  private func textViewDidBeginEditing(_ textField: UITextField) {
+  internal func textFieldDidBeginEditing(_ textField: UITextField) {
     //텍스트가 있을 경우
     if textField.text == "ex. 딱새우회"{
       nicknameInputTextField.text = ""
       nicknameInputTextField.textColor = .black
       countNicknameLabel.textColor = UIColor.white
       nicknameUnderBar.backgroundColor = UIColor.white
+      print("1")
     }
-    nicknameUnderBar.backgroundColor = UIColor.red
+    print("2")
+    nicknameUnderBar.backgroundColor = UIColor.white
+    countNicknameLabel.textColor = UIColor.white
+
     
   }
   
-  private func textViewDidEndEditing(_ textField: UITextField) {
+  internal func textFieldDidEndEditing(_ textField: UITextField) {
     //비어있을 경우 --> 아무것도 뭐 없는디 ..
     if textField.text == nil {
       textField.text = "ex. 딱새우회"
       textField.textColor = .black
+      print("3")
     }
+    print("4")
     nicknameUnderBar.backgroundColor = UIColor.grey500
     countNicknameLabel.textColor = UIColor.grey500
   }
@@ -292,4 +309,16 @@ extension UITextField {
         self.text = ""
         sendActions(for: .editingChanged)
     }
+}
+
+extension UIViewController {
+  func hideKeyboard() {
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer (target: self,
+                                                              action: #selector(UIViewController.dismissKeyboard))
+    view.addGestureRecognizer(tap)
+  }
+  
+  @objc func dismissKeyboard() {
+    view.endEditing(true)
+  }
 }
