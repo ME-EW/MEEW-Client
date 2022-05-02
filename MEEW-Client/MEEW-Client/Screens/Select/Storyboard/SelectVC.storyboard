@@ -76,11 +76,21 @@
                                     <action selector="touchUpToGoToDoView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IbD-NH-zha"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Sjg-27-708">
+                                <rect key="frame" x="131" y="621.66666666666663" width="113" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="ESZ-Rb-gnm"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pageChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Y2Z-Ls-RKB"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RbE-7u-qr4" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="116" id="3sd-PY-EMz"/>
+                            <constraint firstItem="Sjg-27-708" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="5A9-TB-cJp"/>
                             <constraint firstItem="3NW-UJ-HdM" firstAttribute="leading" secondItem="dSQ-VS-lrc" secondAttribute="leading" id="7yz-V6-HHe"/>
                             <constraint firstItem="ODW-uT-sP7" firstAttribute="top" secondItem="RbE-7u-qr4" secondAttribute="bottom" constant="28" id="9zA-c6-n1x"/>
                             <constraint firstItem="3NW-UJ-HdM" firstAttribute="top" secondItem="dSQ-VS-lrc" secondAttribute="top" id="K2h-ah-Rx9"/>
@@ -88,6 +98,7 @@
                             <constraint firstItem="3NW-UJ-HdM" firstAttribute="trailing" secondItem="dSQ-VS-lrc" secondAttribute="trailing" id="MmO-6N-hEg"/>
                             <constraint firstItem="dSQ-VS-lrc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WOg-d7-z9p"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dSQ-VS-lrc" secondAttribute="trailing" constant="20" id="XvU-bI-gj7"/>
+                            <constraint firstItem="Sjg-27-708" firstAttribute="top" secondItem="ODW-uT-sP7" secondAttribute="bottom" constant="24" id="dDz-EA-ga5"/>
                             <constraint firstItem="3NW-UJ-HdM" firstAttribute="bottom" secondItem="dSQ-VS-lrc" secondAttribute="bottom" id="j2q-1i-scN"/>
                             <constraint firstItem="ODW-uT-sP7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l5I-Mo-Kn6"/>
                             <constraint firstItem="RbE-7u-qr4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="74" id="qY1-kP-2tw"/>
@@ -99,6 +110,7 @@
                         <outlet property="SelectCVCHeightConstraint" destination="T2R-e5-7sC" id="M7N-84-ARe"/>
                         <outlet property="backgroundView" destination="dSQ-VS-lrc" id="1x4-hE-H8R"/>
                         <outlet property="nextBtn" destination="3NW-UJ-HdM" id="3mG-ex-1oW"/>
+                        <outlet property="pager" destination="Sjg-27-708" id="5hc-HS-uml"/>
                         <outlet property="selectCV" destination="ODW-uT-sP7" id="oq9-sS-zYK"/>
                     </connections>
                 </viewController>
