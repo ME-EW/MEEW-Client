@@ -68,6 +68,7 @@ class NicknameVC: UIViewController {
   
   private func setTextField() {
     nicknameInputTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    nicknameInputTextField.setClearButton(with: UIImage(named:"btn_delete")!, mode: .whileEditing)
   }
   
   
@@ -262,6 +263,30 @@ extension NicknameVC : UITextFieldDelegate{
     nicknameUnderBar.layer.borderColor = UIColor.grey500.cgColor
     countNicknameLabel.textColor = UIColor.grey500
   }
-  
-  
+}
+
+extension UITextField {
+    
+    func setClearButton(with image: UIImage, mode: UITextField.ViewMode) {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setImage(image, for: .normal)
+        clearButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        clearButton.contentMode = .scaleAspectFit
+        clearButton.addTarget(self, action: #selector(UITextField.clear(sender:)), for: .touchUpInside)
+        self.addTarget(self, action: #selector(UITextField.displayClearButtonIfNeeded), for: .editingDidBegin)
+        self.addTarget(self, action: #selector(UITextField.displayClearButtonIfNeeded), for: .editingChanged)
+        self.rightView = clearButton
+        self.rightViewMode = mode
+    }
+    
+    @objc
+    private func displayClearButtonIfNeeded() {
+        self.rightView?.isHidden = (self.text?.isEmpty) ?? true
+    }
+    
+    @objc
+    private func clear(sender: AnyObject) {
+        self.text = ""
+        sendActions(for: .editingChanged)
+    }
 }
