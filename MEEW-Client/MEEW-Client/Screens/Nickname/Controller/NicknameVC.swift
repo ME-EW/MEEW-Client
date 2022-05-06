@@ -7,11 +7,13 @@
 
 import UIKit
 
-enum nicknameStatus{
-  case specialCharErr
-  case strangeCharErr
-  case countLetterErr
-  case normal
+private class nicknameStatusClass{
+  enum nicknameStatus{
+    case specialCharErr
+    case strangeCharErr
+    case countLetterErr
+    case normal
+  }
 }
 
 class NicknameVC: UIViewController {
@@ -44,11 +46,15 @@ class NicknameVC: UIViewController {
     setUI()
     setTextField()
     setSuccessBtnStatus()
-    nicknameInputTextField.delegate = self
+    registerDelegate()
     hideKeyboard()
   }
   
   // MARK: - Custom Method Part
+  private func registerDelegate() {
+    nicknameInputTextField.delegate = self
+  }
+  
   private func setUI() {
     successBtn.layer.cornerRadius = 8
     successBtn.backgroundColor = UIColor.grey600
@@ -96,7 +102,7 @@ class NicknameVC: UIViewController {
   }
   
   
-  private func isValidNickname(nickname: String?) -> nicknameStatus {
+  private func isValidNickname(nickname: String?) -> nicknameStatusClass.nicknameStatus {
     if !checkMaxLabelCount(nickname: nickname) { //글자수
       return .countLetterErr
     } else if !checkSpecialChar(nickname: nickname){ //특수 문자 있으면 true
@@ -153,19 +159,17 @@ class NicknameVC: UIViewController {
         break
         
       case .specialCharErr:
-        print("특수문자")
         self.successBtn.isEnabled = true
         checkNicknameLabel.textColor = UIColor.red
         checkNicknameLabel.text = "특수문자를 사용할 수 없습니다."
         countNicknameLabel.textColor = UIColor.grey500
-
+        
         nicknameUnderBar.backgroundColor = UIColor.red
         isNicknameValid = false
         self.checkNicknameLabel.isHidden = false
         break
         
       case .strangeCharErr:
-        print("이상한문자 ex)ㅇㄹ")
         self.successBtn.isEnabled = true
         checkNicknameLabel.textColor = UIColor.red
         //        nicknameCheckLabel.text = I18N.SignUp.StrangeChar.errorAlert
@@ -180,14 +184,13 @@ class NicknameVC: UIViewController {
         
       case .normal :
         //세팅들
-        print("정상")
         self.successBtn.isEnabled = true
         isNicknameValid = true
         
         countNicknameLabel.textColor = UIColor.white
         nicknameUnderBar.backgroundColor = UIColor.white
         
-//        nicknameUnderBar.backgroundColor = UIColor.grey500
+        //        nicknameUnderBar.backgroundColor = UIColor.grey500
         
         self.checkNicknameLabel.isHidden = true
         break
@@ -201,31 +204,31 @@ class NicknameVC: UIViewController {
     self.navigationController?.pushViewController(todoVC, animated: true)
   }
   
-//  private func postNickNameData(nickName: String) {
-//    BaseService.default.postNickNameCheck(nickName: nickName) { result in
-//      result.success { [weak self] data in
-//        if let data = data {
-//
-//          if !data.duplicated { // w
-//
-//            self?.pushSignUpEmailVC()
-//            self?.nextBtn.isEnabled = true //되돌아왔을때 pop 했을때 버튼 비활되어 있어서 다시 true해주기
-//
-//          } else { //중복 돠면 중복된 멘트 뜨게 해야하는데
-//            // 빨간 테투리 뜨는 걸로
-//            self?.nicknameCheckLabel.isHidden = false
-//            //회원가입 버튼 비활
-//            self?.setBtnStatus()
-//            self?.nicknameCheckLabel.text = I18N.SignUp.NickName.errorAlert
-//            self?.nicknameInputTextField.layer.borderColor = UIColor.alertRed.cgColor
-//          }
-//        }
-//      }.catch {error in
-//        //        self.pushSignUPVC(socialToken: socialToken, socialType: socialType)
-//
-//      }
-//    }
-//  }
+  //  private func postNickNameData(nickName: String) {
+  //    BaseService.default.postNickNameCheck(nickName: nickName) { result in
+  //      result.success { [weak self] data in
+  //        if let data = data {
+  //
+  //          if !data.duplicated { // w
+  //
+  //            self?.pushSignUpEmailVC()
+  //            self?.nextBtn.isEnabled = true //되돌아왔을때 pop 했을때 버튼 비활되어 있어서 다시 true해주기
+  //
+  //          } else { //중복 돠면 중복된 멘트 뜨게 해야하는데
+  //            // 빨간 테투리 뜨는 걸로
+  //            self?.nicknameCheckLabel.isHidden = false
+  //            //회원가입 버튼 비활
+  //            self?.setBtnStatus()
+  //            self?.nicknameCheckLabel.text = I18N.SignUp.NickName.errorAlert
+  //            self?.nicknameInputTextField.layer.borderColor = UIColor.alertRed.cgColor
+  //          }
+  //        }
+  //      }.catch {error in
+  //        //        self.pushSignUPVC(socialToken: socialToken, socialType: socialType)
+  //
+  //      }
+  //    }
+  //  }
   
   
   // MARK: - IBAction
@@ -233,7 +236,7 @@ class NicknameVC: UIViewController {
     successBtn.isEnabled = false //버튼 여러번 눌리는거 해결
     
     if let nicknameInputTextField = self.nicknameInputTextField.text {
-//      self.postNickNameData(nickName: nicknameInputTextField) // 서버 통신해서 중복 여부 체크 함수
+      //      self.postNickNameData(nickName: nicknameInputTextField) // 서버 통신해서 중복 여부 체크 함수
       self.pushTodoView()
     }
     
@@ -248,8 +251,6 @@ class NicknameVC: UIViewController {
     alertNicknameStatus()
     //    checkMaxLabelCount() //글자수 체크 , 한글이나 이것저것
     setCountLabel() //글자수 값 바뀌는거 실시간으로
-    
-    //여기서 if else 나누기
   }
   
 }
@@ -263,12 +264,10 @@ extension NicknameVC : UITextFieldDelegate{
       nicknameInputTextField.textColor = .black
       countNicknameLabel.textColor = UIColor.white
       nicknameUnderBar.backgroundColor = UIColor.white
-      print("1")
     }
-    print("2")
     nicknameUnderBar.backgroundColor = UIColor.white
     countNicknameLabel.textColor = UIColor.white
-
+    
     
   }
   
@@ -277,38 +276,35 @@ extension NicknameVC : UITextFieldDelegate{
     if textField.text == nil {
       textField.text = "ex. 딱새우회"
       textField.textColor = .black
-      print("3")
     }
-    print("4")
     nicknameUnderBar.backgroundColor = UIColor.grey500
     countNicknameLabel.textColor = UIColor.grey500
   }
 }
 
 extension UITextField {
-    
-    func setClearButton(with image: UIImage, mode: UITextField.ViewMode) {
-        let clearButton = UIButton(type: .custom)
-        clearButton.setImage(image, for: .normal)
-        clearButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        clearButton.contentMode = .scaleAspectFit
-        clearButton.addTarget(self, action: #selector(UITextField.clear(sender:)), for: .touchUpInside)
-        self.addTarget(self, action: #selector(UITextField.displayClearButtonIfNeeded), for: .editingDidBegin)
-        self.addTarget(self, action: #selector(UITextField.displayClearButtonIfNeeded), for: .editingChanged)
-        self.rightView = clearButton
-        self.rightViewMode = mode
-    }
-    
-    @objc
-    private func displayClearButtonIfNeeded() {
-        self.rightView?.isHidden = (self.text?.isEmpty) ?? true
-    }
-    
-    @objc
-    private func clear(sender: AnyObject) {
-        self.text = ""
-        sendActions(for: .editingChanged)
-    }
+  func setClearButton(with image: UIImage, mode: UITextField.ViewMode) {
+    let clearButton = UIButton(type: .custom)
+    clearButton.setImage(image, for: .normal)
+    clearButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+    clearButton.contentMode = .scaleAspectFit
+    clearButton.addTarget(self, action: #selector(UITextField.clear(sender:)), for: .touchUpInside)
+    self.addTarget(self, action: #selector(UITextField.displayClearButtonIfNeeded), for: .editingDidBegin)
+    self.addTarget(self, action: #selector(UITextField.displayClearButtonIfNeeded), for: .editingChanged)
+    self.rightView = clearButton
+    self.rightViewMode = mode
+  }
+  
+  @objc
+  private func displayClearButtonIfNeeded() {
+    self.rightView?.isHidden = (self.text?.isEmpty) ?? true
+  }
+  
+  @objc
+  private func clear(sender: AnyObject) {
+    self.text = ""
+    sendActions(for: .editingChanged)
+  }
 }
 
 extension UIViewController {
