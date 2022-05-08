@@ -2,130 +2,28 @@
 //  ToDoVC.swift
 //  MEEW-Client
 //
-//  Created by taehy.k on 2021/11/21.
+//  Created by 임주민 on 2022/05/08.
 //
 
 import UIKit
 
-class ToDoVC: BaseVC {
-  
-  // MARK: - @IBOutlet
-  @IBOutlet weak var questionLabel: UILabel!
-  @IBOutlet weak var originalButton: UIButton!
-  @IBOutlet weak var archiveButton: UIButton!
-  @IBOutlet weak var inforButton: UIButton!
-  @IBOutlet weak var doneButton: UIButton!
-  @IBOutlet weak var imageView: UIImageView!
-  @IBOutlet weak var checkBoxButton1: UIButton!
-  @IBOutlet weak var checkBoxButton2: UIButton!
-  @IBOutlet weak var checkBoxButton3: UIButton!
-  @IBOutlet weak var checkBoxButton4: UIButton!
-  @IBOutlet weak var missionLabel1: UILabel!
-  @IBOutlet weak var missionLabel2: UILabel!
-  @IBOutlet weak var missionLabel3: UILabel!
-  @IBOutlet weak var missionLabel4: UILabel!
-  
-  // MARK: - @IBAction
-  @IBAction func touchUpToGoResult(_ sender: Any) {
-    guard let vc = UIStoryboard(name: "ResultVC", bundle: nil).instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else { return }
-    vc.modalPresentationStyle = .fullScreen
-    present(vc, animated: true, completion: nil)
-  }
-  
-  @IBAction func againButton(_ sender: Any) {
-    viewWillAppear(true)
-  }
-  
-  @IBAction func inforButtonTapped(_ sender: Any) {
-    if let name = inforButton.titleLabel?.text {
-      MEEWPopUp.loadFromXib()
-        .setTitle(name)
-        .setDescription("\(name)로 살아볼까요?")
-        .present()
+class ToDoVC: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
-  }
-  
-  @IBAction func originalButtonTapped(_ sender: Any) {
-    /// 수정하기
-    guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "VCVC") as? VCVC else { return }
-    vc.modalPresentationStyle = .fullScreen
-    vc.modalPresentationStyle = .overFullScreen
-    vc.modalTransitionStyle = .crossDissolve
-    present(vc, animated: true, completion: nil)
-  }
-  
-  @IBAction func checkBox1Tapped(_ sender: UIButton) {
-    sender.isSelected.toggle()
-  }
-  @IBAction func checkBox2Tapped(_ sender: UIButton) {
-    sender.isSelected.toggle()
-  }
-  @IBAction func checkBox3Tapped(_ sender: UIButton) {
-    sender.isSelected.toggle()
-  }
-  @IBAction func checkBox4Tapped(_ sender: UIButton) {
-    sender.isSelected.toggle()
-  }
-  
-  // MARK: - Life Cycle Part
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setUpView()
-    requestData()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    print("새로고침")
-  }
-  
-  // MARK: - Custom Method
-  func setUpView() {
-    let yourAttributes: [NSAttributedString.Key: Any] = [
-      .foregroundColor: UIColor.lightGrey1,
-      .underlineStyle: NSUnderlineStyle.single.rawValue
-    ]
-    let attributeString = NSMutableAttributedString(
-      string: "오늘은 원래의 나로 살게요",
-      attributes: yourAttributes
-    )
-    view.backgroundColor = .bgDarkgrey
-    doneButton.layer.cornerRadius = 10
-    inforButton.layer.cornerRadius = 16
-    originalButton.titleLabel?.textColor = .lightGrey1
-    originalButton.setAttributedTitle(attributeString, for: .normal)
-  }
-  
-  func requestData() {
-    GetToDoService.shared.getToDoInfo { (response) in
-      switch(response) {
-      case .success(let todoData):
-        if let data = todoData as? DataClass {
-          /// 라벨 - for문 수정
-          self.missionLabel1.text = data.todoLists[0].todo
-          self.missionLabel2.text = data.todoLists[1].todo
-          self.missionLabel3.text = data.todoLists[2].todo
-          self.missionLabel4.text = data.todoLists[3].todo
-          /// 이미지
-          let url = URL(string: data.images[1])
-          do {
-            let data = try Data(contentsOf: url!)
-            self.imageView.image = UIImage(data: data)
-          }
-          catch{
-          }
-          /// 캐릭터이름
-          let name = ["성실한 정직이", "적극적인 태양이", "참을성있는 하늘이", "즉흥적인 바림이"].randomElement()
-          self.inforButton.setTitle(name, for: .normal)
-        }
-      case .requestErr(let message):
-        print("requestErr", message)
-      case .pathErr:
-        print("pathErr")
-      case .serverErr:
-        print("serverErr")
-      case .networkFail:
-        print("networkFail")
-      }
+
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-  }
+    */
+
 }

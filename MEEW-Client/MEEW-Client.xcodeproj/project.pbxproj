@@ -14,6 +14,8 @@
 		6F3134AE27FF02A400FE1EB4 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3134AC27FF02A400FE1EB4 /* JoinVC.swift */; };
 		6F3134AF27FF02A400FE1EB4 /* JoinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F3134AD27FF02A400FE1EB4 /* JoinVC.xib */; };
 		6F8A3B7927FEE48E000FBABE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */; };
+		6FDCA78B2827E9F100BB0836 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCA7892827E9F100BB0836 /* ToDoVC.swift */; };
+		6FDCA78C2827E9F100BB0836 /* ToDoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDCA78A2827E9F100BB0836 /* ToDoVC.xib */; };
 		BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0227493ABF00021E91 /* AppDelegate.swift */; };
 		BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0427493ABF00021E91 /* SceneDelegate.swift */; };
 		BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD339A0827493ABF00021E91 /* Main.storyboard */; };
@@ -31,7 +33,7 @@
 		BD45C412274947B500229D35 /* SelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C411274947B500229D35 /* SelectVC.storyboard */; };
 		BD45C415274947C600229D35 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C414274947C600229D35 /* SelectVC.swift */; };
 		BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C418274947F100229D35 /* ToDoVC.storyboard */; };
-		BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41A274947FA00229D35 /* ToDoVC.swift */; };
+		BD45C41B274947FA00229D35 /* ToDooVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41A274947FA00229D35 /* ToDooVC.swift */; };
 		BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C41C2749482100229D35 /* ResultVC.storyboard */; };
 		BD45C41F2749482800229D35 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41E2749482800229D35 /* ResultVC.swift */; };
 		BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C423274962F300229D35 /* MEEWPopUp.xib */; };
@@ -66,6 +68,8 @@
 		6F3134AC27FF02A400FE1EB4 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		6F3134AD27FF02A400FE1EB4 /* JoinVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinVC.xib; sourceTree = "<group>"; };
 		6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		6FDCA7892827E9F100BB0836 /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
+		6FDCA78A2827E9F100BB0836 /* ToDoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoVC.xib; sourceTree = "<group>"; };
 		98BEA8BD86C29D64B7CA220D /* Pods_MEEW_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEEW_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD09E1AA2809A1C30005D4B3 /* MEEW-Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MEEW-Client.entitlements"; sourceTree = "<group>"; };
 		BD3399FF27493ABF00021E91 /* MEEW-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEEW-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +91,7 @@
 		BD45C411274947B500229D35 /* SelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectVC.storyboard; sourceTree = "<group>"; };
 		BD45C414274947C600229D35 /* SelectVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; tabWidth = 4; };
 		BD45C418274947F100229D35 /* ToDoVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoVC.storyboard; sourceTree = "<group>"; };
-		BD45C41A274947FA00229D35 /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
+		BD45C41A274947FA00229D35 /* ToDooVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDooVC.swift; sourceTree = "<group>"; };
 		BD45C41C2749482100229D35 /* ResultVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultVC.storyboard; sourceTree = "<group>"; };
 		BD45C41E2749482800229D35 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		BD45C423274962F300229D35 /* MEEWPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MEEWPopUp.xib; path = "MEEW-Client/Screens/Result/MEEWPopUp.xib"; sourceTree = SOURCE_ROOT; };
@@ -365,7 +369,9 @@
 		BD45C416274947DF00229D35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C41A274947FA00229D35 /* ToDoVC.swift */,
+				BD45C41A274947FA00229D35 /* ToDooVC.swift */,
+				6FDCA7892827E9F100BB0836 /* ToDoVC.swift */,
+				6FDCA78A2827E9F100BB0836 /* ToDoVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
 				6F3134AF27FF02A400FE1EB4 /* JoinVC.xib in Resources */,
 				F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */,
+				6FDCA78C2827E9F100BB0836 /* ToDoVC.xib in Resources */,
 				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
 				BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
@@ -576,12 +583,13 @@
 			files = (
 				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
-				BD45C41B274947FA00229D35 /* ToDoVC.swift in Sources */,
+				BD45C41B274947FA00229D35 /* ToDooVC.swift in Sources */,
 				F2EC3A112749A47B00805FE3 /* CharacterRequestDataModel.swift in Sources */,
 				BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
 				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
 				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
+				6FDCA78B2827E9F100BB0836 /* ToDoVC.swift in Sources */,
 				F2EC3A0F2749A1D400805FE3 /* CharacterListService.swift in Sources */,
 				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
