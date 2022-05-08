@@ -36,6 +36,10 @@ extension UIFont {
     return UIFont(name: "SpoqaHanSansNeo-Regular", size: 10.0)!
   }
   
+  class var body6: UIFont {
+    return UIFont(name: "SpoqaHanSansNeo-Regular", size: 8.0)!
+  }
+  
   class var join1: UIFont {
     return UIFont(name: "Montserrat-Bold", size: 24.0)!
   }
