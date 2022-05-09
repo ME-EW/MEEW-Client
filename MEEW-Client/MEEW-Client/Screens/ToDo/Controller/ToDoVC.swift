@@ -237,6 +237,9 @@ class ToDoVC: UIViewController {
   }
   
   @objc func doneButtonClicked(_ sender: UIButton) {
-    
+    let alertPopupVC = FinishedModalVC()
+    alertPopupVC.modalPresentationStyle = .overCurrentContext
+    alertPopupVC.modalTransitionStyle = .crossDissolve
+    self.present(alertPopupVC, animated: true, completion: nil)
   }
 }
