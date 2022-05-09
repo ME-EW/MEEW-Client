@@ -98,6 +98,7 @@ class ToDoVC: UIViewController {
     }
     view.add(inforButton) {
       $0.setImage(UIImage(named: "icn_more"), for: .normal)
+      $0.addTarget(self, action: #selector(self.inforButtonClicked(_:)), for: .touchUpInside)
       $0.snp.makeConstraints {
         $0.leading.equalTo(self.imageView.snp.trailing).offset(131)
         $0.centerY.equalTo(self.characterLabel.snp.centerY)
@@ -271,5 +272,11 @@ class ToDoVC: UIViewController {
 
   @objc func didReceiveYesButtonNotification(_ notification: Notification) {
       changeFinishedView()
+  }
+  
+  @objc func inforButtonClicked(_ sender: UIButton) {
+    let bottomSheetVC = BottomSheetVC()
+    bottomSheetVC.modalPresentationStyle = .overFullScreen
+    self.present(bottomSheetVC, animated: false, completion: nil)
   }
 }
