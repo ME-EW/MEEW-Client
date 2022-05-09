@@ -35,7 +35,7 @@ class ToDoVC: UIViewController {
   // MARK: - UI 구현
   func attributes() {
     layout()
-    buttonsLayout()
+    checkBoxLayout()
     missionsLayout()
     lineLayout()
   }
@@ -122,6 +122,7 @@ class ToDoVC: UIViewController {
     }
     view.add(doneButton) {
       $0.setImage(UIImage(named: "btn_done"), for: .normal)
+      $0.addTarget(self, action: #selector(self.doneButtonClicked(_:)), for: .touchUpInside)
       $0.snp.makeConstraints {
         $0.top.equalTo(self.checkBoxView.snp.bottom).offset(68)
         $0.leading.equalTo(self.view.snp.leading).offset(20)
@@ -140,7 +141,7 @@ class ToDoVC: UIViewController {
     }
   }
   
-  func buttonsLayout() {
+  func checkBoxLayout() {
     let checkBoxButton1 = UIButton()
     let checkBoxButton2 = UIButton()
     let checkBoxButton3 = UIButton()
@@ -210,16 +211,6 @@ class ToDoVC: UIViewController {
   }
   
   // MARK: - Custom Method
-  @objc func checkBoxClicked(_ sender: UIButton) {
-    if(sender.isSelected == false) {
-      checkCount += 1
-    } else {
-      checkCount -= 1
-    }
-    changeBar()
-    sender.isSelected.toggle()
-  }
-  
   func changeBar() {
     switch checkCount {
     case 0:
@@ -233,5 +224,19 @@ class ToDoVC: UIViewController {
     default:
       barImageView.image = UIImage(named: "bar=4")
     }
+  }
+  
+  @objc func checkBoxClicked(_ sender: UIButton) {
+    if(sender.isSelected == false) {
+      checkCount += 1
+    } else {
+      checkCount -= 1
+    }
+    changeBar()
+    sender.isSelected.toggle()
+  }
+  
+  @objc func doneButtonClicked(_ sender: UIButton) {
+    
   }
 }
