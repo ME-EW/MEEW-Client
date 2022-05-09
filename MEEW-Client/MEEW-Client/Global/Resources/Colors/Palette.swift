@@ -44,11 +44,23 @@ extension UIColor {
     return UIColor(red: 0.287, green: 0.287, blue: 0.287, alpha: 1)
   }
   
+  @nonobjc class var grey600: UIColor {
+    return UIColor(red: 0.217, green: 0.217, blue: 0.217, alpha: 1)
+  }
+  
   @nonobjc class var grey700: UIColor {
     return UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 1)
   }
   
   @nonobjc class var bgToDogrey: UIColor {
     return UIColor(red: 0.179, green: 0.179, blue: 0.179, alpha: 1)
+  }
+  
+  @nonobjc class var black200: UIColor {
+    return UIColor(red: 0.125, green: 0.125, blue: 0.125, alpha: 1)
+  }
+  
+  @nonobjc class var purple: UIColor {
+    return UIColor(red: 0.722, green: 0.224, blue: 1, alpha: 1)
   }
 }
