@@ -24,7 +24,7 @@ class ToDoVC: UIViewController {
   var checkBoxButtons = [UIButton]()
   var missionLabels = [UILabel]()
   var lineViews = [UIView]()
-  var count = 0
+  var checkCount = 0
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
@@ -103,7 +103,7 @@ class ToDoVC: UIViewController {
       }
     }
     view.add(barImageView) {
-      $0.image = UIImage(named: "bar=1")
+      $0.image = UIImage(named: "bar=0")
       $0.snp.makeConstraints {
         $0.top.equalTo(self.characterLabel.snp.bottom).offset(16)
         $0.leading.equalTo(self.characterLabel.snp.leading)
@@ -211,6 +211,27 @@ class ToDoVC: UIViewController {
   
   // MARK: - Custom Method
   @objc func checkBoxClicked(_ sender: UIButton) {
+    if(sender.isSelected == false) {
+      checkCount += 1
+    } else {
+      checkCount -= 1
+    }
+    changeBar()
     sender.isSelected.toggle()
+  }
+  
+  func changeBar() {
+    switch checkCount {
+    case 0:
+      barImageView.image = UIImage(named: "bar=0")
+    case 1:
+      barImageView.image = UIImage(named: "bar=1")
+    case 2:
+      barImageView.image = UIImage(named: "bar=2")
+    case 3:
+      barImageView.image = UIImage(named: "bar=3")
+    default:
+      barImageView.image = UIImage(named: "bar=4")
+    }
   }
 }
