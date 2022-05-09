@@ -30,6 +30,7 @@ class ToDoVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     attributes()
+    setNotification()
   }
   
   // MARK: - UI 구현
@@ -178,7 +179,7 @@ class ToDoVC: UIViewController {
     for mission in missionLabels {
       let idx = missionLabels.firstIndex(of: mission) ?? 0
       view.add(mission) {
-        $0.text = "평소 먹지 않은 메뉴 시키기"
+        $0.text = "평소 먹지 않는 메뉴 시키기"
         $0.textColor = .grey200
         $0.font = .body2
         $0.snp.makeConstraints {
@@ -204,7 +205,7 @@ class ToDoVC: UIViewController {
           $0.top.equalTo(self.checkBoxView.snp.top).offset(56+56*idx)
           $0.leading.equalTo(self.checkBoxView.snp.leading).offset(8)
           $0.trailing.equalTo(self.checkBoxView.snp.trailing).offset(-8)
-          $0.height.equalTo(1)
+          $0.height.equalTo(0.5)
         }
       }
     }
@@ -226,6 +227,27 @@ class ToDoVC: UIViewController {
     }
   }
   
+  func changeFinishedView() {
+    print("call")
+    checkBoxView.isHidden = true
+    originalButton.isHidden = true
+    doneButton.isUserInteractionEnabled = false
+    doneButton.setImage(UIImage(named: "btn_finished"), for: .normal)
+    for bt in checkBoxButtons {
+      if (bt.isSelected == false) {
+        bt.layer.isHidden = true
+      } else {
+        bt.setImage(UIImage(named: "complete"), for: .selected)
+        bt.isUserInteractionEnabled = false
+      }
+    }
+  }
+  
+  func setNotification() {
+    NotificationCenter.default.addObserver(self, selector: #selector(didReceiveYesButtonNotification(_:)), name: NSNotification.Name("didTapYesButton"), object: nil)
+  }
+  
+  // MARK: - @objc
   @objc func checkBoxClicked(_ sender: UIButton) {
     if(sender.isSelected == false) {
       checkCount += 1
@@ -237,9 +259,17 @@ class ToDoVC: UIViewController {
   }
   
   @objc func doneButtonClicked(_ sender: UIButton) {
-    let alertPopupVC = FinishedModalVC()
-    alertPopupVC.modalPresentationStyle = .overCurrentContext
-    alertPopupVC.modalTransitionStyle = .crossDissolve
-    self.present(alertPopupVC, animated: true, completion: nil)
+    if (checkCount == 4) {
+      changeFinishedView()
+    } else {
+      let alertPopupVC = FinishedModalVC()
+      alertPopupVC.modalPresentationStyle = .overCurrentContext
+      alertPopupVC.modalTransitionStyle = .crossDissolve
+      self.present(alertPopupVC, animated: true, completion: nil)
+    }
+  }
+
+  @objc func didReceiveYesButtonNotification(_ notification: Notification) {
+      changeFinishedView()
   }
 }

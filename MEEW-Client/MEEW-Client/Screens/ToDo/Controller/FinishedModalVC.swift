@@ -26,10 +26,9 @@ class FinishedModalVC: UIViewController {
   
   // MARK: - @objc
   @objc func yesButtonClicked(_ sender: UIButton) {
-//    let nextVC = FinishedVC()
-//    nextVC.modalTransitionStyle = .coverVertical
-//    nextVC.modalPresentationStyle = .fullScreen
-//    self.present(nextVC, animated: true, completion: nil)
+    print("clicked")
+    self.dismiss(animated: true, completion: nil)
+    NotificationCenter.default.post(name: NSNotification.Name("didTapYesButton"), object: nil)
   }
   
   @objc func noButtonClicked(_ sender: UIButton) {
