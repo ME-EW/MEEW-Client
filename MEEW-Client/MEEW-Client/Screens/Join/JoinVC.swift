@@ -45,6 +45,13 @@ class JoinVC: UIViewController {
     }, completion: nil)
   }
   
+  @objc func tmpClicked(_ sender: UIButton) {
+    let nextVC = ToDoVC()
+    nextVC.modalTransitionStyle = .coverVertical
+    nextVC.modalPresentationStyle = .fullScreen
+    self.present(nextVC, animated: true, completion: nil)
+  }
+  
   // MARK: - UI 구현
   func layoutJoinView() {
     view.backgroundColor = .grey700
@@ -88,6 +95,7 @@ class JoinVC: UIViewController {
     }
     view.add(kakaoButton) {
       $0.setImage(UIImage(named: "btn_kakao"), for: .normal)
+      $0.addTarget(self, action: #selector(self.tmpClicked(_:)), for: .touchUpInside)
       $0.snp.makeConstraints {
         $0.top.equalTo(self.view.snp.top).offset(652)
         $0.leading.equalTo(self.view.snp.leading).offset(20)
