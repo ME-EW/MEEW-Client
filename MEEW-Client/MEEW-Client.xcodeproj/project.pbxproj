@@ -37,10 +37,10 @@
 		BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42927496A8700229D35 /* AppDelegate+.swift */; };
 		BD45C42C27496BA000229D35 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42B27496BA000229D35 /* UIView+.swift */; };
 		BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42D27496C4700229D35 /* PopUpVC.swift */; };
-		BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4302749796900229D35 /* ArchiveCVC.swift */; };
-		BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4312749796900229D35 /* ArchiveCVC.xib */; };
 		BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4342749937A00229D35 /* CompletePopUp.xib */; };
 		BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4362749938400229D35 /* CompletePopUp.swift */; };
+		BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */; };
+		BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */; };
 		F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */; };
 		F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39F8274962CD00805FE3 /* Color.xcassets */; };
 		F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39FA2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf */; };
@@ -90,10 +90,10 @@
 		BD45C42927496A8700229D35 /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
 		BD45C42B27496BA000229D35 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		BD45C42D27496C4700229D35 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
-		BD45C4302749796900229D35 /* ArchiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCVC.swift; sourceTree = "<group>"; };
-		BD45C4312749796900229D35 /* ArchiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveCVC.xib; sourceTree = "<group>"; };
 		BD45C4342749937A00229D35 /* CompletePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletePopUp.xib; sourceTree = "<group>"; };
 		BD45C4362749938400229D35 /* CompletePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUp.swift; sourceTree = "<group>"; };
+		BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 			children = (
 				BD45C421274948BA00229D35 /* Controller */,
 				BD45C420274948B300229D35 /* Storyboard */,
-				BD45C42F274978C900229D35 /* Cell */,
+				BD45C42F274978C900229D35 /* View */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -390,13 +390,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		BD45C42F274978C900229D35 /* Cell */ = {
+		BD45C42F274978C900229D35 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C4302749796900229D35 /* ArchiveCVC.swift */,
-				BD45C4312749796900229D35 /* ArchiveCVC.xib */,
+				BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */,
+				BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		EF375EDFD0003B058BCD97D5 /* Pods */ = {
@@ -492,9 +492,9 @@
 				BD45C419274947F100229D35 /* ToDoVC.storyboard in Resources */,
 				F2EC3A022749637400805FE3 /* Spoqa Han Sans Neo Medium.otf in Resources */,
 				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
-				BD45C4332749796900229D35 /* ArchiveCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */,
+				BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
 				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
 				F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */,
@@ -570,11 +570,11 @@
 				F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */,
 				6F257EF02749B86F0055EE43 /* VCVC.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
-				BD45C4322749796900229D35 /* ArchiveCVC.swift in Sources */,
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
+				BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */,
 				BD339A3327493E5700021E91 /* APIConstants.swift in Sources */,
 				BD339A1F27493B9E00021E91 /* BaseVC.swift in Sources */,
 				BD339A2827493C5600021E91 /* Palette.swift in Sources */,
