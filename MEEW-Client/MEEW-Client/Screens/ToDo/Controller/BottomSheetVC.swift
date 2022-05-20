@@ -12,6 +12,7 @@ class BottomSheetVC: UIViewController {
   // MARK: - Properties
   let bottomHeight: CGFloat = 500
   var topConstant: CGFloat = 0
+  private let contentViewController: UIViewController
   private var bottomSheetViewTopConstraint: NSLayoutConstraint! // bottomSheet가 view의 상단에서 떨어진 거리
   private var dimmedBackView = UIView()
   private let bottomSheetView = UIView()
@@ -21,7 +22,9 @@ class BottomSheetVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    layout()
+    setupUI()
+    setNotification()
+    setupBottomSheet()
     setupGestureRecognizer()
   }
   
@@ -31,8 +34,17 @@ class BottomSheetVC: UIViewController {
     showBottomSheet()
   }
   
+  init(contentViewController: UIViewController) {
+    self.contentViewController = contentViewController
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   // MARK: - UI 구현
-  func layout() {
+  func setupUI() {
     view.add(dimmedBackView) {
       $0.alpha = 0.0
       $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -70,7 +82,25 @@ class BottomSheetVC: UIViewController {
     }
   }
   
+  func bottomSheetLayout() {
+    contentViewController.view.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      contentViewController.view.topAnchor.constraint(equalTo: bottomSheetView.topAnchor),
+      contentViewController.view.leadingAnchor.constraint(equalTo: bottomSheetView.leadingAnchor),
+      contentViewController.view.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor),
+      contentViewController.view.bottomAnchor.constraint(equalTo: bottomSheetView.bottomAnchor)
+    ])
+  }
+  
   // MARK: - Custom Method
+  private func setupBottomSheet() {
+    addChild(contentViewController)
+    bottomSheetView.addSubview(contentViewController.view)
+    contentViewController.didMove(toParent: self)
+    view.addSubviews([bottomSheetView, dismissIndicatorView])
+    bottomSheetLayout()
+  }
+  
   private func setupGestureRecognizer() {
     let dimmedTap = UITapGestureRecognizer(target: self, action: #selector(dimmedViewTapped(_:)))
     dimmedBackView.addGestureRecognizer(dimmedTap)
@@ -79,13 +109,14 @@ class BottomSheetVC: UIViewController {
     let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(panGesture))
     swipeGesture.direction = .down
     view.addGestureRecognizer(swipeGesture)
-    
   }
   
   private func showBottomSheet() {
+    let contentVC = children.first as? ContentVC
+    contentVC?.scrollView.isScrollEnabled = false
+    
     let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
     let bottomPadding: CGFloat = view.safeAreaInsets.bottom
-    
     bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - bottomHeight
     
     UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
@@ -108,6 +139,10 @@ class BottomSheetVC: UIViewController {
     }
   }
   
+  func setNotification() {
+    NotificationCenter.default.addObserver(self, selector: #selector(didReceiveOkayButtonNotification(_:)), name: NSNotification.Name("didTapOkayButton"), object: nil)
+  }
+  
   // MARK: - @objc
   @objc private func dimmedViewTapped(_ tapRecognizer: UITapGestureRecognizer) {
     hideBottomSheetAndGoBack()
@@ -123,4 +158,9 @@ class BottomSheetVC: UIViewController {
       }
     }
   }
+  
+  @objc func didReceiveOkayButtonNotification(_ notification: Notification) {
+      hideBottomSheetAndGoBack()
+  }
 }
+

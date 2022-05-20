@@ -275,7 +275,7 @@ class ToDoVC: UIViewController {
   }
   
   @objc func inforButtonClicked(_ sender: UIButton) {
-    let bottomSheetVC = BottomSheetVC()
+    let bottomSheetVC = BottomSheetVC(contentViewController: ContentVC())
     bottomSheetVC.modalPresentationStyle = .overFullScreen
     self.present(bottomSheetVC, animated: false, completion: nil)
   }

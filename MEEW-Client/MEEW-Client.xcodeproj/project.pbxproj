@@ -15,6 +15,7 @@
 		6F65C67B2829113B00DD017A /* FinishedModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65C67A2829113B00DD017A /* FinishedModalVC.swift */; };
 		6F65C67F2829320600DD017A /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65C67E2829320600DD017A /* BottomSheetVC.swift */; };
 		6F8A3B7927FEE48E000FBABE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */; };
+		6F94BF57283768A600345FFA /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F94BF56283768A600345FFA /* ContentVC.swift */; };
 		6FDCA78B2827E9F100BB0836 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCA7892827E9F100BB0836 /* ToDoVC.swift */; };
 		6FDCA78E2828005E00BB0836 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCA78D2828005E00BB0836 /* UIButton+.swift */; };
 		BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD339A0227493ABF00021E91 /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		6F65C67A2829113B00DD017A /* FinishedModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedModalVC.swift; sourceTree = "<group>"; };
 		6F65C67E2829320600DD017A /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 		6F8A3B7827FEE48E000FBABE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		6F94BF56283768A600345FFA /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 		6FDCA7892827E9F100BB0836 /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		6FDCA78D2828005E00BB0836 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		98BEA8BD86C29D64B7CA220D /* Pods_MEEW_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MEEW_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -370,6 +372,7 @@
 				6FDCA7892827E9F100BB0836 /* ToDoVC.swift */,
 				6F65C67A2829113B00DD017A /* FinishedModalVC.swift */,
 				6F65C67E2829320600DD017A /* BottomSheetVC.swift */,
+				6F94BF56283768A600345FFA /* ContentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				BD339A3027493D6500021E91 /* Reusable.swift in Sources */,
 				6F257EEC2749A3E00055EE43 /* GetToDoService.swift in Sources */,
 				BD45C41F2749482800229D35 /* ResultVC.swift in Sources */,
+				6F94BF57283768A600345FFA /* ContentVC.swift in Sources */,
 				6F257EEE2749A54B0055EE43 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
