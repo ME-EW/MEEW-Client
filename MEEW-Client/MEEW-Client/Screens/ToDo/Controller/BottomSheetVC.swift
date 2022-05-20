@@ -111,10 +111,7 @@ class BottomSheetVC: UIViewController {
     view.addGestureRecognizer(swipeGesture)
   }
   
-  private func showBottomSheet() {
-    let contentVC = children.first as? ContentVC
-    contentVC?.scrollView.isScrollEnabled = false
-    
+  private func showBottomSheet() {   
     let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
     let bottomPadding: CGFloat = view.safeAreaInsets.bottom
     bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - bottomHeight
