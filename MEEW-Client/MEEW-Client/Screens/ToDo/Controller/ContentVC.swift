@@ -17,7 +17,7 @@ class ContentVC: UIViewController {
   let okayButton = UIButton()
   let tmpView = UIView()
   var paragraphStyle = NSMutableParagraphStyle()
-  //var dimmedBackView = UIView()
+  var dimmedBackView = UIView()
   let images = ["baram1","baram1","baram1","baram1"]
 
   let levelCollectionView: UICollectionView = {
@@ -33,28 +33,32 @@ class ContentVC: UIViewController {
     super.viewDidLoad()
     
     setupUI()
-    setGradation()
+    setGradationView()
     setCollectionAttributes()
   }
   
   // MARK: - Custom Method
-  func setGradation() {
-    let gradientLayer = CAGradientLayer()
-    gradientLayer.frame = tmpView.bounds
-    gradientLayer.colors = [
-      UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 0).cgColor,
-      UIColor(red: 0.486, green: 0.486, blue: 0.486, alpha: 1).cgColor
-    ]
-    gradientLayer.locations = [0.0 , 1.0]
-    gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-    gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-    tmpView.layer.addSublayer(gradientLayer)
-  }
   
   func setCollectionAttributes() {
     levelCollectionView.register(MyCell.self, forCellWithReuseIdentifier: MyCell.reuseIdentifier)
     levelCollectionView.delegate = self
     levelCollectionView.dataSource = self
+  }
+  
+  func setGradationView() {
+    let dimmedlayer = CAGradientLayer()
+    dimmedlayer.colors = [
+      UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 0).cgColor,
+      UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 1).cgColor
+    ]
+    dimmedlayer.locations = [0, 1]
+    dimmedlayer.startPoint = CGPoint(x: 0.25, y: 0.5)
+    dimmedlayer.endPoint = CGPoint(x: 0.75, y: 0.5)
+    dimmedlayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 0.65, c: -0.65, d: 0, tx: 0.82, ty: 0.14))
+    dimmedlayer.bounds = view.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
+    dimmedlayer.position = view.center
+    view.layer.addSublayer(dimmedlayer)
+    view.addSubview(okayButton)
   }
   
   // MARK: - @objc
@@ -91,7 +95,7 @@ class ContentVC: UIViewController {
         $0.centerX.top.leading.equalToSuperview()
         $0.bottom.equalTo(self.scrollView.snp.bottom)
         $0.width.equalTo(self.view)
-        $0.height.equalTo(718)
+        $0.height.equalTo(680)
       }
     }
     scrollContainverView.add(titleLabel) {
@@ -107,7 +111,7 @@ class ContentVC: UIViewController {
     scrollContainverView.add(subtitleLabel) { [self] in
       $0.numberOfLines = 0
       $0.lineBreakMode = .byWordWrapping
-      $0.attributedText = NSMutableAttributedString(string: "바람이는 어디로 불지 모르는 성격이에요. 계획적이기 보다는 마음가는 대로 즐겁게 살아가고 있죠.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+      $0.attributedText = NSMutableAttributedString(string: "바람이는 어디로 불지 모르는 성격이에요. \n계획적이기 보다는 마음가는 대로 즐겁게 \n살아가고 있죠.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
       $0.textColor = .grey300
       $0.font = .body1
       $0.snp.makeConstraints {
@@ -116,16 +120,6 @@ class ContentVC: UIViewController {
         $0.trailing.equalTo(self.scrollContainverView.snp.trailing).inset(82)
       }
     }
-//    view.add(dimmedBackView) {
-//      //$0.layer.addSublayer(gradientLayer)
-//      //$0.setGradient(color1: .clear, color2: .red)
-//
-//      $0.snp.makeConstraints {
-//        $0.top.equalTo(self.view.snp.top).offset(262)
-//        $0.leading.bottom.equalToSuperview()
-//        $0.height.equalTo(304)
-//      }
-//    }
     scrollContainverView.add(levelCollectionView) {
       $0.backgroundColor = .clear
       $0.isUserInteractionEnabled = false
