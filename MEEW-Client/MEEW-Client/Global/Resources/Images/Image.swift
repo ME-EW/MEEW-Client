@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import UIKit
+
+struct ImageLiterals{
+  
+  struct checkIcon{
+    static let redCheckIcon = UIImage(named: "icn_check_red")!
+    static let orangeCheckIcon = UIImage(named: "icn_check_orange")!
+    static let yellowCheckIcon = UIImage(named: "icn_check_yellow")!
+    static let blueCheckIcon = UIImage(named: "icn_check_blue")!
+    static let pinkCheckIcon = UIImage(named: "icn_check_pink")!
+    static let purpleCheckIcon = UIImage(named: "icn_check_purple")!
+    static let greenCheckIcon = UIImage(named: "icn_check_green")!
+    static let lightpinkCheckIcon = UIImage(named: "icn_check_lightpink")!
+  }
+}

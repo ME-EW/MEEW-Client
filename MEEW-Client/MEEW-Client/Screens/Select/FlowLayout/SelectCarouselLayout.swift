@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SelectCarouselLayout: UICollectionViewFlowLayout {
-    var sideItemScale: CGFloat = 0.8 //크기 작아졌다가 커지는 정도
+    var sideItemScale: CGFloat =  1//크기 작아졌다가 커지는 정도
     var sideItemAlpha: CGFloat = 0.5 //그림자 효과?
     var spacing: CGFloat = 10 //요소들간의 간격
     var isPagingEnabled: Bool = false
