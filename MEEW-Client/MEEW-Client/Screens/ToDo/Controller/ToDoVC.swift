@@ -2,149 +2,274 @@
 //  ToDoVC.swift
 //  MEEW-Client
 //
-//  Created by taehy.k on 2021/11/21.
+//  Created by 임주민 on 2022/05/08.
 //
 
 import UIKit
 
-class ToDoVC: BaseVC {
-    
-    // MARK: - var & let
-    
-    let yourAttributes: [NSAttributedString.Key: Any] = [
-          .foregroundColor: UIColor.lightGrey1,
-          .underlineStyle: NSUnderlineStyle.single.rawValue
-    ]
-    
-    
-    // MARK: - @IBOutlet
-    
-    @IBOutlet weak var questionLabel: UILabel!
-    
-    @IBOutlet weak var originalButton: UIButton!
-    @IBOutlet weak var archiveButton: UIButton!
-    @IBOutlet weak var inforButton: UIButton!
-    @IBOutlet weak var doneButton: UIButton!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var checkBoxButton1: UIButton!
-    @IBOutlet weak var checkBoxButton2: UIButton!
-    @IBOutlet weak var checkBoxButton3: UIButton!
-    @IBOutlet weak var checkBoxButton4: UIButton!
-    
-    @IBOutlet weak var missionLabel1: UILabel!
-    @IBOutlet weak var missionLabel2: UILabel!
-    @IBOutlet weak var missionLabel3: UILabel!
-    @IBOutlet weak var missionLabel4: UILabel!
-    
-    // MARK: - @IBAction
-    
-    @IBAction func touchUpToGoResult(_ sender: Any) {
-        guard let vc = UIStoryboard(name: "ResultVC", bundle: nil).instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else { return }
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
-    }
-    
-    @IBAction func againButton(_ sender: Any) {
-        requestData()
-    }
-    
-    @IBAction func inforButtonTapped(_ sender: Any) {
-        
-        if let name = inforButton.titleLabel?.text {
-            MEEWPopUp.loadFromXib()
-                .setTitle(name)
-                .setDescription("\(name)로 살아볼까요?")
-                .present()
-        }
+class ToDoVC: UIViewController {
 
-    }
+  // MARK: - Properties
+  let NickNameLabel = UILabel()
+  let againButton = UIButton()
+  let againLabel = UILabel()
+  let imageView = UIImageView()
+  let levelLabel = UILabel()
+  let characterLabel = UILabel()
+  let inforButton = UIButton()
+  let barImageView = UIImageView()
+  let doneButton = UIButton()
+  let originalButton = UIButton()
+  let checkBoxView = UIView()
+  var checkBoxButtons = [UIButton]()
+  var missionLabels = [UILabel]()
+  var lineViews = [UIView]()
+  var checkCount = 0
+  
+  // MARK: - Life Cycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    attributes()
+    setNotification()
+  }
+  
+  // MARK: - UI 구현
+  func attributes() {
+    layout()
+    checkBoxLayout()
+    missionsLayout()
+    lineLayout()
+  }
+  
+  func layout() {
+    view.backgroundColor = .grey700
     
-    @IBAction func originalButtonTapped(_ sender: Any) {
-        //오늘은나로살게요 버튼 - 수정하기
-        guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "VCVC") as? VCVC else { return }
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true, completion: nil)
-        
+    view.add(NickNameLabel) {
+      $0.text = "오늘의 미우님"
+      $0.font = .head3
+      $0.textColor = .white
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.view.snp.top).offset(76)
+        $0.leading.equalTo(self.view.snp.leading).offset(20)
+      }
     }
-    
-    // MARK: - 체크박스 구현
-    
-    @IBAction func checkBox1Tapped(_ sender: UIButton) {
-        sender.isSelected.toggle()
+    view.add(againButton) {
+      $0.setImage(UIImage(named: "ic_Refresh"), for: .normal)
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.view.snp.top).offset(71)
+        $0.trailing.equalTo(self.view.snp.trailing).offset(-16)
+      }
     }
-    @IBAction func checkBox2Tapped(_ sender: UIButton) {
-        sender.isSelected.toggle()
+    view.add(againLabel) {
+      $0.text = "1/3"
+      $0.textColor = .grey400
+      $0.font = .body6
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.againButton.snp.bottom).offset(5)
+        $0.trailing.equalTo(self.view.snp.trailing).offset(-22)
+      }
     }
-    @IBAction func checkBox3Tapped(_ sender: UIButton) {
-        sender.isSelected.toggle()
+    view.add(imageView) {
+      $0.image = UIImage(named: "baram1")
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.NickNameLabel.snp.bottom).offset(28)
+        $0.leading.equalTo(self.view.snp.leading).offset(20)
+        $0.height.equalTo(168)
+        $0.width.equalTo(168)
+      }
     }
-    @IBAction func checkBox4Tapped(_ sender: UIButton) {
-        sender.isSelected.toggle()
+    view.add(levelLabel) {
+      $0.text = "Lv. 1"
+      $0.textColor = .grey5
+      $0.font = .body2
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.view.snp.top).offset(185)
+        $0.leading.equalTo(self.imageView.snp.trailing).offset(21)
+      }
     }
-    
-    // MARK: - Life Cycle Part
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setView()
-        requestData()
+    view.add(characterLabel) {
+      $0.text = "즉흥적인 바람이"
+      $0.textColor = .white
+      $0.font = .head3
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.levelLabel.snp.bottom).offset(9)
+        $0.leading.equalTo(self.levelLabel.snp.leading)
+      }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        //
-        print("새로고침")
+    view.add(inforButton) {
+      $0.setImage(UIImage(named: "icn_more"), for: .normal)
+      $0.snp.makeConstraints {
+        $0.leading.equalTo(self.imageView.snp.trailing).offset(131)
+        $0.centerY.equalTo(self.characterLabel.snp.centerY)
+      }
     }
-    
-    // MARK: - Custom Method
-    
-    func setView() {
-        view.backgroundColor = .bgDarkgrey
-        doneButton.layer.cornerRadius = 10
-        originalButton.titleLabel?.textColor = .lightGrey1
-        let attributeString = NSMutableAttributedString(
-            string: "오늘은 원래의 나로 살게요",
-            attributes: yourAttributes
-        )
-        originalButton.setAttributedTitle(attributeString, for: .normal)
-        inforButton.layer.cornerRadius = 16
+    view.add(barImageView) {
+      $0.image = UIImage(named: "bar=0")
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.characterLabel.snp.bottom).offset(16)
+        $0.leading.equalTo(self.characterLabel.snp.leading)
+        $0.width.equalTo(140)
+      }
     }
-    
-    func requestData() {
-        GetToDoService.shared.getToDoInfo { (response) in
-            switch(response) {
-            case .success(let todoData):
-                if let data = todoData as? DataClass {
-                    //라벨 - for문 수정
-                    self.missionLabel1.text = data.todoLists[0].todo
-                    self.missionLabel2.text = data.todoLists[1].todo
-                    self.missionLabel3.text = data.todoLists[2].todo
-                    self.missionLabel4.text = data.todoLists[3].todo
-                    //이미지
-                    let url = URL(string: data.images[1])
-                    do {
-                        let data = try Data(contentsOf: url!)
-                        self.imageView.image = UIImage(data: data)
-                    }
-                    catch{
-                    }
-                    //캐릭터이름
-                    let name = ["성실한 정직이", "적극적인 태양이", "참을성있는 하늘이", "즉흥적인 바림이"].randomElement()
-                    self.inforButton.setTitle(name, for: .normal)
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
+    view.add(checkBoxView) {
+      $0.backgroundColor = .bgToDogrey
+      $0.layer.cornerRadius = 7.93
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.view.snp.top).offset(322)
+        $0.leading.equalTo(self.view.snp.leading).offset(20)
+        $0.trailing.equalTo(self.view.snp.trailing).offset(-20)
+        $0.height.equalTo(224)
+      }
+    }
+    view.add(doneButton) {
+      $0.setImage(UIImage(named: "btn_done"), for: .normal)
+      $0.addTarget(self, action: #selector(self.doneButtonClicked(_:)), for: .touchUpInside)
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.checkBoxView.snp.bottom).offset(68)
+        $0.leading.equalTo(self.view.snp.leading).offset(20)
+        $0.trailing.equalTo(self.view.snp.trailing).offset(-20)
+      }
+    }
+    view.add(originalButton) {
+      $0.setTitle("오늘은 원래의 나로 살게요", for: .normal)
+      $0.setTitleColor(.grey400, for: .normal)
+      $0.titleLabel?.font = .body3
+      $0.setUnderline()
+      $0.snp.makeConstraints {
+        $0.top.equalTo(self.doneButton.snp.bottom).offset(16)
+        $0.centerX.equalTo(self.view.snp.centerX)
+      }
+    }
+  }
+  
+  func checkBoxLayout() {
+    let checkBoxButton1 = UIButton()
+    let checkBoxButton2 = UIButton()
+    let checkBoxButton3 = UIButton()
+    let checkBoxButton4 = UIButton()
+    checkBoxButtons.append(checkBoxButton1)
+    checkBoxButtons.append(checkBoxButton2)
+    checkBoxButtons.append(checkBoxButton3)
+    checkBoxButtons.append(checkBoxButton4)
+    for bt in checkBoxButtons {
+      let idx = checkBoxButtons.firstIndex(of: bt) ?? 0
+      view.add(bt) {
+        $0.setImage(UIImage(named: "ic_uncheck"), for: .normal)
+        $0.setImage(UIImage(named: "ic_check"), for: .selected)
+        $0.addTarget(self, action: #selector(self.checkBoxClicked(_:)), for: .touchUpInside)
+        $0.snp.makeConstraints {
+          $0.leading.equalTo(self.checkBoxView.snp.leading).offset(18)
+          $0.top.equalTo(self.checkBoxView.snp.top).offset(18+56*idx)
+          $0.height.equalTo(20)
+          $0.width.equalTo(20)
         }
+      }
     }
-    
-    
+  }
+  
+  func missionsLayout() {
+    let missionLabel1 = UILabel()
+    let missionLabel2 = UILabel()
+    let missionLabel3 = UILabel()
+    let missionLabel4 = UILabel()
+    missionLabels.append(missionLabel1)
+    missionLabels.append(missionLabel2)
+    missionLabels.append(missionLabel3)
+    missionLabels.append(missionLabel4)
+    for mission in missionLabels {
+      let idx = missionLabels.firstIndex(of: mission) ?? 0
+      view.add(mission) {
+        $0.text = "평소 먹지 않는 메뉴 시키기"
+        $0.textColor = .grey200
+        $0.font = .body2
+        $0.snp.makeConstraints {
+          $0.leading.equalTo(self.checkBoxView.snp.leading).offset(48)
+          $0.centerY.equalTo(self.checkBoxButtons[idx].snp.centerY)
+        }
+      }
+    }
+  }
+  
+  func lineLayout() {
+    let lineView1 = UIView()
+    let lineView2 = UIView()
+    let lineView3 = UIView()
+    lineViews.append(lineView1)
+    lineViews.append(lineView2)
+    lineViews.append(lineView3)
+    for line in lineViews {
+      let idx = lineViews.firstIndex(of: line) ?? 0
+      view.add(line) {
+        $0.backgroundColor = .grey500
+        $0.snp.makeConstraints {
+          $0.top.equalTo(self.checkBoxView.snp.top).offset(56+56*idx)
+          $0.leading.equalTo(self.checkBoxView.snp.leading).offset(8)
+          $0.trailing.equalTo(self.checkBoxView.snp.trailing).offset(-8)
+          $0.height.equalTo(0.5)
+        }
+      }
+    }
+  }
+  
+  // MARK: - Custom Method
+  func changeBar() {
+    switch checkCount {
+    case 0:
+      barImageView.image = UIImage(named: "bar=0")
+    case 1:
+      barImageView.image = UIImage(named: "bar=1")
+    case 2:
+      barImageView.image = UIImage(named: "bar=2")
+    case 3:
+      barImageView.image = UIImage(named: "bar=3")
+    default:
+      barImageView.image = UIImage(named: "bar=4")
+    }
+  }
+  
+  func changeFinishedView() {
+    print("call")
+    checkBoxView.isHidden = true
+    originalButton.isHidden = true
+    doneButton.isUserInteractionEnabled = false
+    doneButton.setImage(UIImage(named: "btn_finished"), for: .normal)
+    for bt in checkBoxButtons {
+      if (bt.isSelected == false) {
+        bt.layer.isHidden = true
+      } else {
+        bt.setImage(UIImage(named: "complete"), for: .selected)
+        bt.isUserInteractionEnabled = false
+      }
+    }
+  }
+  
+  func setNotification() {
+    NotificationCenter.default.addObserver(self, selector: #selector(didReceiveYesButtonNotification(_:)), name: NSNotification.Name("didTapYesButton"), object: nil)
+  }
+  
+  // MARK: - @objc
+  @objc func checkBoxClicked(_ sender: UIButton) {
+    if(sender.isSelected == false) {
+      checkCount += 1
+    } else {
+      checkCount -= 1
+    }
+    changeBar()
+    sender.isSelected.toggle()
+  }
+  
+  @objc func doneButtonClicked(_ sender: UIButton) {
+    if (checkCount == 4) {
+      changeFinishedView()
+    } else {
+      let alertPopupVC = FinishedModalVC()
+      alertPopupVC.modalPresentationStyle = .overCurrentContext
+      alertPopupVC.modalTransitionStyle = .crossDissolve
+      self.present(alertPopupVC, animated: true, completion: nil)
+    }
+  }
+
+  @objc func didReceiveYesButtonNotification(_ notification: Notification) {
+      changeFinishedView()
+  }
 }

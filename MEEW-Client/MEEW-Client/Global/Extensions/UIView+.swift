@@ -18,4 +18,19 @@ extension UIView {
         }
         return view
     }
+  func addSubviews(_ view: [UIView]) {
+    view.forEach { self.addSubview($0) }
+  }
+  @discardableResult
+  func add<T: UIView>(_ subview: T,
+                      then closure: ((T) -> Void)? = nil) -> T {
+    addSubview(subview)
+    closure?(subview)
+    return subview
+  }
+  func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
+    clipsToBounds = true
+    layer.cornerRadius = cornerRadius
+    layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
+  }
 }
