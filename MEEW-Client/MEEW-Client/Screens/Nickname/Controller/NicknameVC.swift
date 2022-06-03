@@ -24,7 +24,11 @@ class NicknameVC: UIViewController {
     }
   }
   
+//  private var loadingView: LoadingView?
+  
   // MARK: - UI Component Part
+
+  
   @IBOutlet weak var nicknameInputTextField: UITextField!{
     didSet{
       nicknameInputTextField.delegate = self
@@ -39,6 +43,19 @@ class NicknameVC: UIViewController {
   }
   @IBOutlet weak var successBtn: UIButton!
   
+  @IBOutlet weak var loadingView: UIView!{
+    didSet{
+      loadingView.isHidden = true
+    }
+  }
+  
+  @IBOutlet var dots: [UIView]! {
+    didSet {
+      dots[0].layer.cornerRadius = 7/2
+      dots[1].layer.cornerRadius = 7/2
+      dots[2].layer.cornerRadius = 7/2
+    }
+  }
   
   // MARK: - Life Cycle Part
   override func viewDidLoad() {
@@ -51,6 +68,15 @@ class NicknameVC: UIViewController {
   }
   
   // MARK: - Custom Method Part
+  func startAnimation() {
+    loadingView.isHidden = false
+    for index in 0..<dots.count {
+      dots[index].transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+      UIView.animate(withDuration: 0.6, delay: Double(index+1) * 0.2, options: [.repeat, .autoreverse], animations: {self.dots[index].transform = CGAffineTransform.identity}, completion: nil)
+    }
+  }
+  
+  
   private func registerDelegate() {
     nicknameInputTextField.delegate = self
   }
@@ -200,8 +226,8 @@ class NicknameVC: UIViewController {
   }
   
   private func pushTodoView() {
-    guard let todoVC = self.storyboard?.instantiateViewController(identifier: "ToDoVC") as? ToDoVC else {return}
-    self.navigationController?.pushViewController(todoVC, animated: true)
+//    guard let todoVC = self.storyboard?.instantiateViewController(identifier: "ToDoVC") as? ToDoVC else {return}
+//    self.navigationController?.pushViewController(todoVC, animated: true)
   }
   
   //  private func postNickNameData(nickName: String) {
@@ -233,8 +259,10 @@ class NicknameVC: UIViewController {
   
   // MARK: - IBAction
   @IBAction func gotoTodoView(_ sender: Any) {
+    startAnimation()
+
     successBtn.isEnabled = false //버튼 여러번 눌리는거 해결
-    
+
     if let nicknameInputTextField = self.nicknameInputTextField.text {
       //      self.postNickNameData(nickName: nicknameInputTextField) // 서버 통신해서 중복 여부 체크 함수
       self.pushTodoView()
