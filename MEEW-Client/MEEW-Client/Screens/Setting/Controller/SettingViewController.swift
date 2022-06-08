@@ -15,8 +15,9 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(navigationBarView)
+        navigationBarView.backgroundColor = .blue
         navigationBarView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(48)
         }
     }

@@ -27,9 +27,9 @@ final class NavigationBarView: UIView {
         setStyle()
     }
     
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setStyle()
     }
     
     private func setStyle() {
