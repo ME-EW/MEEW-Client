@@ -22,6 +22,12 @@ final class NavigationBarView: UIView {
         $0.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 18)!
     }
     
+    lazy var doneButton = UIButton().then {
+        $0.isHidden = true
+        $0.setTitle("완료", for: .normal)
+        $0.titleLabel?.font = UIFont.body1
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setStyle()
@@ -32,8 +38,13 @@ final class NavigationBarView: UIView {
         setStyle()
     }
     
+    convenience init(hasDoneButton: Bool) {
+        self.init(frame: .zero)
+        doneButton.isHidden = !hasDoneButton
+    }
+    
     private func setStyle() {
-        self.addSubviews([navigationBackButton, navigationTitleLabel])
+        self.addSubviews([navigationBackButton, navigationTitleLabel, doneButton])
         
         navigationBackButton.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
@@ -42,6 +53,13 @@ final class NavigationBarView: UIView {
         
         navigationTitleLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        
+        doneButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(20)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(30)
+            $0.height.equalTo(24)
         }
     }
 }

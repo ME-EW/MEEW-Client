@@ -19,7 +19,7 @@ final class ProfileView: UIView {
     
     private lazy var emailLabel = UILabel().then {
         $0.text = email
-        $0.font = UIFont.body4
+        $0.font = UIFont(name: "SpoqaHanSansNeo-Medium", size: 12)!
         $0.textColor = .grey400
     }
     

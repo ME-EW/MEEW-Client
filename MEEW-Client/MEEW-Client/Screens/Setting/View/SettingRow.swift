@@ -23,7 +23,7 @@ final class SettingRow: UIView {
     
     private lazy var infoLabel = UILabel().then {
         $0.isHidden = true
-        $0.font = UIFont.body4
+        $0.font = UIFont(name: "SpoqaHanSansNeo-Medium", size: 12)!
         $0.text = "최신 버전"
         $0.textColor = .grey400
     }
@@ -59,7 +59,7 @@ final class SettingRow: UIView {
         addSubviews([rowTitleLabel, moreIcon, infoLabel, lineView])
         
         rowTitleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(30)
+            $0.leading.equalToSuperview().inset(20)
             $0.centerY.equalToSuperview()
         }
         
