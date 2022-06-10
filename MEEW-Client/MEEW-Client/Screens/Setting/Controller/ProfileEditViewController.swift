@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileEditViewController: UIViewController {
+final class ProfileEditViewController: BaseVC {
     
     private let navigationBarView = NavigationBarView(hasDoneButton: true)
     private let nicknameTitleLabel = UILabel().then {
@@ -29,6 +29,7 @@ final class ProfileEditViewController: UIViewController {
         configureNavItem()
         configureHierarchy()
         configureLayout()
+        configureNaivagtion()
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,6 +84,12 @@ final class ProfileEditViewController: UIViewController {
     func updateBorder(textField: UITextField, color: UIColor, width: CGFloat) -> Void {
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0.0, y: textField.frame.size.height + width, width: textField.frame.size.width, height: width)
+    }
+    
+    private func configureNaivagtion() {
+        navigationBarView.dismissClosure = {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

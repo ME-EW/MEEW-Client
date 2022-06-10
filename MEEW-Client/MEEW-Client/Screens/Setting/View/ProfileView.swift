@@ -27,6 +27,7 @@ final class ProfileView: UIView {
         $0.setTitle("관리", for: .normal)
         $0.titleLabel?.font = UIFont.body2
         $0.setTitleColor(.white, for: .normal)
+        $0.addTarget(self, action: #selector(manageButtonDidTap), for: .touchUpInside)
     }
     
     private let lineView = UIView().then {
@@ -44,6 +45,8 @@ final class ProfileView: UIView {
             emailLabel.text = email
         }
     }
+    
+    var manageButtonClosure: (() -> ())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,5 +85,10 @@ final class ProfileView: UIView {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(0.5)
         }
+    }
+    
+    @objc
+    func manageButtonDidTap() {
+        manageButtonClosure?()
     }
 }

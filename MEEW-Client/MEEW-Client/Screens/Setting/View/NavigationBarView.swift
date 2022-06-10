@@ -12,8 +12,9 @@ import Then
 
 final class NavigationBarView: UIView {
     
-    let navigationBackButton = UIButton().then {
+    lazy var navigationBackButton = UIButton().then {
         $0.setImage(UIImage(named: "icn_back"), for: .normal)
+        $0.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
     
     let navigationTitleLabel = UILabel().then {
@@ -27,6 +28,8 @@ final class NavigationBarView: UIView {
         $0.setTitle("완료", for: .normal)
         $0.titleLabel?.font = UIFont.body1
     }
+    
+    var dismissClosure: (() -> ())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,5 +64,10 @@ final class NavigationBarView: UIView {
             $0.width.equalTo(30)
             $0.height.equalTo(24)
         }
+    }
+    
+    @objc
+    private func dismissViewController() {
+        dismissClosure?()
     }
 }

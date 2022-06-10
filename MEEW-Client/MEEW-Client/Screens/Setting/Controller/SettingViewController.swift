@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SettingViewController: UIViewController {
+final class SettingViewController: BaseVC {
     
     let navigationBarView = NavigationBarView()
     let profileView = ProfileView()
@@ -29,6 +29,7 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
         setStyle()
         setLayout()
+        configureNaivagtion()
     }
     
     private func setStyle() {
@@ -83,6 +84,17 @@ final class SettingViewController: UIViewController {
         withdrawalMessageLabel.snp.makeConstraints {
             $0.top.equalTo(logoutButton.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
+        }
+    }
+    
+    private func configureNaivagtion() {
+        profileView.manageButtonClosure = {
+            let profileEditViewController = ProfileEditViewController()
+            self.navigationController?.pushViewController(profileEditViewController, animated: true)
+        }
+        
+        navigationBarView.dismissClosure = {
+            self.dismiss(animated: true)
         }
     }
 }
