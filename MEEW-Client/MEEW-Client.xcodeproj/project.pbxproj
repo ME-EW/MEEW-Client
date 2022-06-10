@@ -45,6 +45,7 @@
 		BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42D27496C4700229D35 /* PopUpVC.swift */; };
 		BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4342749937A00229D35 /* CompletePopUp.xib */; };
 		BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4362749938400229D35 /* CompletePopUp.swift */; };
+		BD4C26842853170000EFAEE5 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C26832853170000EFAEE5 /* ProfileEditViewController.swift */; };
 		BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA4628508CAB00883B32 /* NavigationBarView.swift */; };
 		BDABFA492850928600883B32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA482850928600883B32 /* SettingViewController.swift */; };
 		BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABFA4A2850930700883B32 /* SettingViewController.storyboard */; };
@@ -109,6 +110,7 @@
 		BD45C42D27496C4700229D35 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		BD45C4342749937A00229D35 /* CompletePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletePopUp.xib; sourceTree = "<group>"; };
 		BD45C4362749938400229D35 /* CompletePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUp.swift; sourceTree = "<group>"; };
+		BD4C26832853170000EFAEE5 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		BDABFA4628508CAB00883B32 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		BDABFA482850928600883B32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BDABFA4A2850930700883B32 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				BDABFA482850928600883B32 /* SettingViewController.swift */,
+				BD4C26832853170000EFAEE5 /* ProfileEditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 			files = (
 				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
+				BD4C26842853170000EFAEE5 /* ProfileEditViewController.swift in Sources */,
 				6F65C67B2829113B00DD017A /* FinishedModalVC.swift in Sources */,
 				F2EC3A112749A47B00805FE3 /* CharacterRequestDataModel.swift in Sources */,
 				BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */,
