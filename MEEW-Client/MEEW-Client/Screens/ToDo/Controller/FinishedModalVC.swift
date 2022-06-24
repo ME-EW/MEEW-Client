@@ -21,7 +21,7 @@ class FinishedModalVC: UIViewController {
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    layout()
+    setupUI()
   }
   
   // MARK: - @objc
@@ -36,7 +36,7 @@ class FinishedModalVC: UIViewController {
   }
   
   // MARK: - UI 구현
-  func layout() {
+  func setupUI() {
     view.backgroundColor = .clear
     
     view.add(bgView) {
