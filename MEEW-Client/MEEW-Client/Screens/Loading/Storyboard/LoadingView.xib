@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Neo Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingView" customModule="MEEW_Client" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 캐릭터 보러가는 중" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX8-nF-gev">
+                    <rect key="frame" x="48.333333333333336" y="71" width="103.66666666666666" height="43.333333333333343"/>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baS-ua-rAE">
+                    <rect key="frame" x="96.666666666666671" y="130.33333333333334" width="7" height="7"/>
+                    <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="dQk-4W-pte"/>
+                        <constraint firstAttribute="height" constant="7" id="sXg-xX-3uC"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34N-Qd-kC8">
+                    <rect key="frame" x="110.66666666666667" y="130.33333333333334" width="7" height="7"/>
+                    <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="Ui0-Pc-Jex"/>
+                        <constraint firstAttribute="height" constant="7" id="oWW-Uc-uFw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-eu-llG">
+                    <rect key="frame" x="82.666666666666671" y="130.33333333333334" width="7" height="7"/>
+                    <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="412-DP-KIB"/>
+                        <constraint firstAttribute="height" constant="7" id="uuY-8Z-Jc5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IU0-eu-llG" firstAttribute="top" secondItem="baS-ua-rAE" secondAttribute="top" id="DIi-Ro-yJN"/>
+                <constraint firstItem="34N-Qd-kC8" firstAttribute="leading" secondItem="baS-ua-rAE" secondAttribute="trailing" constant="7" id="E1d-QE-Otv"/>
+                <constraint firstItem="yX8-nF-gev" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="71" id="FW2-lq-ePa"/>
+                <constraint firstItem="34N-Qd-kC8" firstAttribute="top" secondItem="baS-ua-rAE" secondAttribute="top" id="K76-Yb-bIf"/>
+                <constraint firstItem="baS-ua-rAE" firstAttribute="leading" secondItem="IU0-eu-llG" secondAttribute="trailing" constant="7" id="Me4-R2-J5n"/>
+                <constraint firstItem="yX8-nF-gev" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Mxg-gn-xnx"/>
+                <constraint firstItem="baS-ua-rAE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="fy7-Vp-GIt"/>
+                <constraint firstItem="baS-ua-rAE" firstAttribute="top" secondItem="yX8-nF-gev" secondAttribute="bottom" constant="16" id="zJR-xR-ULk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="dots" destination="IU0-eu-llG" collectionClass="NSMutableArray" id="2J7-XD-PT7"/>
+                <outletCollection property="dots" destination="baS-ua-rAE" collectionClass="NSMutableArray" id="AvE-vN-rIN"/>
+                <outletCollection property="dots" destination="34N-Qd-kC8" collectionClass="NSMutableArray" id="EzL-Sx-NJ8"/>
+            </connections>
+            <point key="canvasLocation" x="36.799999999999997" y="387.93103448275866"/>
+        </view>
+    </objects>
+</document>
