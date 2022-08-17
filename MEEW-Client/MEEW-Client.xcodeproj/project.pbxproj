@@ -38,8 +38,6 @@
 		BD3B547828520D14003D91D3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B547728520D14003D91D3 /* InfoView.swift */; };
 		BD45C412274947B500229D35 /* SelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C411274947B500229D35 /* SelectVC.storyboard */; };
 		BD45C415274947C600229D35 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C414274947C600229D35 /* SelectVC.swift */; };
-		BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C423274962F300229D35 /* MEEWPopUp.xib */; };
-		BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C425274962FA00229D35 /* MEEWPopUp.swift */; };
 		BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C427274968FB00229D35 /* UIApplication+.swift */; };
 		BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42927496A8700229D35 /* AppDelegate+.swift */; };
 		BD45C42C27496BA000229D35 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42B27496BA000229D35 /* UIView+.swift */; };
@@ -111,8 +109,6 @@
 		BD3B547728520D14003D91D3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		BD45C411274947B500229D35 /* SelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectVC.storyboard; sourceTree = "<group>"; };
 		BD45C414274947C600229D35 /* SelectVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; tabWidth = 4; };
-		BD45C423274962F300229D35 /* MEEWPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MEEWPopUp.xib; path = "MEEW-Client/Screens/Result/MEEWPopUp.xib"; sourceTree = SOURCE_ROOT; };
-		BD45C425274962FA00229D35 /* MEEWPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MEEWPopUp.swift; path = "MEEW-Client/Screens/Result/MEEWPopUp.swift"; sourceTree = SOURCE_ROOT; };
 		BD45C427274968FB00229D35 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		BD45C42927496A8700229D35 /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
 		BD45C42B27496BA000229D35 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -423,8 +419,6 @@
 		BD45C4222749629100229D35 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C423274962F300229D35 /* MEEWPopUp.xib */,
-				BD45C425274962FA00229D35 /* MEEWPopUp.swift */,
 				BD45C42D27496C4700229D35 /* PopUpVC.swift */,
 				BD45C4342749937A00229D35 /* CompletePopUp.xib */,
 				BD45C4362749938400229D35 /* CompletePopUp.swift */,
@@ -626,7 +620,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */,
 				BD339A1C27493B9200021E91 /* BaseVC.storyboard in Resources */,
 				F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */,
 				6F3134AF27FF02A400FE1EB4 /* JoinVC.xib in Resources */,
@@ -720,7 +713,6 @@
 				F2E1CACA281FC63500E4B1FD /* NicknameVC.swift in Sources */,
 				BD3B547828520D14003D91D3 /* InfoView.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
-				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
 				BDC5CC9128AD4D8C00CBDE12 /* ArchiveTVC.swift in Sources */,
 				BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */,
@@ -901,7 +893,7 @@
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ResultVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -935,7 +927,7 @@
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ResultVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

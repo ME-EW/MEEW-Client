@@ -24,14 +24,17 @@ final class ArchiveBannerView: UIView {
     }
     
     private let characterNameLabel = UILabel().then {
+        $0.text = "적극적인 태양이"
         $0.textColor = .white
         $0.font = .head3
     }
     
     private let characterDescriptionLabel = UILabel().then {
+        $0.text = "마음이는 늘 상대방의 마음을 먼저 생각해요. 항상 타인의 말에..."
         $0.textColor = .grey300
-        $0.font = .body4
+        $0.font = .body3
         $0.numberOfLines = 0
+        $0.lineBreakMode = .byCharWrapping
     }
     
     override init(frame: CGRect) {
