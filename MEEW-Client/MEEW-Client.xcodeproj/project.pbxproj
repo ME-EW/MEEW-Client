@@ -56,6 +56,7 @@
 		BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */; };
 		F203E64128AD5C1200F620A6 /* AlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F203E64028AD5C1200F620A6 /* AlertViewController.storyboard */; };
 		F203E64328AD5C3000F620A6 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203E64228AD5C3000F620A6 /* AlertViewController.swift */; };
+		F203E64528AD5FED00F620A6 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F203E64428AD5FED00F620A6 /* AlertView.xib */; };
 		F22A7C2E284A3732006C6572 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7C2D284A3732006C6572 /* LoadingView.xib */; };
 		F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */; };
 		F2C6AAD8284A358A00613BF7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AAD7284A358A00613BF7 /* LoadingView.swift */; };
@@ -130,6 +131,7 @@
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F203E64028AD5C1200F620A6 /* AlertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertViewController.storyboard; sourceTree = "<group>"; };
 		F203E64228AD5C3000F620A6 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		F203E64428AD5FED00F620A6 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		F22A7C2D284A3732006C6572 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F2C6AAD7284A358A00613BF7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 		F203E63C28AD5BB900F620A6 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				F203E64628AD5FF100F620A6 /* View */,
 				F203E63E28AD5BE600F620A6 /* Controller */,
 				F203E63F28AD5BF500F620A6 /* Storyboard */,
 			);
@@ -520,6 +523,14 @@
 				F203E64028AD5C1200F620A6 /* AlertViewController.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F203E64628AD5FF100F620A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F203E64428AD5FED00F620A6 /* AlertView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F2C6770827C7DA100020B8F4 /* FlowLayout */ = {
@@ -659,6 +670,7 @@
 				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				F203E64128AD5C1200F620A6 /* AlertViewController.storyboard in Resources */,
+				F203E64528AD5FED00F620A6 /* AlertView.xib in Resources */,
 				BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */,
 				BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
