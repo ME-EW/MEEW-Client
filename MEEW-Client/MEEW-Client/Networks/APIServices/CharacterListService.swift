@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-struct CharacterListService {
+class CharacterListService {
     
     static let shared = CharacterListService()
 
