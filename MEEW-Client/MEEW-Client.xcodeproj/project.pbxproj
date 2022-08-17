@@ -54,7 +54,9 @@
 		BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABFA4A2850930700883B32 /* SettingViewController.storyboard */; };
 		BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */; };
 		BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */; };
+		F22A7C2E284A3732006C6572 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7C2D284A3732006C6572 /* LoadingView.xib */; };
 		F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */; };
+		F2C6AAD8284A358A00613BF7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AAD7284A358A00613BF7 /* LoadingView.swift */; };
 		F2E1CAC8281FC41400E4B1FD /* NicknameVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E1CAC7281FC41400E4B1FD /* NicknameVC.storyboard */; };
 		F2E1CACA281FC63500E4B1FD /* NicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E1CAC9281FC63500E4B1FD /* NicknameVC.swift */; };
 		F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EC39F8274962CD00805FE3 /* Color.xcassets */; };
@@ -123,7 +125,9 @@
 		BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
+		F22A7C2D284A3732006C6572 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; tabWidth = 4; };
+		F2C6AAD7284A358A00613BF7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F2E1CAC7281FC41400E4B1FD /* NicknameVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NicknameVC.storyboard; sourceTree = "<group>"; };
 		F2E1CAC9281FC63500E4B1FD /* NicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameVC.swift; sourceTree = "<group>"; };
 		F2EC39F8274962CD00805FE3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 		BD339A1627493B4600021E91 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F2D357CB284A138C0010FC61 /* Loading */,
 				6F8A3B6D27FEDD14000FBABE /* Join */,
 				BD339A1A27493B8800021E91 /* Base */,
 				BD45C40D274946BF00229D35 /* Select */,
@@ -492,6 +497,31 @@
 			path = FlowLayout;
 			sourceTree = "<group>";
 		};
+		F2D357CB284A138C0010FC61 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				F2D357CD284A139B0010FC61 /* Storyboard */,
+				F2D357CC284A13960010FC61 /* Controller */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		F2D357CC284A13960010FC61 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6AAD7284A358A00613BF7 /* LoadingView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2D357CD284A139B0010FC61 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F22A7C2D284A3732006C6572 /* LoadingView.xib */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		F2E1CAC4281FC3CE00E4B1FD /* Nickname */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +635,7 @@
 				BD339A0C27493AC300021E91 /* Assets.xcassets in Resources */,
 				F2EC39FB2749635B00805FE3 /* Spoqa Han Sans Neo Bold.otf in Resources */,
 				BD339A0A27493ABF00021E91 /* Main.storyboard in Resources */,
+				F22A7C2E284A3732006C6572 /* LoadingView.xib in Resources */,
 				BD45C412274947B500229D35 /* SelectVC.storyboard in Resources */,
 				F2EC3A032749637400805FE3 /* Spoqa Han Sans Neo Regular.otf in Resources */,
 			);
@@ -666,6 +697,7 @@
 				6F65C67F2829320600DD017A /* BottomSheetVC.swift in Sources */,
 				F2EC3A112749A47B00805FE3 /* CharacterRequestDataModel.swift in Sources */,
 				BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */,
+				F2C6AAD8284A358A00613BF7 /* LoadingView.swift in Sources */,
 				BD339A2C27493C6700021E91 /* Image.swift in Sources */,
 				BD3B547628520928003D91D3 /* SettingRow.swift in Sources */,
 				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,

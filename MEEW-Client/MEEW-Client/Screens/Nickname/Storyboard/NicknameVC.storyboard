@@ -80,21 +80,71 @@
                                 <color key="textColor" red="0.90588235289999997" green="0.27058823529999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-DU-aKj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 캐릭터 보러가는 중" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFD-ir-10X">
+                                        <rect key="frame" x="135.66666666666666" y="377" width="103.66666666666666" height="43.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwC-Fh-EYQ">
+                                        <rect key="frame" x="170" y="436.33333333333331" width="7" height="7"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="7" id="74C-i8-IJl"/>
+                                            <constraint firstAttribute="height" constant="7" id="uNj-XR-jR0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-vq-7Hq">
+                                        <rect key="frame" x="184" y="436.33333333333331" width="7" height="7"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="7" id="79X-F9-qoL"/>
+                                            <constraint firstAttribute="width" constant="7" id="NQd-gc-ATG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC0-uw-Kxx">
+                                        <rect key="frame" x="198" y="436.33333333333331" width="7" height="7"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="7" id="H5f-7c-hsZ"/>
+                                            <constraint firstAttribute="width" constant="7" id="jAf-Au-Gwv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nFD-ir-10X" firstAttribute="top" secondItem="SCP-DU-aKj" secondAttribute="top" constant="377" id="2GV-Xo-GNn"/>
+                                    <constraint firstItem="GwC-Fh-EYQ" firstAttribute="top" secondItem="sj9-vq-7Hq" secondAttribute="top" id="Hci-06-ign"/>
+                                    <constraint firstItem="sj9-vq-7Hq" firstAttribute="top" secondItem="nFD-ir-10X" secondAttribute="bottom" constant="16" id="Lg9-h1-Qya"/>
+                                    <constraint firstItem="sj9-vq-7Hq" firstAttribute="leading" secondItem="GwC-Fh-EYQ" secondAttribute="trailing" constant="7" id="dh1-We-MxA"/>
+                                    <constraint firstItem="PC0-uw-Kxx" firstAttribute="leading" secondItem="sj9-vq-7Hq" secondAttribute="trailing" constant="7" id="kfj-rC-dMd"/>
+                                    <constraint firstItem="sj9-vq-7Hq" firstAttribute="centerX" secondItem="SCP-DU-aKj" secondAttribute="centerX" id="p1a-BY-K2G"/>
+                                    <constraint firstItem="nFD-ir-10X" firstAttribute="centerX" secondItem="SCP-DU-aKj" secondAttribute="centerX" id="pwB-Qc-IYm"/>
+                                    <constraint firstItem="PC0-uw-Kxx" firstAttribute="top" secondItem="sj9-vq-7Hq" secondAttribute="top" id="r4A-yz-Aqg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D8i-8b-cXT" firstAttribute="top" secondItem="Rnd-1r-9Kq" secondAttribute="bottom" constant="10" id="0Cp-uQ-P1e"/>
+                            <constraint firstItem="SCP-DU-aKj" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="1Wl-9n-4eZ"/>
                             <constraint firstItem="cV3-dL-FeV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="CCm-jR-sch"/>
                             <constraint firstItem="Rnd-1r-9Kq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Dea-Ak-p8Y"/>
                             <constraint firstItem="hSx-3w-L9q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="DzU-s9-vuY"/>
+                            <constraint firstItem="SCP-DU-aKj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NMr-Ak-KFk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hSx-3w-L9q" secondAttribute="trailing" constant="20" id="RH5-mO-YNT"/>
                             <constraint firstItem="p89-VQ-pHa" firstAttribute="top" secondItem="cV3-dL-FeV" secondAttribute="bottom" constant="8" id="RTD-wz-OKD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cV3-dL-FeV" secondAttribute="trailing" constant="20" id="S4a-IS-W7P"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Rnd-1r-9Kq" secondAttribute="trailing" constant="20" id="Tbj-xk-bWQ"/>
                             <constraint firstItem="p89-VQ-pHa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="YtQ-M0-A71"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SCP-DU-aKj" secondAttribute="trailing" id="ZEY-4x-Irc"/>
                             <constraint firstItem="D8i-8b-cXT" firstAttribute="top" secondItem="cV3-dL-FeV" secondAttribute="bottom" constant="6" id="bAb-80-Xpu"/>
                             <constraint firstItem="bbx-eH-Tjm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="85" id="cS4-TJ-eR1"/>
+                            <constraint firstAttribute="bottom" secondItem="SCP-DU-aKj" secondAttribute="bottom" id="dRH-fD-Z2M"/>
                             <constraint firstItem="cV3-dL-FeV" firstAttribute="top" secondItem="bbx-eH-Tjm" secondAttribute="bottom" constant="126" id="fSq-eR-M5v"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="D8i-8b-cXT" secondAttribute="trailing" constant="20" id="lyn-5a-4K2"/>
                             <constraint firstItem="bbx-eH-Tjm" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ojF-dl-3jT"/>
@@ -104,9 +154,13 @@
                     <connections>
                         <outlet property="checkNicknameLabel" destination="p89-VQ-pHa" id="vGb-hP-JIf"/>
                         <outlet property="countNicknameLabel" destination="D8i-8b-cXT" id="Qgz-sE-Tlj"/>
+                        <outlet property="loadingView" destination="SCP-DU-aKj" id="gaX-AV-1vD"/>
                         <outlet property="nicknameInputTextField" destination="Rnd-1r-9Kq" id="yuv-d0-WYh"/>
                         <outlet property="nicknameUnderBar" destination="cV3-dL-FeV" id="kl7-TG-Q9k"/>
                         <outlet property="successBtn" destination="hSx-3w-L9q" id="61V-qD-wt7"/>
+                        <outletCollection property="dots" destination="GwC-Fh-EYQ" collectionClass="NSMutableArray" id="QDz-9F-Fz0"/>
+                        <outletCollection property="dots" destination="sj9-vq-7Hq" collectionClass="NSMutableArray" id="tw3-rH-cJ9"/>
+                        <outletCollection property="dots" destination="PC0-uw-Kxx" collectionClass="NSMutableArray" id="wvs-LX-y7J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
