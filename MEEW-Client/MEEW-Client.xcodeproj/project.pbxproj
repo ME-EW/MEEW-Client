@@ -38,8 +38,6 @@
 		BD3B547828520D14003D91D3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B547728520D14003D91D3 /* InfoView.swift */; };
 		BD45C412274947B500229D35 /* SelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C411274947B500229D35 /* SelectVC.storyboard */; };
 		BD45C415274947C600229D35 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C414274947C600229D35 /* SelectVC.swift */; };
-		BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C41C2749482100229D35 /* ResultVC.storyboard */; };
-		BD45C41F2749482800229D35 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41E2749482800229D35 /* ResultVC.swift */; };
 		BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C423274962F300229D35 /* MEEWPopUp.xib */; };
 		BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C425274962FA00229D35 /* MEEWPopUp.swift */; };
 		BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C427274968FB00229D35 /* UIApplication+.swift */; };
@@ -52,8 +50,12 @@
 		BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA4628508CAB00883B32 /* NavigationBarView.swift */; };
 		BDABFA492850928600883B32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA482850928600883B32 /* SettingViewController.swift */; };
 		BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABFA4A2850930700883B32 /* SettingViewController.storyboard */; };
-		BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */; };
-		BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */; };
+		BDC5CC8E28AD4D1600CBDE12 /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC8D28AD4D1600CBDE12 /* ArchiveVC.swift */; };
+		BDC5CC9128AD4D8C00CBDE12 /* ArchiveTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9028AD4D8C00CBDE12 /* ArchiveTVC.swift */; };
+		BDC5CC9328AD4DC900CBDE12 /* ArchiveBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9228AD4DC900CBDE12 /* ArchiveBannerView.swift */; };
+		BDC5CC9528AD4DE700CBDE12 /* ArchiveAllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9428AD4DE700CBDE12 /* ArchiveAllVC.swift */; };
+		BDC5CC9728AD4E1600CBDE12 /* ArchiveHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9628AD4E1600CBDE12 /* ArchiveHeaderView.swift */; };
+		BDC5CC9928AD4E2500CBDE12 /* ArchiveAllHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9828AD4E2500CBDE12 /* ArchiveAllHeaderView.swift */; };
 		F22A7C2E284A3732006C6572 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7C2D284A3732006C6572 /* LoadingView.xib */; };
 		F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */; };
 		F2C6AAD8284A358A00613BF7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AAD7284A358A00613BF7 /* LoadingView.swift */; };
@@ -108,8 +110,6 @@
 		BD3B547728520D14003D91D3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		BD45C411274947B500229D35 /* SelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectVC.storyboard; sourceTree = "<group>"; };
 		BD45C414274947C600229D35 /* SelectVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; tabWidth = 4; };
-		BD45C41C2749482100229D35 /* ResultVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultVC.storyboard; sourceTree = "<group>"; };
-		BD45C41E2749482800229D35 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		BD45C423274962F300229D35 /* MEEWPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MEEWPopUp.xib; path = "MEEW-Client/Screens/Result/MEEWPopUp.xib"; sourceTree = SOURCE_ROOT; };
 		BD45C425274962FA00229D35 /* MEEWPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MEEWPopUp.swift; path = "MEEW-Client/Screens/Result/MEEWPopUp.swift"; sourceTree = SOURCE_ROOT; };
 		BD45C427274968FB00229D35 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -122,8 +122,12 @@
 		BDABFA4628508CAB00883B32 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		BDABFA482850928600883B32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BDABFA4A2850930700883B32 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
-		BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
-		BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		BDC5CC8D28AD4D1600CBDE12 /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
+		BDC5CC9028AD4D8C00CBDE12 /* ArchiveTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTVC.swift; sourceTree = "<group>"; };
+		BDC5CC9228AD4DC900CBDE12 /* ArchiveBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveBannerView.swift; sourceTree = "<group>"; };
+		BDC5CC9428AD4DE700CBDE12 /* ArchiveAllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveAllVC.swift; sourceTree = "<group>"; };
+		BDC5CC9628AD4E1600CBDE12 /* ArchiveHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveHeaderView.swift; sourceTree = "<group>"; };
+		BDC5CC9828AD4E2500CBDE12 /* ArchiveAllHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveAllHeaderView.swift; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F22A7C2D284A3732006C6572 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -211,7 +215,7 @@
 				BD45C40D274946BF00229D35 /* Select */,
 				F2E1CAC4281FC3CE00E4B1FD /* Nickname */,
 				BD45C40E2749472700229D35 /* ToDo */,
-				BD45C40F2749472900229D35 /* Result */,
+				BD45C40F2749472900229D35 /* Archive */,
 				BDABFA4228508A5000883B32 /* Setting */,
 			);
 			path = Screens;
@@ -367,14 +371,14 @@
 			path = ToDo;
 			sourceTree = "<group>";
 		};
-		BD45C40F2749472900229D35 /* Result */ = {
+		BD45C40F2749472900229D35 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
 				BD45C421274948BA00229D35 /* Controller */,
-				BD45C420274948B300229D35 /* Storyboard */,
 				BD45C42F274978C900229D35 /* View */,
+				BDC5CC8F28AD4D4800CBDE12 /* Cell */,
 			);
-			path = Result;
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		BD45C4102749476200229D35 /* Storyboard */ = {
@@ -405,18 +409,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BD45C420274948B300229D35 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				BD45C41C2749482100229D35 /* ResultVC.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		BD45C421274948BA00229D35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C41E2749482800229D35 /* ResultVC.swift */,
+				BDC5CC8D28AD4D1600CBDE12 /* ArchiveVC.swift */,
+				BDC5CC9428AD4DE700CBDE12 /* ArchiveAllVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -436,8 +433,9 @@
 		BD45C42F274978C900229D35 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */,
-				BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */,
+				BDC5CC9228AD4DC900CBDE12 /* ArchiveBannerView.swift */,
+				BDC5CC9628AD4E1600CBDE12 /* ArchiveHeaderView.swift */,
+				BDC5CC9828AD4E2500CBDE12 /* ArchiveAllHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +476,14 @@
 				BD3B547728520D14003D91D3 /* InfoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BDC5CC8F28AD4D4800CBDE12 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BDC5CC9028AD4D8C00CBDE12 /* ArchiveTVC.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EF375EDFD0003B058BCD97D5 /* Pods */ = {
@@ -626,9 +632,7 @@
 				F2EC3A0827496AA000805FE3 /* SelectCharacterCVC.xib in Resources */,
 				F2EC3A012749637400805FE3 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */,
-				BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
-				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
 				BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */,
 				F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */,
 				6F8A3B7927FEE48E000FBABE /* Montserrat-Bold.ttf in Resources */,
@@ -706,6 +710,7 @@
 				F2EC3A0F2749A1D400805FE3 /* CharacterListService.swift in Sources */,
 				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
+				BDC5CC8E28AD4D1600CBDE12 /* ArchiveVC.swift in Sources */,
 				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
 				F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */,
 				F2E1CACA281FC63500E4B1FD /* NicknameVC.swift in Sources */,
@@ -713,13 +718,15 @@
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
+				BDC5CC9128AD4D8C00CBDE12 /* ArchiveTVC.swift in Sources */,
 				BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
+				BDC5CC9928AD4E2500CBDE12 /* ArchiveAllHeaderView.swift in Sources */,
 				6F3134AE27FF02A400FE1EB4 /* JoinVC.swift in Sources */,
+				BDC5CC9728AD4E1600CBDE12 /* ArchiveHeaderView.swift in Sources */,
 				6FDCA78E2828005E00BB0836 /* UIButton+.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
 				BDABFA492850928600883B32 /* SettingViewController.swift in Sources */,
-				BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */,
 				BD339A3327493E5700021E91 /* APIConstants.swift in Sources */,
 				BD3B54742852038F003D91D3 /* ProfileView.swift in Sources */,
 				BD339A1F27493B9E00021E91 /* BaseVC.swift in Sources */,
@@ -728,9 +735,10 @@
 				6F673C042837F26400B7E0D3 /* MyCell.swift in Sources */,
 				BD339A3027493D6500021E91 /* Reusable.swift in Sources */,
 				6F257EEC2749A3E00055EE43 /* GetToDoService.swift in Sources */,
-				BD45C41F2749482800229D35 /* ResultVC.swift in Sources */,
+				BDC5CC9528AD4DE700CBDE12 /* ArchiveAllVC.swift in Sources */,
 				6F94BF57283768A600345FFA /* ContentVC.swift in Sources */,
 				6F257EEE2749A54B0055EE43 /* DataModel.swift in Sources */,
+				BDC5CC9328AD4DC900CBDE12 /* ArchiveBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
