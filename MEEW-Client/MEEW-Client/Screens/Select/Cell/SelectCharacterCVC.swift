@@ -55,7 +55,7 @@ class SelectCharacterCVC: UICollectionViewCell {
         //❌ UI 점검용으로 사용할 코드
         characterImageView.image = appData.makeItemImage()
         characterName.text = appData.name
-        characterInfo.text = appData.info
+        characterInfo.text = appData.description
         
         switch(characterName.text) {
         case "태양이" :

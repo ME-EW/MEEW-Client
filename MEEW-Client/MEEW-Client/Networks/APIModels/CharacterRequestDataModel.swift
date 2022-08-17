@@ -8,7 +8,7 @@
 import Foundation
 import Metal
 
-// MARK: - LoginResponsData
+// MARK: - CharacterData
 struct CharacterRequestData: Codable {
     let status: Int
     let success: Bool
@@ -16,16 +16,14 @@ struct CharacterRequestData: Codable {
     let data: [CharacterRequestResultData]?
 }
 
-// MARK: - LoginResultData
+// MARK: - CharacterResultData
 struct CharacterRequestResultData: Codable {
     let id: Int
-    let name, description: String
-    let images: [String]
-    let createdAt, updatedAt: String
-
+    let name, description, imageUrl: String
+	
     enum CodingKeys: String, CodingKey {
         case id, name, description
-        case images, createdAt, updatedAt
+        case imageUrl
     }
 }
 
