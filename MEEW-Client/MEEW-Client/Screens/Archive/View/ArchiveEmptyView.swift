@@ -20,7 +20,7 @@ final class ArchiveEmptyView: UIView {
     private let descriptionLabel = UILabel().then {
         $0.text = "아직 기록이 없어요."
         $0.textColor = .white
-        $0.font = .body3
+        $0.font = .body2
     }
     
     override init(frame: CGRect) {

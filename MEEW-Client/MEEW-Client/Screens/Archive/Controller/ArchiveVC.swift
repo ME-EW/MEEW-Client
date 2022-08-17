@@ -14,6 +14,7 @@ final class ArchiveVC: BaseVC {
     
     lazy var archiveBannerView = ArchiveBannerView()
     lazy var archiveHeaderView = ArchiveHeaderView()
+    lazy var emptyView = ArchiveEmptyView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ extension ArchiveVC {
     }
     
     private func configureLayout() {
-        view.addSubviews([archiveBannerView, archiveHeaderView])
+        view.addSubviews([archiveBannerView, archiveHeaderView, emptyView])
         
         archiveBannerView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(29)
@@ -42,6 +43,12 @@ extension ArchiveVC {
         archiveHeaderView.snp.makeConstraints {
             $0.top.equalTo(archiveBannerView.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview()
+        }
+        
+        emptyView.snp.makeConstraints {
+            $0.top.equalTo(archiveHeaderView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(80)
         }
     }
 }

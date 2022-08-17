@@ -14,7 +14,7 @@ final class ArchiveBannerView: UIView {
     
     private lazy var characterImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
-        $0.image = ImageLiterals.imageCharacterNothing
+        $0.image = ImageLiterals.imageCharacterToday
     }
     
     private let todayLabel = UILabel().then {
