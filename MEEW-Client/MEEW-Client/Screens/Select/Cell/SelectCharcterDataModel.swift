@@ -10,7 +10,7 @@ struct SelectCharacterDataModel {
     
     var image : String
     var name : String
-    var info : String
+    var description : String
 
     func makeItemImage() -> UIImage? {
         return UIImage(named: image)

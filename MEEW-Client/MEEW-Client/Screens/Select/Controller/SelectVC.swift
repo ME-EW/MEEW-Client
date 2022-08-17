@@ -89,14 +89,14 @@ class SelectVC: BaseVC {
   //❌ UI 점검용으로 사용할 코드
   private func initEventDataList(){
     characterList.append(contentsOf: [
-      SelectCharacterDataModel(image: "img_taeyang_select", name: "태양이", info: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
-      SelectCharacterDataModel(image: "img_maeum_select", name: "마음이", info: "마음이는 기여웡!"),
-      SelectCharacterDataModel(image: "img_jungjik_select", name: "정직이", info: "정직이도 기여웡!"),
-      SelectCharacterDataModel(image: "img_haneul_select", name: "하늘이", info: "하늘이는 넓은 마음씨를 가지고 있어요. 그래서 대부분의 상황에서 참을성있게 행동할 줄 알아요."),
-      SelectCharacterDataModel(image: "img_gureum_select", name: "구름이", info: "구름이도 기여웡!"),
-      SelectCharacterDataModel(image: "img_baram_select", name: "바람이", info: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠."),
-      SelectCharacterDataModel(image: "img_banghyang_select", name: "방향이", info: "방향이도 기여웡!"),
-      SelectCharacterDataModel(image: "img_kotnim_select", name: "꽃님이", info: "꽃님이도 기여웡!")
+      SelectCharacterDataModel(image: "img_taeyang_select", name: "태양이", description: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
+      SelectCharacterDataModel(image: "img_maeum_select", name: "마음이", description: "마음이는 기여웡!"),
+      SelectCharacterDataModel(image: "img_jungjik_select", name: "정직이", description: "정직이도 기여웡!"),
+      SelectCharacterDataModel(image: "img_haneul_select", name: "하늘이", description: "하늘이는 넓은 마음씨를 가지고 있어요. 그래서 대부분의 상황에서 참을성있게 행동할 줄 알아요."),
+      SelectCharacterDataModel(image: "img_gureum_select", name: "구름이", description: "구름이도 기여웡!"),
+      SelectCharacterDataModel(image: "img_baram_select", name: "바람이", description: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠."),
+      SelectCharacterDataModel(image: "img_banghyang_select", name: "방향이", description: "방향이도 기여웡!"),
+      SelectCharacterDataModel(image: "img_kotnim_select", name: "꽃님이", description: "꽃님이도 기여웡!")
     ])
   }
   
@@ -146,14 +146,6 @@ extension SelectVC: UICollectionViewDataSource {
     //        }
     
     cell.setData(appData: characterList[indexPath.row])
-    // switch case 써서 indexPath 0이면 빨간 체크 그거 , 1이면 노란놈체크로 이런식..? 아우씨 귀찮네
-    // 저거 체크 빨간거 노란거 다 이미지로 달라고 해야겠다
-    //맞지 저게 흠냐링 그냥 ㄷ그러게 근데 그러게
-    //ㅇㅇㅇㅇ 그러고 데이터 전달 그런식으로 근데그걸 처리하기 편할라면
-    //VC에서 하면 좋자나 어디에 didSelectRowat
-    //extension 새로 만들어야함??? 잠만 찾아보고 올께링 저거 선언 ㅇㅇㅇ 아항 ㅇㅇ 근게 그거 선언을
-    //ㅏㅇ니 지금 가이드가 안나와 개빡쳐 보봐 왜 가이드 안뜨지
-    //그 함 찾아보께링....  감사 감사 근데 내일할래..ㅎ.ㅎ...하~ ㅋㅋㅋㅋㅋㅋ바이바이 감사링!
     //https://velog.io/@cooo002/ios-특정-collectionViewCell를-선택한-상태로-cell-생성하기
     
     return cell
@@ -204,14 +196,13 @@ extension SelectVC {
         //설정해주는 부분
         if let userData = response.data {
           for charactor in userData{
-            let charData = SelectCharacterDataModel(image: charactor.images[0],
+            let charData = SelectCharacterDataModel(image: charactor.imageUrl,
                                                     name: charactor.name,
-                                                    info: charactor.description)
+                                                    description: charactor.description)
             self.characterList.append(charData)
           }
           
           self.selectCV.reloadData()
-          print(userData)
         }
       case .requestErr(let msg):
         print("requestERR \(msg)")

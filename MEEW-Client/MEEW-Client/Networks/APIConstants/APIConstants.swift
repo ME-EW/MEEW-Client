@@ -15,8 +15,9 @@ enum APIConstants {
     static let baseURL = "https://asia-northeast3-sopt-hackathon.cloudfunctions.net/api"
     
     static let todoURL = baseURL + "/user/1"
+  
     //MARK: - SelectURL
-    static let readCharacterURL = baseURL + "/character/list"
-    
+    static let readCharacterURL = baseURL + "/personality/list"
+  
     
 }
