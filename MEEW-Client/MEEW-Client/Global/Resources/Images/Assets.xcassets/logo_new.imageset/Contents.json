@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IMG_4577.jpg",
+      "filename" : "logo_new.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "logo_new@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "logo_new@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
