@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-Nw-dTE">
-                                <rect key="frame" x="0.0" y="44" width="336" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <color key="barTintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -30,16 +31,25 @@
                                     <navigationItem title="알림" id="vlI-U5-8NP"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-fs-kEU">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6h7-Nw-dTE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8Hr-oj-iCR"/>
+                            <constraint firstItem="7Nq-fs-kEU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Pz8-LF-sxz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7Nq-fs-kEU" secondAttribute="trailing" id="QaU-c8-0cV"/>
+                            <constraint firstItem="7Nq-fs-kEU" firstAttribute="top" secondItem="6h7-Nw-dTE" secondAttribute="bottom" id="V97-mE-OPd"/>
                             <constraint firstItem="6h7-Nw-dTE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZoC-vw-SNf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7Nq-fs-kEU" secondAttribute="bottom" id="r5m-fk-98d"/>
                             <constraint firstItem="6h7-Nw-dTE" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="tEO-34-iKb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertTableView" destination="7Nq-fs-kEU" id="AeM-zD-Lfw"/>
                         <outlet property="navigationBar" destination="6h7-Nw-dTE" id="tsz-HO-3xs"/>
                     </connections>
                 </viewController>
@@ -48,4 +58,9 @@
             <point key="canvasLocation" x="-7" y="77"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
