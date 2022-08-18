@@ -59,7 +59,7 @@ extension ArchiveVC {
         
         tableView.snp.makeConstraints {
             $0.top.equalTo(archiveHeaderView.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().inset(80)
         }
     }

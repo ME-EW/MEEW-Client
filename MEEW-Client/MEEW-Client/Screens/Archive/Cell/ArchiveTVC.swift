@@ -58,7 +58,7 @@ final class ArchiveTVC: UITableViewCell {
         
         characterImageView.snp.makeConstraints {
             $0.width.height.equalTo(100)
-            $0.leading.equalToSuperview().inset(4)
+            $0.leading.equalToSuperview().inset(25)
             $0.top.equalToSuperview().inset(10)
         }
         
@@ -76,13 +76,13 @@ final class ArchiveTVC: UITableViewCell {
         
         timeLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(8)
-            $0.trailing.equalToSuperview().inset(7)
+            $0.trailing.equalToSuperview().inset(27)
         }
         
         lineView.snp.makeConstraints {
             $0.top.equalTo(characterImageView.snp.bottom).offset(12)
             $0.height.equalTo(0.5)
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.lessThanOrEqualToSuperview()
         }
     }
