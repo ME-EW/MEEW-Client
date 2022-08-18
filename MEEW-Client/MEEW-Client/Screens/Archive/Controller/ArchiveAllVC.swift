@@ -18,6 +18,9 @@ final class ArchiveAllVC: BaseVC {
     
     // MARK: - UI Properties
     
+    lazy var navigationBarView = NavigationBarView().then {
+        $0.title = "전체 기록"
+    }
     lazy var emptyView = ArchiveEmptyView()
     let tableView = UITableView(frame: .zero, style: .grouped)
     
@@ -27,6 +30,7 @@ final class ArchiveAllVC: BaseVC {
         configureUI()
         configureLayout()
         configureTableView()
+        dismissController()
     }
 }
 
@@ -37,10 +41,17 @@ extension ArchiveAllVC {
     }
     
     private func configureLayout() {
-        view.addSubview(tableView)
+        view.addSubviews([navigationBarView, tableView])
 
+        navigationBarView.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
         tableView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.top.equalTo(navigationBarView.snp.bottom).offset(18)
+            $0.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
     }
@@ -52,6 +63,12 @@ extension ArchiveAllVC {
         tableView.register(ArchiveAllHeaderView.self, forHeaderFooterViewReuseIdentifier: ArchiveAllHeaderView.reuseIdentifier)
         tableView.register(ArchiveTVC.self, forCellReuseIdentifier: ArchiveTVC.reuseIdentifier)
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    private func dismissController() {
+        navigationBarView.dismissClosure = {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

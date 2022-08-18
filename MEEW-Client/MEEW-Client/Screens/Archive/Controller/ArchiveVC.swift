@@ -18,6 +18,9 @@ final class ArchiveVC: BaseVC {
     
     // MARK: - UI Properties
     
+    lazy var navigationBarView = NavigationBarView(withRightItemImage: ImageLiterals.settingIcon).then {
+        $0.title = "나의 기록"
+    }
     lazy var archiveBannerView = ArchiveBannerView()
     lazy var archiveHeaderView = ArchiveHeaderView()
     lazy var emptyView = ArchiveEmptyView()
@@ -32,6 +35,7 @@ final class ArchiveVC: BaseVC {
         configureUI()
         configureLayout()
         configureTableView()
+        archiveHeaderView.delegate = self
     }
 }
 
@@ -43,10 +47,16 @@ extension ArchiveVC {
     }
     
     private func configureLayout() {
-        view.addSubviews([archiveBannerView, archiveHeaderView, tableView])
+        view.addSubviews([navigationBarView, archiveBannerView, archiveHeaderView, tableView])
+        
+        navigationBarView.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
         
         archiveBannerView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(29)
+            $0.top.equalTo(navigationBarView.snp.bottom).offset(18)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(180)
         }
@@ -83,5 +93,13 @@ extension ArchiveVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArchiveTVC.reuseIdentifier) as! ArchiveTVC
         return cell
+    }
+}
+
+extension ArchiveVC: ArchiveHeaderViewDelegate {
+    
+    func archiveButtonTapped() {
+        let archiveAllVC = ArchiveAllVC()
+        navigationController?.pushViewController(archiveAllVC, animated: true)
     }
 }

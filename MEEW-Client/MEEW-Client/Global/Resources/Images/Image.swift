@@ -23,4 +23,5 @@ struct ImageLiterals {
     
     static let imageCharacterNothing = UIImage(named: "img_character_nothing")!
     static let imageCharacterToday = UIImage(named: "img_character_today")!
+    static let settingIcon = UIImage(named: "icn_setting")!
 }

@@ -17,8 +17,7 @@ final class NavigationBarView: UIView {
         $0.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
     }
     
-    let navigationTitleLabel = UILabel().then {
-        $0.text = "설정"
+    lazy var navigationTitleLabel = UILabel().then {
         $0.textColor = .white
         $0.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 18)!
     }
@@ -29,6 +28,15 @@ final class NavigationBarView: UIView {
         $0.titleLabel?.font = UIFont.body1
     }
     
+    lazy var rightItemButton = UIButton().then {
+        $0.isHidden = true
+    }
+
+    var title: String? {
+        didSet {
+            navigationTitleLabel.text = title
+        }
+    }
     var dismissClosure: (() -> ())?
     
     override init(frame: CGRect) {
@@ -46,8 +54,16 @@ final class NavigationBarView: UIView {
         doneButton.isHidden = !hasDoneButton
     }
     
+    convenience init(withRightItemImage: UIImage) {
+        self.init(frame: .zero)
+        navigationBackButton.isHidden = true
+        doneButton.isHidden = true
+        rightItemButton.isHidden = false
+        rightItemButton.setImage(withRightItemImage, for: .normal)
+    }
+    
     private func setStyle() {
-        self.addSubviews([navigationBackButton, navigationTitleLabel, doneButton])
+        self.addSubviews([navigationBackButton, navigationTitleLabel, doneButton, rightItemButton])
         
         navigationBackButton.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
@@ -63,6 +79,12 @@ final class NavigationBarView: UIView {
             $0.centerY.equalToSuperview()
             $0.width.equalTo(30)
             $0.height.equalTo(24)
+        }
+        
+        rightItemButton.snp.makeConstraints {
+            $0.width.height.equalTo(48)
+            $0.trailing.equalToSuperview().inset(4)
+            $0.centerY.equalTo(navigationTitleLabel)
         }
     }
     

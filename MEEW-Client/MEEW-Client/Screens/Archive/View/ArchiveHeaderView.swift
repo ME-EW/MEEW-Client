@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol ArchiveHeaderViewDelegate: AnyObject {
+    func archiveButtonTapped()
+}
+
 final class ArchiveHeaderView: UIView {
     
     private let titleLabel = UILabel().then {
@@ -18,7 +22,7 @@ final class ArchiveHeaderView: UIView {
         $0.font = .title4
     }
     
-    private let archiveButton = UIButton().then {
+    private lazy var archiveButton = UIButton().then {
         $0.setTitle("전체보기", for: .normal)
         $0.setTitleColor(.grey300, for: .normal)
         $0.titleLabel?.font = .body2
@@ -28,10 +32,13 @@ final class ArchiveHeaderView: UIView {
         $0.backgroundColor = .grey500
     }
     
+    weak var delegate: ArchiveHeaderViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         configureLayout()
+        archiveButton.addTarget(self, action: #selector(archiveButtonTapped), for: .touchUpInside)
     }
     
     @available(*, unavailable)
@@ -62,6 +69,10 @@ extension ArchiveHeaderView {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.5)
         }
+    }
+    
+    @objc func archiveButtonTapped() {
+        delegate?.archiveButtonTapped()
     }
 }
 
