@@ -186,6 +186,7 @@ class ToDoVC: UIViewController {
         $0.setImage(UIImage(named: "ic_uncheck"), for: .normal)
         $0.setImage(UIImage(named: "ic_check"), for: .selected)
         $0.isSelected = self.todayCharacterInfo.todo[idx].complete
+        $0.tag = self.todayCharacterInfo.todo[idx].taskID
         $0.addTarget(self, action: #selector(self.checkBoxClicked(_:)), for: .touchUpInside)
         $0.snp.makeConstraints {
           $0.leading.equalTo(self.checkBoxView.snp.leading).offset(18)
@@ -272,6 +273,8 @@ class ToDoVC: UIViewController {
   }
   
   @objc func checkBoxClicked(_ sender: UIButton) {
+    print(sender.tag)
+    requestPatchTODO(taskId: sender.tag)
     if(sender.isSelected == false) {
       checkCount += 1
     } else {
@@ -358,6 +361,28 @@ extension ToDoVC {
           self.attributes()
           self.originalButton.isEnabled = false
           self.againButton.isEnabled = false
+        }
+        print("success")
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
+  }
+  
+  func requestPatchTODO(taskId: Int) {
+    GetTodayCharacter.shared.patchToDo(taskId: taskId) { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        if let userData = response.data {
+          self.todayCharacterInfo = userData
+          self.checkBoxLayout()
         }
         print("success")
       case .requestErr(let msg):
