@@ -19,6 +19,4 @@ enum APIConstants {
 
     //MARK: - SelectURL
     static let readCharacterURL = baseURL + "/personality/list"
-  
-    
 }

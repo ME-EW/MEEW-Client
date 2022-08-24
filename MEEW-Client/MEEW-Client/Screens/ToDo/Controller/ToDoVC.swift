@@ -47,7 +47,7 @@ class ToDoVC: UIViewController {
     view.backgroundColor = .grey700
     
     view.add(NickNameLabel) {
-      $0.text = self.todayCharacterInfo.nickname
+      $0.text = "오늘의 " + "\(self.todayCharacterInfo.nickname)" + "님"
       $0.font = .head3
       $0.textColor = .white
       $0.snp.makeConstraints {
