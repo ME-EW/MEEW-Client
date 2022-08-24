@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class ToDoVC: UIViewController {
-
+  
   // MARK: - Properties
   let NickNameLabel = UILabel()
   let againButton = UIButton()
@@ -25,11 +26,12 @@ class ToDoVC: UIViewController {
   var missionLabels = [UILabel]()
   var lineViews = [UIView]()
   var checkCount = 0
+  var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, todo: [])
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    attributes()
+    requestGetTodayCharacter()
     setNotification()
   }
   
@@ -45,7 +47,7 @@ class ToDoVC: UIViewController {
     view.backgroundColor = .grey700
     
     view.add(NickNameLabel) {
-      $0.text = "오늘의 미우님"
+      $0.text = self.todayCharacterInfo.nickname
       $0.font = .head3
       $0.textColor = .white
       $0.snp.makeConstraints {
@@ -61,7 +63,7 @@ class ToDoVC: UIViewController {
       }
     }
     view.add(againLabel) {
-      $0.text = "1/3"
+      $0.text = "\(self.todayCharacterInfo.chance)" + "/3"
       $0.textColor = .grey400
       $0.font = .body6
       $0.snp.makeConstraints {
@@ -70,7 +72,6 @@ class ToDoVC: UIViewController {
       }
     }
     view.add(imageView) {
-      $0.image = UIImage(named: "baram1")
       $0.snp.makeConstraints {
         $0.top.equalTo(self.NickNameLabel.snp.bottom).offset(28)
         $0.leading.equalTo(self.view.snp.leading).offset(20)
@@ -78,8 +79,13 @@ class ToDoVC: UIViewController {
         $0.width.equalTo(168)
       }
     }
+    let url = URL(string: self.todayCharacterInfo.imageURL)
+    do {
+      let data = try Data(contentsOf: url!)
+      imageView.image = UIImage(data: data)
+    } catch { }
     view.add(levelLabel) {
-      $0.text = "Lv. 1"
+      $0.text = "Lv. " + "\(self.todayCharacterInfo.level)"
       $0.textColor = .grey5
       $0.font = .body2
       $0.snp.makeConstraints {
@@ -88,7 +94,7 @@ class ToDoVC: UIViewController {
       }
     }
     view.add(characterLabel) {
-      $0.text = "즉흥적인 바람이"
+      $0.text = self.todayCharacterInfo.name
       $0.textColor = .white
       $0.font = .head3
       $0.snp.makeConstraints {
@@ -157,6 +163,7 @@ class ToDoVC: UIViewController {
       view.add(bt) {
         $0.setImage(UIImage(named: "ic_uncheck"), for: .normal)
         $0.setImage(UIImage(named: "ic_check"), for: .selected)
+        $0.isSelected = self.todayCharacterInfo.todo[idx].complete
         $0.addTarget(self, action: #selector(self.checkBoxClicked(_:)), for: .touchUpInside)
         $0.snp.makeConstraints {
           $0.leading.equalTo(self.checkBoxView.snp.leading).offset(18)
@@ -180,7 +187,7 @@ class ToDoVC: UIViewController {
     for mission in missionLabels {
       let idx = missionLabels.firstIndex(of: mission) ?? 0
       view.add(mission) {
-        $0.text = "평소 먹지 않는 메뉴 시키기"
+        $0.text = self.todayCharacterInfo.todo[idx].content
         $0.textColor = .grey200
         $0.font = .body2
         $0.snp.makeConstraints {
@@ -269,14 +276,38 @@ class ToDoVC: UIViewController {
       self.present(alertPopupVC, animated: true, completion: nil)
     }
   }
-
+  
   @objc func didReceiveYesButtonNotification(_ notification: Notification) {
-      changeFinishedView()
+    changeFinishedView()
   }
   
   @objc func inforButtonClicked(_ sender: UIButton) {
     let bottomSheetVC = BottomSheetVC(contentViewController: ContentVC())
     bottomSheetVC.modalPresentationStyle = .overFullScreen
     self.present(bottomSheetVC, animated: false, completion: nil)
+  }
+}
+
+extension ToDoVC {
+  func requestGetTodayCharacter() {
+    GetTodayCharacter.shared.getTodayCharacter { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        if let userData = response.data {
+          self.todayCharacterInfo = userData
+          self.attributes()
+        }
+        print("success")
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("todoview pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
   }
 }
