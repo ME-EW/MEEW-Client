@@ -18,20 +18,20 @@ class ToDoVC: UIViewController {
   let levelLabel = UILabel()
   let characterLabel = UILabel()
   let inforButton = UIButton()
-  let barImageView = UIImageView()
   let doneButton = UIButton()
   let originalButton = UIButton()
   let checkBoxView = UIView()
+  let backRectangle = UIView()
   var checkBoxButtons = [UIButton]()
   var missionLabels = [UILabel]()
   var lineViews = [UIView]()
-  var checkCount = 0
+  var levelViews = [UIView]()
   var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, todo: [])
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    setCheckBoxAndMission()
+    appendArrayUIProperties()
     requestGetTodayCharacter()
     setNotification()
   }
@@ -41,6 +41,7 @@ class ToDoVC: UIViewController {
     layout()
     checkBoxLayout()
     missionsLayout()
+    levelsLayout()
     lineLayout()
   }
   
@@ -86,38 +87,43 @@ class ToDoVC: UIViewController {
       let data = try Data(contentsOf: url!)
       imageView.image = UIImage(data: data)
     } catch { }
-    view.add(levelLabel) {
-      $0.text = "Lv. " + "\(self.todayCharacterInfo.level)"
-      $0.textColor = .grey5
-      $0.font = .body2
-      $0.snp.makeConstraints {
-        $0.top.equalTo(self.view.snp.top).offset(185)
-        $0.leading.equalTo(self.imageView.snp.trailing).offset(21)
-      }
-    }
     view.add(characterLabel) {
       $0.text = self.todayCharacterInfo.name
       $0.textColor = .white
       $0.font = .head3
       $0.snp.makeConstraints {
-        $0.top.equalTo(self.levelLabel.snp.bottom).offset(9)
-        $0.leading.equalTo(self.levelLabel.snp.leading)
+        $0.top.equalTo(self.NickNameLabel.snp.bottom).offset(112)
+        $0.leading.equalTo(self.view.snp.leading).offset(188)
       }
     }
     view.add(inforButton) {
-      $0.setImage(UIImage(named: "icn_more"), for: .normal)
+      $0.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+      $0.tintColor = .white
       $0.addTarget(self, action: #selector(self.inforButtonClicked(_:)), for: .touchUpInside)
       $0.snp.makeConstraints {
-        $0.leading.equalTo(self.imageView.snp.trailing).offset(131)
+        $0.leading.equalTo(self.characterLabel.snp.trailing).offset(10)
         $0.centerY.equalTo(self.characterLabel.snp.centerY)
+        $0.width.equalTo(10)
+        $0.height.equalTo(16)
       }
     }
-    view.add(barImageView) {
-      $0.image = UIImage(named: "bar=0")
+    view.add(backRectangle) {
+      $0.backgroundColor = .grey600
+      $0.layer.cornerRadius = 8
       $0.snp.makeConstraints {
-        $0.top.equalTo(self.characterLabel.snp.bottom).offset(16)
         $0.leading.equalTo(self.characterLabel.snp.leading)
-        $0.width.equalTo(140)
+        $0.bottom.equalTo(self.characterLabel.snp.top).offset(-12)
+        $0.width.equalTo(87)
+        $0.height.equalTo(22)
+      }
+    }
+    view.add(levelLabel) {
+      $0.text = "Lv." + "\(self.todayCharacterInfo.level)"
+      $0.textColor = .purple
+      $0.font = .body3
+      $0.snp.makeConstraints {
+        $0.leading.equalTo(self.backRectangle.snp.leading).offset(10)
+        $0.centerY.equalTo(self.backRectangle.snp.centerY)
       }
     }
     view.add(checkBoxView) {
@@ -152,7 +158,16 @@ class ToDoVC: UIViewController {
     }
   }
   
-  func setCheckBoxAndMission() {
+  func appendArrayUIProperties() {
+    let level1Rectangle = UIView()
+    let level2Rectangle = UIView()
+    let level3Rectangle = UIView()
+    let level4Rectangle = UIView()
+    levelViews.append(level1Rectangle)
+    levelViews.append(level2Rectangle)
+    levelViews.append(level3Rectangle)
+    levelViews.append(level4Rectangle)
+    
     let missionLabel1 = UILabel()
     let missionLabel2 = UILabel()
     let missionLabel3 = UILabel()
@@ -177,6 +192,22 @@ class ToDoVC: UIViewController {
     lineViews.append(lineView1)
     lineViews.append(lineView2)
     lineViews.append(lineView3)
+  }
+  
+  func levelsLayout() {
+    for level in levelViews {
+      let idx = levelViews.firstIndex(of: level) ?? 0
+      view.add(level) {
+        $0.layer.cornerRadius = 2
+        $0.backgroundColor = (idx+1) <= self.todayCharacterInfo.level ? .purple : .grey700
+        $0.snp.makeConstraints {
+          $0.leading.equalTo(self.backRectangle.snp.leading).offset(41+(10*idx))
+          $0.centerY.equalTo(self.backRectangle.snp.centerY)
+          $0.width.equalTo(6)
+          $0.height.equalTo(6)
+        }
+      }
+    }
   }
   
   func checkBoxLayout() {
@@ -229,24 +260,10 @@ class ToDoVC: UIViewController {
   }
   
   // MARK: - Custom Method
-  func changeBar() {
-    switch checkCount {
-    case 0:
-      barImageView.image = UIImage(named: "bar=0")
-    case 1:
-      barImageView.image = UIImage(named: "bar=1")
-    case 2:
-      barImageView.image = UIImage(named: "bar=2")
-    case 3:
-      barImageView.image = UIImage(named: "bar=3")
-    default:
-      barImageView.image = UIImage(named: "bar=4")
-    }
-  }
-  
   func changeFinishedView() {
     checkBoxView.isHidden = true
     originalButton.isHidden = true
+    againButton.isEnabled = false
     doneButton.isUserInteractionEnabled = false
     doneButton.setImage(UIImage(named: "btn_finished"), for: .normal)
     for bt in checkBoxButtons {
@@ -279,17 +296,12 @@ class ToDoVC: UIViewController {
   @objc func checkBoxClicked(_ sender: UIButton) {
     print(sender.tag)
     requestPatchTODO(taskId: sender.tag)
-    if(sender.isSelected == false) {
-      checkCount += 1
-    } else {
-      checkCount -= 1
-    }
-    changeBar()
     sender.isSelected.toggle()
   }
   
   @objc func doneButtonClicked(_ sender: UIButton) {
-    if (checkCount == 4) {
+    if (todayCharacterInfo.level == 4) {
+      postEndTodayCharacter()
       changeFinishedView()
     } else {
       let alertPopupVC = FinishedModalVC()
@@ -386,8 +398,27 @@ extension ToDoVC {
         guard let response = result as? TodayCharacterRequestModel else { return }
         if let userData = response.data {
           self.todayCharacterInfo = userData
-          self.checkBoxLayout()
+          self.attributes()
         }
+        print("success")
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
+  }
+  
+  func postEndTodayCharacter() {
+    GetTodayCharacter.shared.postEndTodayCharacter { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        print(response.message)
         print("success")
       case .requestErr(let msg):
         print("requestErr \(msg)")
