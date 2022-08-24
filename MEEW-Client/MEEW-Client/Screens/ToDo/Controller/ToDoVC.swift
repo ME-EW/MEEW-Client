@@ -57,6 +57,7 @@ class ToDoVC: UIViewController {
     }
     view.add(againButton) {
       $0.setImage(UIImage(named: "ic_Refresh"), for: .normal)
+      $0.addTarget(self, action: #selector(self.againButtonClicked(_:)), for: .touchUpInside)
       $0.snp.makeConstraints {
         $0.top.equalTo(self.view.snp.top).offset(71)
         $0.trailing.equalTo(self.view.snp.trailing).offset(-16)
@@ -256,6 +257,10 @@ class ToDoVC: UIViewController {
   }
   
   // MARK: - @objc
+  @objc func againButtonClicked(_ sender: UIButton) {
+    requestGetNewTodayCharacter()
+  }
+  
   @objc func checkBoxClicked(_ sender: UIButton) {
     if(sender.isSelected == false) {
       checkCount += 1
@@ -302,7 +307,29 @@ extension ToDoVC {
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:
-        print("todoview pathErr")
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
+  }
+  
+  func requestGetNewTodayCharacter() {
+    GetTodayCharacter.shared.getNewTodayCharacter { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        if let userData = response.data {
+          self.todayCharacterInfo = userData
+          self.attributes()
+        }
+        print("success")
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
       case .serverErr:
         print("serverErr")
       case .networkFail:
