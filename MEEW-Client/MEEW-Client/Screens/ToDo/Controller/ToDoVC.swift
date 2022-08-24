@@ -265,7 +265,11 @@ class ToDoVC: UIViewController {
   
   // MARK: - @objc
   @objc func againButtonClicked(_ sender: UIButton) {
-    requestGetNewTodayCharacter()
+    if todayCharacterInfo.chance != 0 {
+      requestGetNewTodayCharacter()
+    } else {
+      print("새로고침 기회 모두 소진")
+    }
   }
   
   @objc func originalButtonClicked(_ sender: UIButton) {
