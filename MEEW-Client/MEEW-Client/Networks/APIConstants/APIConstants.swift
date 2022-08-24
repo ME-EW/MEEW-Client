@@ -17,6 +17,7 @@ enum APIConstants {
     // MARK: - ToDo뷰
     static let getTodayCharacterURL = baseURL + "/personality/today"
     static let getNewTodayCharacterURL = baseURL + "/personality/new"
+    static let getOriginalMyCharacterURL = baseURL + "/personality/me"
 
     //MARK: - SelectURL
     static let readCharacterURL = baseURL + "/personality/list"

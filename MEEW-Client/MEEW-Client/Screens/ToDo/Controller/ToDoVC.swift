@@ -31,6 +31,7 @@ class ToDoVC: UIViewController {
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    setCheckBoxAndMission()
     requestGetTodayCharacter()
     setNotification()
   }
@@ -143,6 +144,7 @@ class ToDoVC: UIViewController {
       $0.setTitleColor(.grey400, for: .normal)
       $0.titleLabel?.font = .body3
       $0.setUnderline()
+      $0.addTarget(self, action: #selector(self.originalButtonClicked(_:)), for: .touchUpInside)
       $0.snp.makeConstraints {
         $0.top.equalTo(self.doneButton.snp.bottom).offset(16)
         $0.centerX.equalTo(self.view.snp.centerX)
@@ -150,7 +152,16 @@ class ToDoVC: UIViewController {
     }
   }
   
-  func checkBoxLayout() {
+  func setCheckBoxAndMission() {
+    let missionLabel1 = UILabel()
+    let missionLabel2 = UILabel()
+    let missionLabel3 = UILabel()
+    let missionLabel4 = UILabel()
+    missionLabels.append(missionLabel1)
+    missionLabels.append(missionLabel2)
+    missionLabels.append(missionLabel3)
+    missionLabels.append(missionLabel4)
+    
     let checkBoxButton1 = UIButton()
     let checkBoxButton2 = UIButton()
     let checkBoxButton3 = UIButton()
@@ -159,6 +170,16 @@ class ToDoVC: UIViewController {
     checkBoxButtons.append(checkBoxButton2)
     checkBoxButtons.append(checkBoxButton3)
     checkBoxButtons.append(checkBoxButton4)
+    
+    let lineView1 = UIView()
+    let lineView2 = UIView()
+    let lineView3 = UIView()
+    lineViews.append(lineView1)
+    lineViews.append(lineView2)
+    lineViews.append(lineView3)
+  }
+  
+  func checkBoxLayout() {
     for bt in checkBoxButtons {
       let idx = checkBoxButtons.firstIndex(of: bt) ?? 0
       view.add(bt) {
@@ -177,14 +198,6 @@ class ToDoVC: UIViewController {
   }
   
   func missionsLayout() {
-    let missionLabel1 = UILabel()
-    let missionLabel2 = UILabel()
-    let missionLabel3 = UILabel()
-    let missionLabel4 = UILabel()
-    missionLabels.append(missionLabel1)
-    missionLabels.append(missionLabel2)
-    missionLabels.append(missionLabel3)
-    missionLabels.append(missionLabel4)
     for mission in missionLabels {
       let idx = missionLabels.firstIndex(of: mission) ?? 0
       view.add(mission) {
@@ -200,12 +213,6 @@ class ToDoVC: UIViewController {
   }
   
   func lineLayout() {
-    let lineView1 = UIView()
-    let lineView2 = UIView()
-    let lineView3 = UIView()
-    lineViews.append(lineView1)
-    lineViews.append(lineView2)
-    lineViews.append(lineView3)
     for line in lineViews {
       let idx = lineViews.firstIndex(of: line) ?? 0
       view.add(line) {
@@ -237,7 +244,6 @@ class ToDoVC: UIViewController {
   }
   
   func changeFinishedView() {
-    print("call")
     checkBoxView.isHidden = true
     originalButton.isHidden = true
     doneButton.isUserInteractionEnabled = false
@@ -259,6 +265,10 @@ class ToDoVC: UIViewController {
   // MARK: - @objc
   @objc func againButtonClicked(_ sender: UIButton) {
     requestGetNewTodayCharacter()
+  }
+  
+  @objc func originalButtonClicked(_ sender: UIButton) {
+    requestGetOriginalMyTodayCharacter()
   }
   
   @objc func checkBoxClicked(_ sender: UIButton) {
@@ -324,6 +334,30 @@ extension ToDoVC {
         if let userData = response.data {
           self.todayCharacterInfo = userData
           self.attributes()
+        }
+        print("success")
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
+  }
+  
+  func requestGetOriginalMyTodayCharacter() {
+    GetTodayCharacter.shared.getOriginalMyCharacter { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        if let userData = response.data {
+          self.todayCharacterInfo = userData
+          self.attributes()
+          self.originalButton.isEnabled = false
+          self.againButton.isEnabled = false
         }
         print("success")
       case .requestErr(let msg):
