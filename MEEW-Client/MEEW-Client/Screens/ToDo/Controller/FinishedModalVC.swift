@@ -153,7 +153,7 @@ extension FinishedModalVC {
           self.splitedCharacterName = String(stringArray.last!)
           self.setupUI()
         }
-        print("success")
+        print(response.message)
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:

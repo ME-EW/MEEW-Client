@@ -26,7 +26,8 @@ class ToDoVC: UIViewController {
   var missionLabels = [UILabel]()
   var lineViews = [UIView]()
   var levelViews = [UIView]()
-  var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, todo: [])
+  var backCheckboxViews = [UIView]()
+  var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, finished: false, todo: [])
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
@@ -192,6 +193,15 @@ class ToDoVC: UIViewController {
     lineViews.append(lineView1)
     lineViews.append(lineView2)
     lineViews.append(lineView3)
+    
+    let backCheckBoxView1 = UIView()
+    let backCheckBoxView2 = UIView()
+    let backCheckBoxView3 = UIView()
+    let backCheckBoxView4 = UIView()
+    backCheckboxViews.append(backCheckBoxView1)
+    backCheckboxViews.append(backCheckBoxView2)
+    backCheckboxViews.append(backCheckBoxView3)
+    backCheckboxViews.append(backCheckBoxView4)
   }
   
   func levelsLayout() {
@@ -213,10 +223,9 @@ class ToDoVC: UIViewController {
   }
   
   func checkBoxLayout() {
-    for bt in checkBoxButtons {
-      let idx = checkBoxButtons.firstIndex(of: bt) ?? 0
-      let backRectangleView = UIView()
-      view.add(backRectangleView) {
+    for backView in backCheckboxViews {
+      let idx = backCheckboxViews.firstIndex(of: backView) ?? 0
+      view.add(backView) {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 6
         $0.snp.makeConstraints {
@@ -226,6 +235,9 @@ class ToDoVC: UIViewController {
           $0.height.equalTo(20)
         }
       }
+    }
+    for bt in checkBoxButtons {
+      let idx = checkBoxButtons.firstIndex(of: bt) ?? 0
       view.add(bt) {
         $0.setImage(UIImage(named: "ic_uncheck"), for: .normal)
         $0.setImage(UIImage(named: "ic_check")?.withRenderingMode(.alwaysTemplate), for: .selected)
@@ -235,10 +247,10 @@ class ToDoVC: UIViewController {
         $0.tag = self.todayCharacterInfo.todo[idx].taskID
         $0.addTarget(self, action: #selector(self.checkBoxClicked(_:)), for: .touchUpInside)
         $0.snp.makeConstraints {
-          $0.centerX.equalTo(backRectangleView)
-          $0.centerY.equalTo(backRectangleView)
-          $0.height.equalTo(backRectangleView).offset(4)
-          $0.width.equalTo(backRectangleView).offset(4)
+          $0.leading.equalTo(self.checkBoxView.snp.leading).offset(18)
+          $0.top.equalTo(self.checkBoxView.snp.top).offset(18+56*idx)
+          $0.width.equalTo(20)
+          $0.height.equalTo(20)
         }
       }
     }
@@ -276,11 +288,15 @@ class ToDoVC: UIViewController {
   
   // MARK: - Custom Method
   func changeFinishedView() {
+    againButton.isHidden = true
+    againLabel.isHidden = true
     checkBoxView.isHidden = true
     originalButton.isHidden = true
-    againButton.isEnabled = false
     doneButton.isUserInteractionEnabled = false
     doneButton.setImage(UIImage(named: "btn_finished"), for: .normal)
+    for backView in backCheckboxViews {
+      backView.isHidden = true
+    }
     for bt in checkBoxButtons {
       if (bt.isSelected == false) {
         bt.layer.isHidden = true
@@ -348,8 +364,11 @@ extension ToDoVC {
         if let userData = response.data {
           self.todayCharacterInfo = userData
           self.attributes()
+          if userData.finished {
+            self.changeFinishedView()
+          }
         }
-        print("success")
+        print(response.message)
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:
@@ -371,7 +390,7 @@ extension ToDoVC {
           self.todayCharacterInfo = userData
           self.attributes()
         }
-        print("success")
+        print(response.message)
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:
@@ -392,10 +411,11 @@ extension ToDoVC {
         if let userData = response.data {
           self.todayCharacterInfo = userData
           self.attributes()
-          self.originalButton.isEnabled = false
-          self.againButton.isEnabled = false
+          self.originalButton.isHidden = true
+          self.againButton.isHidden = true
+          self.againLabel.isHidden = true
         }
-        print("success")
+        print(response.message)
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:
@@ -417,7 +437,7 @@ extension ToDoVC {
           self.todayCharacterInfo = userData
           self.attributes()
         }
-        print("success")
+        print(response.message)
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:
@@ -436,7 +456,6 @@ extension ToDoVC {
       case .success(let result):
         guard let response = result as? TodayCharacterRequestModel else { return }
         print(response.message)
-        print("success")
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:

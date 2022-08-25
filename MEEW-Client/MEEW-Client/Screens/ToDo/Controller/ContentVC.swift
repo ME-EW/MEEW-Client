@@ -19,7 +19,7 @@ class ContentVC: UIViewController {
   private var paragraphStyle = NSMutableParagraphStyle()
   private var dimmedBackView = UIView()
   private let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 304))
-  private var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, todo: [])
+  private var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, finished: false, todo: [])
   private  let levelCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
@@ -168,7 +168,7 @@ extension ContentVC {
           self.setupUI()
           self.setCollectionAttributes()
         }
-        print("success")
+        print(response.message)
       case .requestErr(let msg):
         print("requestErr \(msg)")
       case .pathErr:
