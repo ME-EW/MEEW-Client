@@ -10,21 +10,28 @@ import UIKit
 class BottomSheetVC: UIViewController {
   
   // MARK: - Properties
-  let bottomHeight: CGFloat = 500
-  var topConstant: CGFloat = 0
+  private let bottomHeight: CGFloat = UIScreen.main.bounds.height * 0.61
+  private var topConstant: CGFloat = 0
   private let contentViewController: UIViewController
-  private var bottomSheetViewTopConstraint: NSLayoutConstraint! // bottomSheet가 view의 상단에서 떨어진 거리
+  private var bottomSheetViewTopConstraint: NSLayoutConstraint!
   private var dimmedBackView = UIView()
   private let bottomSheetView = UIView()
   private let dismissIndicatorView = UIView()
+  private lazy var bottomSheetPanStartingTopConstant: CGFloat = bottomSheetPanMinTopConstant
+  private var bottomSheetPanMinTopConstant: CGFloat = 52.0
+  
+  enum BottomSheetViewState {
+    case expanded
+    case normal
+  }
   
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setupBottomSheet()
     setupUI()
     setNotification()
-    setupBottomSheet()
     setupGestureRecognizer()
   }
   
@@ -98,6 +105,10 @@ class BottomSheetVC: UIViewController {
     bottomSheetView.addSubview(contentViewController.view)
     contentViewController.didMove(toParent: self)
     view.addSubviews([bottomSheetView, dismissIndicatorView])
+    let viewPan = UIPanGestureRecognizer(target: self, action: #selector(viewPanned(_:)))
+    viewPan.delaysTouchesBegan = false
+    viewPan.delaysTouchesEnded = false
+    view.addGestureRecognizer(viewPan)
     bottomSheetLayout()
   }
   
@@ -111,15 +122,25 @@ class BottomSheetVC: UIViewController {
     view.addGestureRecognizer(swipeGesture)
   }
   
-  private func showBottomSheet() {   
-    let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
-    let bottomPadding: CGFloat = view.safeAreaInsets.bottom
-    bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - bottomHeight
-    
+  private func showBottomSheet(atState: BottomSheetViewState = .normal) {
+    if atState == .normal {
+      changeScrollToggle()
+      let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
+      let bottomPadding: CGFloat = view.safeAreaInsets.bottom
+      bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - bottomHeight
+    } else {
+      changeScrollToggle()
+      bottomSheetViewTopConstraint.constant = bottomSheetPanMinTopConstant
+    }
     UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
       self.dimmedBackView.alpha = 0.5
       self.view.layoutIfNeeded()
     }, completion: nil)
+  }
+  
+  func changeScrollToggle() {
+    let contentVC = children.first as? ContentVC
+    contentVC?.scrollView.isScrollEnabled.toggle()
   }
   
   private func hideBottomSheetAndGoBack() {
@@ -134,6 +155,12 @@ class BottomSheetVC: UIViewController {
         self.dismiss(animated: false, completion: nil)
       }
     }
+  }
+  
+  func nearest(to number: CGFloat, inValues values: [CGFloat]) -> CGFloat {
+    guard let nearestVal = values.min(by: { abs(number - $0) < abs(number - $1) })
+    else { return number }
+    return nearestVal
   }
   
   func setNotification() {
@@ -156,8 +183,39 @@ class BottomSheetVC: UIViewController {
     }
   }
   
+  @objc private func viewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
+    let translation = panGestureRecognizer.translation(in: self.view)
+    let velocity = panGestureRecognizer.velocity(in: view)
+    
+    switch panGestureRecognizer.state {
+    case .began:
+      bottomSheetPanStartingTopConstant = bottomSheetViewTopConstraint.constant
+    case .changed:
+      if bottomSheetPanStartingTopConstant + translation.y > bottomSheetPanMinTopConstant {
+        bottomSheetViewTopConstraint.constant = bottomSheetPanStartingTopConstant + translation.y
+      }
+    case .ended:
+      if velocity.y > 1500 {
+        hideBottomSheetAndGoBack()
+        return
+      }
+      let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
+      let bottomPadding = view.safeAreaInsets.bottom
+      let defaultPadding = safeAreaHeight + bottomPadding - bottomHeight
+      let nearestValue = nearest(to: bottomSheetViewTopConstraint.constant, inValues: [bottomSheetPanMinTopConstant + 200, defaultPadding, safeAreaHeight + bottomPadding])
+      if nearestValue == bottomSheetPanMinTopConstant + 200 {
+        showBottomSheet(atState: .expanded)
+      } else if nearestValue == defaultPadding {
+        showBottomSheet(atState: .normal)
+      } else {
+        hideBottomSheetAndGoBack()
+      }
+    default:
+      break
+    }
+  }
+  
   @objc func didReceiveOkayButtonNotification(_ notification: Notification) {
       hideBottomSheetAndGoBack()
   }
 }
-
