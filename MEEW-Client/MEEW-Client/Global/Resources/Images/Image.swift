@@ -25,4 +25,6 @@ struct ImageLiterals {
     static let imageCharacterToday = UIImage(named: "img_character_today")!
     static let settingIcon = UIImage(named: "icn_setting")!
     static let icnCheckEmpty = UIImage(named: "ic_check_empty")!
+    static let icnArrowDown = UIImage(named: "icn_down")!
+    static let icnClose = UIImage(named: "icClose")!
 }

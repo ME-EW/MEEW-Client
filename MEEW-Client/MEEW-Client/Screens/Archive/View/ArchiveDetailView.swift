@@ -12,6 +12,9 @@ import Then
 
 final class ArchiveDetailView: UIView {
     
+    let dateLabel = UILabel()
+    let dateButton = UIButton()
+    let closeButton = UIButton()
     let containerView = UIView()
     let progressView = ArchiveLevelProgressView()
     let nameLabel = UILabel()
@@ -32,6 +35,22 @@ final class ArchiveDetailView: UIView {
     func configureUI() {
         
         backgroundColor = .grey700
+        
+        dateLabel.do {
+            $0.text = "2022.02.26"
+            $0.textColor = .white
+            $0.font = .head3
+        }
+        
+        dateButton.do {
+            $0.setImage(ImageLiterals.icnArrowDown, for: .normal)
+            $0.contentMode = .scaleAspectFill
+        }
+        
+        closeButton.do {
+            $0.setImage(ImageLiterals.icnClose, for: .normal)
+            $0.contentMode = .scaleAspectFill
+        }
         
         containerView.do {
             $0.layer.borderWidth = 0.5
@@ -57,8 +76,26 @@ final class ArchiveDetailView: UIView {
     
     func configureLayout() {
         
-        addSubview(containerView)
+        addSubviews([dateLabel, dateButton, closeButton, containerView])
         containerView.addSubviews([progressView, nameLabel, characterImageView, tableView])
+        
+        dateLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).inset(13)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(24)
+        }
+        
+        dateButton.snp.makeConstraints {
+            $0.leading.equalTo(dateLabel.snp.trailing).inset(2)
+            $0.size.equalTo(48)
+            $0.centerY.equalTo(dateLabel)
+        }
+        
+        closeButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(2)
+            $0.size.equalTo(48)
+            $0.centerY.equalTo(dateButton)
+        }
         
         containerView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).inset(81)

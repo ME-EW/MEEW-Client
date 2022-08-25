@@ -48,6 +48,7 @@
 		BD772D5528B75C02006CBD6B /* ArchiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5428B75C02006CBD6B /* ArchiveDetailVC.swift */; };
 		BD772D5728B75C3B006CBD6B /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */; };
 		BD772D5928B75F7F006CBD6B /* ArchiveTodoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */; };
+		BD772D5C28B797E5006CBD6B /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5B28B797E5006CBD6B /* DatePickerView.swift */; };
 		BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA4628508CAB00883B32 /* NavigationBarView.swift */; };
 		BDABFA492850928600883B32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA482850928600883B32 /* SettingViewController.swift */; };
 		BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABFA4A2850930700883B32 /* SettingViewController.storyboard */; };
@@ -123,6 +124,7 @@
 		BD772D5428B75C02006CBD6B /* ArchiveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailVC.swift; sourceTree = "<group>"; };
 		BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
 		BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTodoTVC.swift; sourceTree = "<group>"; };
+		BD772D5B28B797E5006CBD6B /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		BDABFA4628508CAB00883B32 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		BDABFA482850928600883B32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BDABFA4A2850930700883B32 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				BDC5CC9A28AD4E8C00CBDE12 /* ArchiveEmptyView.swift */,
 				BDC5CC9C28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift */,
 				BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */,
+				BD772D5B28B797E5006CBD6B /* DatePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				BD3B547828520D14003D91D3 /* InfoView.swift in Sources */,
 				BD339A3527493EEB00021E91 /* NetworkResult.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
+				BD772D5C28B797E5006CBD6B /* DatePickerView.swift in Sources */,
 				BDC5CC9128AD4D8C00CBDE12 /* ArchiveTVC.swift in Sources */,
 				BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
@@ -913,7 +917,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -947,7 +951,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
