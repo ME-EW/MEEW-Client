@@ -18,6 +18,7 @@ class FinishedModalVC: UIViewController {
   let horizonView = UIView()
   let verticalView = UIView()
   var splitedCharacterName = ""
+  var characterEnum = 0
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
@@ -74,7 +75,7 @@ class FinishedModalVC: UIViewController {
     view.add(yesButton) {
       $0.backgroundColor = .grey600
       $0.setTitle("네", for: .normal)
-      $0.setTitleColor(.purple, for: .normal)
+      $0.setTitleColor(Character.color[self.characterEnum], for: .normal)
       $0.titleLabel?.font = .title4
       $0.roundCorners(cornerRadius: 12, maskedCorners: [.layerMaxXMaxYCorner])
       $0.addTarget(self, action: #selector(self.yesButtonClicked(_:)), for: .touchUpInside)
@@ -147,10 +148,9 @@ extension FinishedModalVC {
       case .success(let result):
         guard let response = result as? TodayCharacterRequestModel else { return }
         if let userData = response.data {
+          self.characterEnum = userData.dataEnum
           let stringArray = userData.name.split(separator: " ")
-          print(stringArray)
           self.splitedCharacterName = String(stringArray.last!)
-          print(self.splitedCharacterName)
           self.setupUI()
         }
         print("success")
