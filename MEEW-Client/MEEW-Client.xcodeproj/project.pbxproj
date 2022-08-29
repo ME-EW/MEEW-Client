@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A090CA306EA49226DDC0A01 /* Pods_MEEW_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98BEA8BD86C29D64B7CA220D /* Pods_MEEW_Client.framework */; };
+		6F2AB33928BA49CD0054B4BB /* ChracterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2AB33828BA49CD0054B4BB /* ChracterRequestModel.swift */; };
+		6F2AB33B28BA4AC90054B4BB /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2AB33A28BA4AC90054B4BB /* CharacterService.swift */; };
 		6F3134AE27FF02A400FE1EB4 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3134AC27FF02A400FE1EB4 /* JoinVC.swift */; };
 		6F3134AF27FF02A400FE1EB4 /* JoinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F3134AD27FF02A400FE1EB4 /* JoinVC.xib */; };
 		6F65C67B2829113B00DD017A /* FinishedModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65C67A2829113B00DD017A /* FinishedModalVC.swift */; };
@@ -81,6 +83,8 @@
 
 /* Begin PBXFileReference section */
 		092457F45C406AD811590023 /* Pods-MEEW-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.debug.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.debug.xcconfig"; sourceTree = "<group>"; };
+		6F2AB33828BA49CD0054B4BB /* ChracterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChracterRequestModel.swift; sourceTree = "<group>"; };
+		6F2AB33A28BA4AC90054B4BB /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		6F3134AC27FF02A400FE1EB4 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		6F3134AD27FF02A400FE1EB4 /* JoinVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinVC.xib; sourceTree = "<group>"; };
 		6F65C67A2829113B00DD017A /* FinishedModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedModalVC.swift; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 				BD339A3627493F3A00021E91 /* GenericResponse.swift */,
 				F2EC3A102749A47B00805FE3 /* CharacterRequestDataModel.swift */,
 				6F74466428B621A8008A3A7A /* TodayCharacterRequestModel.swift */,
+				6F2AB33828BA49CD0054B4BB /* ChracterRequestModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				BD339A3427493EEB00021E91 /* NetworkResult.swift */,
 				F2EC3A0E2749A1D400805FE3 /* CharacterListService.swift */,
 				6F74466228B6205B008A3A7A /* GetTodayCharacter.swift */,
+				6F2AB33A28BA4AC90054B4BB /* CharacterService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -786,9 +792,11 @@
 				BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
 				6F3134AE27FF02A400FE1EB4 /* JoinVC.swift in Sources */,
+				6F2AB33B28BA4AC90054B4BB /* CharacterService.swift in Sources */,
 				6FDCA78E2828005E00BB0836 /* UIButton+.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
 				BDABFA492850928600883B32 /* SettingViewController.swift in Sources */,
+				6F2AB33928BA49CD0054B4BB /* ChracterRequestModel.swift in Sources */,
 				BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */,
 				BD339A3327493E5700021E91 /* APIConstants.swift in Sources */,
 				BD3B54742852038F003D91D3 /* ProfileView.swift in Sources */,

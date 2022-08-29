@@ -28,6 +28,11 @@ class ToDoVC: UIViewController {
   var levelViews = [UIView]()
   var backCheckboxViews = [UIView]()
   var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, finished: false, todo: [])
+  private let loadingView: LoadingView = {
+    let view = LoadingView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
@@ -120,7 +125,7 @@ class ToDoVC: UIViewController {
     }
     view.add(levelLabel) {
       $0.text = "Lv." + "\(self.todayCharacterInfo.level)"
-      $0.textColor = Character.color[self.todayCharacterInfo.dataEnum]
+      $0.textColor = Character.color[self.todayCharacterInfo.dataEnum ?? 1]
       $0.font = .body3
       $0.snp.makeConstraints {
         $0.leading.equalTo(self.backRectangle.snp.leading).offset(10)
@@ -210,7 +215,7 @@ class ToDoVC: UIViewController {
       view.add(level) {
         $0.layer.cornerRadius = 2
         $0.backgroundColor = (idx+1) <= self.todayCharacterInfo.level
-        ? Character.color[self.todayCharacterInfo.dataEnum]
+        ? Character.color[self.todayCharacterInfo.dataEnum ?? 1]
         : .grey700
         $0.snp.makeConstraints {
           $0.leading.equalTo(self.backRectangle.snp.leading).offset(41+(10*idx))
@@ -229,29 +234,30 @@ class ToDoVC: UIViewController {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 6
         $0.snp.makeConstraints {
-          $0.leading.equalTo(self.checkBoxView.snp.leading).offset(18)
-          $0.top.equalTo(self.checkBoxView.snp.top).offset(18+56*idx)
-          $0.width.equalTo(20)
-          $0.height.equalTo(20)
+          $0.centerX.equalTo(self.checkBoxView.snp.leading).offset(28)
+          $0.centerY.equalTo(self.checkBoxView.snp.top).offset(28+56*idx)
+          $0.width.equalTo(16)
+          $0.height.equalTo(16)
         }
       }
     }
     for bt in checkBoxButtons {
       let idx = checkBoxButtons.firstIndex(of: bt) ?? 0
       view.add(bt) {
-        $0.setImage(UIImage(named: "ic_uncheck"), for: .normal)
-        $0.setImage(UIImage(named: "ic_check")?.withRenderingMode(.alwaysTemplate), for: .selected)
-        $0.contentMode = .scaleToFill
-        $0.tintColor = Character.color[self.todayCharacterInfo.dataEnum]
-        $0.isSelected = self.todayCharacterInfo.todo[idx].complete
-        $0.tag = self.todayCharacterInfo.todo[idx].taskID
-        $0.addTarget(self, action: #selector(self.checkBoxClicked(_:)), for: .touchUpInside)
         $0.snp.makeConstraints {
-          $0.leading.equalTo(self.checkBoxView.snp.leading).offset(18)
-          $0.top.equalTo(self.checkBoxView.snp.top).offset(18+56*idx)
+          $0.centerX.equalTo(self.checkBoxView.snp.leading).offset(28)
+          $0.centerY.equalTo(self.checkBoxView.snp.top).offset(28+56*idx)
           $0.width.equalTo(20)
           $0.height.equalTo(20)
         }
+        $0.setImage(UIImage(named: "ic_uncheck"), for: .normal)
+        $0.setImage(UIImage(named: "ic_check")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        $0.imageView?.contentMode = .scaleToFill
+        $0.contentMode = .scaleToFill
+        $0.tintColor = Character.color[self.todayCharacterInfo.dataEnum ?? 1]
+        $0.isSelected = self.todayCharacterInfo.todo[idx].complete
+        $0.tag = self.todayCharacterInfo.todo[idx].taskID
+        $0.addTarget(self, action: #selector(self.checkBoxClicked(_:)), for: .touchUpInside)
       }
     }
   }
@@ -265,7 +271,7 @@ class ToDoVC: UIViewController {
         $0.font = .body2
         $0.snp.makeConstraints {
           $0.leading.equalTo(self.checkBoxView.snp.leading).offset(48)
-          $0.centerY.equalTo(self.checkBoxButtons[idx].snp.centerY)
+          $0.centerY.equalTo(self.checkBoxView.snp.top).offset(28+56*idx)
         }
       }
     }
@@ -302,7 +308,7 @@ class ToDoVC: UIViewController {
         bt.layer.isHidden = true
       } else {
         bt.setImage(UIImage(named: "complete")?.withRenderingMode(.alwaysTemplate), for: .selected)
-        bt.tintColor = Character.color[self.todayCharacterInfo.dataEnum]
+        bt.tintColor = Character.color[self.todayCharacterInfo.dataEnum ?? 1]
         bt.isUserInteractionEnabled = false
       }
     }
@@ -326,9 +332,7 @@ class ToDoVC: UIViewController {
   }
   
   @objc func checkBoxClicked(_ sender: UIButton) {
-    print(sender.tag)
     requestPatchTODO(taskId: sender.tag)
-    sender.tintColor = Character.color[self.todayCharacterInfo.dataEnum]
     sender.isSelected.toggle()
   }
   
@@ -349,7 +353,9 @@ class ToDoVC: UIViewController {
   }
   
   @objc func inforButtonClicked(_ sender: UIButton) {
-    let bottomSheetVC = BottomSheetVC(contentViewController: ContentVC())
+    let contentVC = ContentVC()
+    contentVC.characterId = self.todayCharacterInfo.dataEnum
+    let bottomSheetVC = BottomSheetVC(contentViewController: contentVC)
     bottomSheetVC.modalPresentationStyle = .overFullScreen
     self.present(bottomSheetVC, animated: false, completion: nil)
   }
@@ -364,7 +370,7 @@ extension ToDoVC {
         if let userData = response.data {
           self.todayCharacterInfo = userData
           self.attributes()
-          if userData.finished {
+          if userData.finished ?? false {
             self.changeFinishedView()
           }
         }
