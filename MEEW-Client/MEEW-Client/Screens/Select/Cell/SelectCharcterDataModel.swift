@@ -8,6 +8,7 @@ import UIKit
 
 struct SelectCharacterDataModel {
     
+	var id: Int
     var image : String
     var name : String
     var description : String
