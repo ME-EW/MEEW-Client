@@ -28,11 +28,6 @@ class ToDoVC: UIViewController {
   var levelViews = [UIView]()
   var backCheckboxViews = [UIView]()
   var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, finished: false, todo: [])
-  private let loadingView: LoadingView = {
-    let view = LoadingView()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
