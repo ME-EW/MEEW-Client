@@ -28,11 +28,14 @@ class SelectCharacterCVC: UICollectionViewCell {
 				self.checkImageView.image = checkIconColor
 				active()
 				
-				var count = characterName.text?.count
-				var sliced_str = characterName.text![(count ?? 0)-3 ..< (count ?? 0)]
-				
-				setNotification(name: sliced_str ?? "마음이")
-//				print("CVC에서 쏜 이름",characterName.text)
+				if let text = characterName.text {
+					let count: Int = text.count
+					
+					let startIndex = text.index(text.startIndex, offsetBy: count-3)// 사용자지정 시작인덱스
+					let endIndex = text.index(text.startIndex, offsetBy: count)// 사용자지정 끝인덱스
+					let sliced_str: String = String(text[startIndex ..< endIndex])
+					setNotification(name: sliced_str)
+				}
 			}
 			else {
 				self.layer.backgroundColor = .none

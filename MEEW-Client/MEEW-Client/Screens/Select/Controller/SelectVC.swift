@@ -102,14 +102,14 @@ class SelectVC: BaseVC {
 			.setDescription("나의 캐릭터가 \(String(describing: characterName))로 선택되었어요!")
 			.present()
 		
-//		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-//			guard let self = self else { return }
-//			//데이터 전달하면서 화면 전환 해야함..!
-//			guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
-//			vc.modalPresentationStyle = .overFullScreen
-//			vc.modalTransitionStyle = .crossDissolve
-//			self.present(vc, animated: true, completion: nil)
-//		}
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+			guard let self = self else { return }
+			//데이터 전달하면서 화면 전환 해야함..!
+			guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
+			vc.modalPresentationStyle = .overFullScreen
+			vc.modalTransitionStyle = .crossDissolve
+			self.present(vc, animated: true, completion: nil)
+		}
 	}
 	
 	@IBAction func pageChanged(_ sender: UIPageControl) {
