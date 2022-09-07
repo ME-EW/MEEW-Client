@@ -6,24 +6,23 @@
 //
 
 import Foundation
-import Metal
 
 // MARK: - CharacterData
 struct CharacterRequestData: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: [CharacterRequestResultData]?
+    let data: PersonalityData?
+}
+struct PersonalityData : Codable {
+	let personalities: [CharacterRequestResultData]?
 }
 
 // MARK: - CharacterResultData
 struct CharacterRequestResultData: Codable {
     let id: Int
-    let name, description, imageUrl: String
+    let name, description, createdAt, updatedAt, mainImg: String
+	let imgUrl : [String]
 	
-    enum CodingKeys: String, CodingKey {
-        case id, name, description
-        case imageUrl
-    }
 }
 
