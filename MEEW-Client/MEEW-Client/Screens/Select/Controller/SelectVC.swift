@@ -10,7 +10,7 @@ import UIKit
 class SelectVC: BaseVC {
 	
 	var characterList:[SelectCharacterDataModel] = []
-	
+	var characterName: String = "마음이"
 	
 	@IBOutlet weak var selectCV: UICollectionView!
 	@IBOutlet weak var backgroundView: UIView!{
@@ -22,7 +22,11 @@ class SelectVC: BaseVC {
 	@IBOutlet weak var nextBtn: UIButton!{
 		didSet {
 			nextBtn.isEnabled = false
-			nextBtn.titleLabel?.textColor = .grey400
+			if nextBtn.isEnabled == false {
+				nextBtn.titleLabel?.textColor = .grey400
+			} else {
+				nextBtn.titleLabel?.textColor = .grey700
+			}
 		}
 	}
 	@IBOutlet weak var SelectCVCHeightConstraint: NSLayoutConstraint!{
@@ -35,17 +39,15 @@ class SelectVC: BaseVC {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//✅ 서버연결 시 사용할 원래 코드
-		//        getCharacterData()
 		registerCVC()
-		//❌ UI 점검용으로 사용할 코드
-		initEventDataList()
 		setUI()
+		getCharacterData()
 		setPager()
+		addNotiObserver()
 	}
 	
 	private func setPager() {
-		pager.numberOfPages = characterList.count
+		pager.numberOfPages = 8
 		pager.currentPage = 0
 		pager.pageIndicatorTintColor = UIColor.grey500
 		pager.currentPageIndicatorTintColor = UIColor.white
@@ -87,40 +89,40 @@ class SelectVC: BaseVC {
 		selectCV.register(xib, forCellWithReuseIdentifier: SelectCharacterCVC.identifier)
 	}
 	
-	//❌ UI 점검용으로 사용할 코드
-	private func initEventDataList(){
-		characterList.append(contentsOf: [
-			SelectCharacterDataModel(image: "img_taeyang_select", name: "태양이", description: "태양이는 이름 그대로 늘 맑고 긍정적이에요. 덕분에 모든 일에 적극적으로 참여하고 도전하죠."),
-			SelectCharacterDataModel(image: "img_maeum_select", name: "마음이", description: "마음이는 기여웡!"),
-			SelectCharacterDataModel(image: "img_jungjik_select", name: "정직이", description: "정직이도 기여웡!"),
-			SelectCharacterDataModel(image: "img_haneul_select", name: "하늘이", description: "하늘이는 넓은 마음씨를 가지고 있어요. 그래서 대부분의 상황에서 참을성있게 행동할 줄 알아요."),
-			SelectCharacterDataModel(image: "img_gureum_select", name: "구름이", description: "구름이도 기여웡!"),
-			SelectCharacterDataModel(image: "img_baram_select", name: "바람이", description: "바람이는 어디로 불지 모르는 성격이에요. \n그래서 계획적이기보다는 마음가는 대로 즐겁게 살아가고 있죠."),
-			SelectCharacterDataModel(image: "img_banghyang_select", name: "방향이", description: "방향이도 기여웡!"),
-			SelectCharacterDataModel(image: "img_kotnim_select", name: "꽃님이", description: "꽃님이도 기여웡!")
-		])
+	private func addNotiObserver() {
+		print("11")
+		NotificationCenter.default.addObserver(self, selector: #selector(alertCharacterName(_:)), name:  NSNotification.Name(rawValue: "characterName"), object: nil)
+		print("22")
 	}
 	
 	@IBAction func touchUpToGoToDoView(_ sender: Any) {
 		//싹 다 닉네임뷰로 이동하는걸로 변경해야함
+		
 		CompletePopUp.loadFromXib()
-			.setDescription("나의 캐릭터가 마음이로 선택되었어요!")
+			.setDescription("나의 캐릭터가 \(String(describing: characterName))로 선택되었어요!")
 			.present()
 		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-			guard let self = self else { return }
-			//데이터 전달하면서 화면 전환 해야함..!
-			guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
-			vc.modalPresentationStyle = .overFullScreen
-			vc.modalTransitionStyle = .crossDissolve
-			self.present(vc, animated: true, completion: nil)
-		}
+//		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+//			guard let self = self else { return }
+//			//데이터 전달하면서 화면 전환 해야함..!
+//			guard let vc = UIStoryboard(name: "ToDoVC", bundle: nil).instantiateViewController(withIdentifier: "ToDoVC") as? ToDoVC else { return }
+//			vc.modalPresentationStyle = .overFullScreen
+//			vc.modalTransitionStyle = .crossDissolve
+//			self.present(vc, animated: true, completion: nil)
+//		}
 	}
 	
 	@IBAction func pageChanged(_ sender: UIPageControl) {
 		let indexPath = IndexPath(item: sender.currentPage, section: 0)
 		// 인덱스패스위치로 컬렉션 뷰를 스크롤
 		selectCV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+	}
+	
+	@objc func alertCharacterName(_ notification: NSNotification)  {
+		print("33")
+		if let text = notification.object as? String{
+			characterName = text
+		}
 	}
 	
 	
@@ -141,13 +143,13 @@ extension SelectVC: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCharacterCVC.identifier, for: indexPath) as? SelectCharacterCVC else {return UICollectionViewCell()}
 		
-		//        if indexPath.item == 0 {
-		//            cell.isSelected = true
-		//        }
 		
 		cell.active = { [weak self] in
 			guard let self = self else {return}
+			self.nextBtn.titleLabel?.textColor = .grey700
 			self.nextBtn.isEnabled = true
+			self.nextBtn.layer.cornerRadius = 8
+			self.nextBtn.backgroundColor = .white
 		}
 		
 		cell.setData(appData: characterList[indexPath.row])
@@ -202,15 +204,22 @@ extension SelectVC {
 				guard let response = successResponse as? CharacterRequestData else { return }
 				self.characterList = []
 				//설정해주는 부분
+				
+				
+				
 				if let userData = response.data {
-					for charactor in userData{
-						let charData = SelectCharacterDataModel(image: charactor.imageUrl,
+					if let useData = userData.personalities {
+						for charactor in useData{
+							let charData = SelectCharacterDataModel(id: charactor.id, image: charactor.mainImg,
 																name: charactor.name,
 																description: charactor.description)
-						self.characterList.append(charData)
+							self.characterList.append(charData)
+						}
+						self.selectCV.reloadData()
+//						DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//							self.setPager()
+//						}
 					}
-					
-					self.selectCV.reloadData()
 				}
 			case .requestErr(let msg):
 				print("requestERR \(msg)")
