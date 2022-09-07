@@ -12,6 +12,8 @@ class SelectCharacterCVC: UICollectionViewCell {
     
     static let identifier = "SelectCharacterCVC"
     var checkIconColor = ImageLiterals.checkIcon.redCheckIcon
+	lazy var active: (() -> Void) = {}
+	
     
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterName: UILabel!
@@ -24,6 +26,7 @@ class SelectCharacterCVC: UICollectionViewCell {
                 self.layer.backgroundColor = UIColor.grey600.cgColor
                 self.layer.borderColor = UIColor.grey300.cgColor
                 self.checkImageView.image = checkIconColor
+				active()
             }
             else {
                 self.layer.backgroundColor = .none
@@ -80,5 +83,5 @@ class SelectCharacterCVC: UICollectionViewCell {
             return checkIconColor = ImageLiterals.checkIcon.redCheckIcon
         }
     }
-    
+	
 }

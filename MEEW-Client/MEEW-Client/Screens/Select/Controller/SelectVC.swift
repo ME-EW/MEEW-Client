@@ -11,6 +11,7 @@ class SelectVC: BaseVC {
 	
 	var characterList:[SelectCharacterDataModel] = []
 	
+	
 	@IBOutlet weak var selectCV: UICollectionView!
 	@IBOutlet weak var backgroundView: UIView!{
 		didSet{
@@ -130,7 +131,6 @@ extension SelectVC: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		//        self.selectedIndexPath = indexPath
 		
-		
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -145,8 +145,12 @@ extension SelectVC: UICollectionViewDataSource {
 		//            cell.isSelected = true
 		//        }
 		
+		cell.active = { [weak self] in
+			guard let self = self else {return}
+			self.nextBtn.isEnabled = true
+		}
+		
 		cell.setData(appData: characterList[indexPath.row])
-		//https://velog.io/@cooo002/ios-특정-collectionViewCell를-선택한-상태로-cell-생성하기
 		
 		return cell
 	}
@@ -173,17 +177,13 @@ extension SelectVC : UIScrollViewDelegate {
 		//    self.pageControl.currentPage = Int(roundedIndex)
 	}
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		//페이저 관련..!
 		let width = scrollView.bounds.size.width
 		let screenWidth = UIScreen.main.bounds.width
 		
 		// 좌표보정을 위해 절반의 너비를 더해줌
 		let x = scrollView.contentOffset.x + (width/2)
-		print("x값. : ", x)
-		print("round값 : ", round(x/width))
 		let newPage = Int(round(x / width))
 		
-		print("newpage값 : ", newPage)
 		if pager.currentPage != newPage {
 			pager.currentPage = newPage
 		}
