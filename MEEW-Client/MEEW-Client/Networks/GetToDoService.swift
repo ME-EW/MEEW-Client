@@ -10,15 +10,15 @@ import Alamofire
 
 struct GetToDoService {
     static let shared = GetToDoService()
-    
+
     func getToDoInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
-        
+
         //통신할 API주소
         let URL = APIConstants.todoURL
-        
+
         //요청헤더
         let header: HTTPHeaders = ["Content-Type" : "application/json"]
-        
+
         //요청서
         let dataRequest = AF.request(URL,
                                      method: .get,
@@ -36,7 +36,7 @@ struct GetToDoService {
             }
         }
     }
-    
+
     //받은 statusCode를 바탕으로 어떻게 결과값을 처리할 건지 정의
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         switch statusCode {
@@ -46,13 +46,13 @@ struct GetToDoService {
         default: return .networkFail
         }
     }
-    
+
     private func isValidData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(DataModel.self, from: data) else { return .pathErr}
         //성공적으로 decode를 마치면 success에다가 data 부분을 담아서 completion 호출
         return .success(decodedData.data)
-        
+
     }
 
 }

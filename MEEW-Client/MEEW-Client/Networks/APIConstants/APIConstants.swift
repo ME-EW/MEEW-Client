@@ -18,6 +18,9 @@ enum APIConstants {
   
     //MARK: - SelectURL
     static let readCharacterURL = baseURL + "/personality"
+	
+	//MARK: - SignUpURL
+	static let signUpURL = baseURL + "/auth/signup"
   
     
 }

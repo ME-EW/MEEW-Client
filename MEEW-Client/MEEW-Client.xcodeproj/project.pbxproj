@@ -58,6 +58,8 @@
 		F203E64328AD5C3000F620A6 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203E64228AD5C3000F620A6 /* AlertViewController.swift */; };
 		F203E64528AD5FED00F620A6 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F203E64428AD5FED00F620A6 /* AlertTableViewCell.xib */; };
 		F22A7C2E284A3732006C6572 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7C2D284A3732006C6572 /* LoadingView.xib */; };
+		F2A0A45128C8DCD80027E18C /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0A45028C8DCD80027E18C /* SignUpDataModel.swift */; };
+		F2A0A45328C8DDA40027E18C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0A45228C8DDA40027E18C /* SignUpService.swift */; };
 		F2AC126A28AE2FCD00B844AC /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC126928AE2FCD00B844AC /* AlertTableViewCell.swift */; };
 		F2AC126D28AE306D00B844AC /* AlertDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC126C28AE306D00B844AC /* AlertDataModel.swift */; };
 		F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */; };
@@ -135,6 +137,8 @@
 		F203E64228AD5C3000F620A6 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		F203E64428AD5FED00F620A6 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
 		F22A7C2D284A3732006C6572 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		F2A0A45028C8DCD80027E18C /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
+		F2A0A45228C8DDA40027E18C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		F2AC126928AE2FCD00B844AC /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		F2AC126C28AE306D00B844AC /* AlertDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDataModel.swift; sourceTree = "<group>"; };
 		F2C6770927C7DA320020B8F4 /* SelectCarouselLayout.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectCarouselLayout.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -329,6 +333,7 @@
 			children = (
 				BD339A3627493F3A00021E91 /* GenericResponse.swift */,
 				F2EC3A102749A47B00805FE3 /* CharacterRequestDataModel.swift */,
+				F2A0A45028C8DCD80027E18C /* SignUpDataModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			children = (
 				BD339A3427493EEB00021E91 /* NetworkResult.swift */,
 				F2EC3A0E2749A1D400805FE3 /* CharacterListService.swift */,
+				F2A0A45228C8DDA40027E18C /* SignUpService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -788,8 +794,10 @@
 				BD3B54742852038F003D91D3 /* ProfileView.swift in Sources */,
 				BD339A1F27493B9E00021E91 /* BaseVC.swift in Sources */,
 				BD339A2827493C5600021E91 /* Palette.swift in Sources */,
+				F2A0A45328C8DDA40027E18C /* SignUpService.swift in Sources */,
 				BD45C415274947C600229D35 /* SelectVC.swift in Sources */,
 				6F673C042837F26400B7E0D3 /* MyCell.swift in Sources */,
+				F2A0A45128C8DCD80027E18C /* SignUpDataModel.swift in Sources */,
 				BD339A3027493D6500021E91 /* Reusable.swift in Sources */,
 				6F257EEC2749A3E00055EE43 /* GetToDoService.swift in Sources */,
 				BD45C41F2749482800229D35 /* ResultVC.swift in Sources */,
