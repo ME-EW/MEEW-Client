@@ -70,7 +70,7 @@
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음">
-                                    <color key="titleColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="touchUpToGoToDoView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IbD-NH-zha"/>
