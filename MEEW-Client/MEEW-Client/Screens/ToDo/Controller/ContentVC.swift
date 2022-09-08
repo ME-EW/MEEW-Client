@@ -19,7 +19,8 @@ class ContentVC: UIViewController {
   private var paragraphStyle = NSMutableParagraphStyle()
   private var dimmedBackView = UIView()
   private let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 304))
-  private var todayCharacterInfo = TodayCharacterData(nickname: "", dataEnum: 0, name: "", level: 0, imageURL: "", chance: 0, finished: false, todo: [])
+  var characterId: Int? = nil
+  private var characterPerInfo = Personality(id: 0, name: "", personalityDescription: "", createdAt: "", updatedAt: "", mainImg: "", imgURL: [])
   private  let levelCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
@@ -31,7 +32,7 @@ class ContentVC: UIViewController {
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    requestGetTodayCharacter()
+    requestGetCharacterList()
   }
   
   // MARK: - Custom Method
@@ -89,7 +90,7 @@ class ContentVC: UIViewController {
       }
     }
     scrollContainverView.add(titleLabel) {
-      $0.text = self.todayCharacterInfo.name
+      $0.text = self.characterPerInfo.name
       $0.textColor = .white
       $0.font = .head2
       $0.snp.makeConstraints {
@@ -98,16 +99,19 @@ class ContentVC: UIViewController {
       }
     }
     paragraphStyle.lineHeightMultiple = 1.25
+    var lines = self.characterPerInfo.personalityDescription.components(separatedBy: ". ")
+    lines[0].insert(".", at: lines[0].endIndex)
+    let paragraph = lines.joined(separator: "\n")
     scrollContainverView.add(subtitleLabel) { [self] in
       $0.numberOfLines = 0
       $0.lineBreakMode = .byWordWrapping
-      $0.attributedText = NSMutableAttributedString(string: "바람이는 어디로 불지 모르는 성격이에요. \n계획적이기 보다는 마음가는 대로 즐겁게 \n살아가고 있죠.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+      $0.attributedText = NSMutableAttributedString(string: paragraph, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
       $0.textColor = .grey300
       $0.font = .body1
       $0.snp.makeConstraints {
         $0.top.equalTo(self.titleLabel.snp.bottom).offset(16)
         $0.leading.equalTo(self.titleLabel.snp.leading)
-        $0.trailing.equalTo(self.scrollContainverView.snp.trailing).inset(82)
+        $0.trailing.equalTo(self.scrollContainverView.snp.trailing).offset(-20)
       }
     }
     scrollContainverView.add(levelCollectionView) {
@@ -131,7 +135,7 @@ extension ContentVC: UICollectionViewDelegate, UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCell.reuseIdentifier, for: indexPath) as? MyCell else {return UICollectionViewCell() }
-    let url = URL(string: self.todayCharacterInfo.imageURL)
+    let url = URL(string: self.characterPerInfo.imgURL[indexPath.row])
     do {
       let data = try Data(contentsOf: url!)
       cell.myImage.image = UIImage(data: data)
@@ -158,15 +162,18 @@ extension ContentVC: UICollectionViewDelegateFlowLayout {
 }
 
 extension ContentVC {
-  private func requestGetTodayCharacter() {
-    GetTodayCharacter.shared.getTodayCharacter { networkResult in
+  
+  private func requestGetCharacterList() {
+    CharacterService.shared.getCharacterList { networkResult in
       switch networkResult {
       case .success(let result):
-        guard let response = result as? TodayCharacterRequestModel else { return }
+        guard let response = result as? CharacterRequestModel else { return }
         if let userData = response.data {
-          self.todayCharacterInfo = userData
-          self.setupUI()
-          self.setCollectionAttributes()
+          if let id = self.characterId {
+            self.characterPerInfo = userData.personalities[id-1]
+            self.setupUI()
+            self.setCollectionAttributes()
+          }
         }
         print(response.message)
       case .requestErr(let msg):

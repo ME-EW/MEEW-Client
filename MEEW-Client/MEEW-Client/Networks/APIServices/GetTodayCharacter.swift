@@ -94,6 +94,7 @@ struct GetTodayCharacter {
         let networkResult = self.judgeStatus(by: statusCode, value)
         completion(networkResult)
       case .failure(let err):
+        print("failure")
         print("fail")
         print(err)
         completion(.pathErr)

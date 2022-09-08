@@ -16,12 +16,12 @@ struct TodayCharacterRequestModel: Codable {
 
 struct TodayCharacterData: Codable {
   let nickname: String
-  let dataEnum: Int
+  let dataEnum: Int?
   let name: String
   let level: Int
   let imageURL: String
   let chance: Int
-  let finished: Bool
+  let finished: Bool?
   let todo: [TodayTodoList]
   
   enum CodingKeys: String, CodingKey {

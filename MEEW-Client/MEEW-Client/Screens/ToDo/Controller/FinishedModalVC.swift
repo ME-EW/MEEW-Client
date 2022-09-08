@@ -148,7 +148,9 @@ extension FinishedModalVC {
       case .success(let result):
         guard let response = result as? TodayCharacterRequestModel else { return }
         if let userData = response.data {
-          self.characterEnum = userData.dataEnum
+          if let dataenum = userData.dataEnum {
+            self.characterEnum = dataenum
+          } else { print("error") }
           let stringArray = userData.name.split(separator: " ")
           self.splitedCharacterName = String(stringArray.last!)
           self.setupUI()
