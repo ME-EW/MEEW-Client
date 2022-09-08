@@ -11,16 +11,17 @@ class ContentVC: UIViewController {
   
   // MARK: - Properties
   let scrollView = UIScrollView()
-  let scrollContainverView = UIView()
-  let titleLabel = UILabel()
-  let subtitleLabel = UILabel()
-  let okayButton = UIButton()
-  let tmpView = UIView()
-  var paragraphStyle = NSMutableParagraphStyle()
-  var dimmedBackView = UIView()
-  let images = ["baram1","baram1","baram1","baram1"]
-
-  let levelCollectionView: UICollectionView = {
+  private let scrollContainverView = UIView()
+  private let titleLabel = UILabel()
+  private let subtitleLabel = UILabel()
+  private let okayButton = UIButton()
+  private let tmpView = UIView()
+  private var paragraphStyle = NSMutableParagraphStyle()
+  private var dimmedBackView = UIView()
+  private let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 304))
+  var characterId: Int? = nil
+  private var characterPerInfo = Personality(id: 0, name: "", personalityDescription: "", createdAt: "", updatedAt: "", mainImg: "", imgURL: [])
+  private  let levelCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
     let collectionView = UICollectionView(frame: .zero,
@@ -31,34 +32,14 @@ class ContentVC: UIViewController {
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    setupUI()
-    setGradationView()
-    setCollectionAttributes()
+    requestGetCharacterList()
   }
   
   // MARK: - Custom Method
-  
-  func setCollectionAttributes() {
+  private func setCollectionAttributes() {
     levelCollectionView.register(MyCell.self, forCellWithReuseIdentifier: MyCell.reuseIdentifier)
     levelCollectionView.delegate = self
     levelCollectionView.dataSource = self
-  }
-  
-  func setGradationView() {
-    let dimmedlayer = CAGradientLayer()
-    dimmedlayer.colors = [
-      UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 0).cgColor,
-      UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 1).cgColor
-    ]
-    dimmedlayer.locations = [0, 1]
-    dimmedlayer.startPoint = CGPoint(x: 0.25, y: 0.5)
-    dimmedlayer.endPoint = CGPoint(x: 0.75, y: 0.5)
-    dimmedlayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 0.65, c: -0.65, d: 0, tx: 0.82, ty: 0.14))
-    dimmedlayer.bounds = view.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
-    dimmedlayer.position = view.center
-    view.layer.addSublayer(dimmedlayer)
-    view.addSubview(okayButton)
   }
   
   // MARK: - @objc
@@ -67,7 +48,7 @@ class ContentVC: UIViewController {
   }
   
   // MARK: - UI
-  func setupUI() {
+  private func setupUI() {
     view.add(scrollView) {
       $0.backgroundColor = .clear
       $0.translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +56,16 @@ class ContentVC: UIViewController {
       $0.snp.makeConstraints {
         $0.top.equalTo(self.view.snp.top).offset(40)
         $0.centerX.leading.trailing.bottom.equalToSuperview()
+      }
+    }
+    view.add(gradientView) {
+      $0.setGradient(color1: UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 0), color2: UIColor(red: 0.286, green: 0.286, blue: 0.286, alpha: 1))
+      $0.snp.makeConstraints {
+        $0.leading.equalTo(self.view.snp.leading)
+        $0.bottom.equalTo(self.view.snp.bottom).offset(64)
+        $0.trailing.equalTo(self.view.snp.trailing)
+        $0.height.equalTo(304)
+        $0.width.equalTo(375)
       }
     }
     view.add(okayButton) {
@@ -99,7 +90,7 @@ class ContentVC: UIViewController {
       }
     }
     scrollContainverView.add(titleLabel) {
-      $0.text = "즉흥적인 바람이"
+      $0.text = self.characterPerInfo.name
       $0.textColor = .white
       $0.font = .head2
       $0.snp.makeConstraints {
@@ -108,16 +99,19 @@ class ContentVC: UIViewController {
       }
     }
     paragraphStyle.lineHeightMultiple = 1.25
+    var lines = self.characterPerInfo.personalityDescription.components(separatedBy: ". ")
+    lines[0].insert(".", at: lines[0].endIndex)
+    let paragraph = lines.joined(separator: "\n")
     scrollContainverView.add(subtitleLabel) { [self] in
       $0.numberOfLines = 0
       $0.lineBreakMode = .byWordWrapping
-      $0.attributedText = NSMutableAttributedString(string: "바람이는 어디로 불지 모르는 성격이에요. \n계획적이기 보다는 마음가는 대로 즐겁게 \n살아가고 있죠.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+      $0.attributedText = NSMutableAttributedString(string: paragraph, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
       $0.textColor = .grey300
       $0.font = .body1
       $0.snp.makeConstraints {
         $0.top.equalTo(self.titleLabel.snp.bottom).offset(16)
         $0.leading.equalTo(self.titleLabel.snp.leading)
-        $0.trailing.equalTo(self.scrollContainverView.snp.trailing).inset(82)
+        $0.trailing.equalTo(self.scrollContainverView.snp.trailing).offset(-20)
       }
     }
     scrollContainverView.add(levelCollectionView) {
@@ -141,7 +135,11 @@ extension ContentVC: UICollectionViewDelegate, UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCell.reuseIdentifier, for: indexPath) as? MyCell else {return UICollectionViewCell() }
-    cell.myImage.image = UIImage(named: images[indexPath.row])
+    let url = URL(string: self.characterPerInfo.imgURL[indexPath.row])
+    do {
+      let data = try Data(contentsOf: url!)
+      cell.myImage.image = UIImage(data: data)
+    } catch { }
     cell.myLabel.text = "Lv. " + String(indexPath.row+1)
     cell.awakeFromNib()
     return cell
@@ -160,5 +158,33 @@ extension ContentVC: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 15
+  }
+}
+
+extension ContentVC {
+  
+  private func requestGetCharacterList() {
+    CharacterService.shared.getCharacterList { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? CharacterRequestModel else { return }
+        if let userData = response.data {
+          if let id = self.characterId {
+            self.characterPerInfo = userData.personalities[id-1]
+            self.setupUI()
+            self.setCollectionAttributes()
+          }
+        }
+        print(response.message)
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
   }
 }

@@ -12,12 +12,15 @@ import Foundation
 
 enum APIConstants {
     // Base url
-    static let baseURL = "https://asia-northeast3-sopt-hackathon.cloudfunctions.net/api"
+    static let baseURL = "https://asia-northeast3-meew-server.cloudfunctions.net/api"
     
-    static let todoURL = baseURL + "/user/1"
-  
+    // MARK: - ToDo뷰
+    static let getTodayCharacterURL = baseURL + "/personality/today"
+    static let getNewTodayCharacterURL = baseURL + "/personality/new"
+    static let getOriginalMyCharacterURL = baseURL + "/personality/me"
+    static let patchToDoURL = baseURL + "/personality/check"
+    static let getCharacterURL = baseURL + "/personality"
+
     //MARK: - SelectURL
     static let readCharacterURL = baseURL + "/personality/list"
-  
-    
 }

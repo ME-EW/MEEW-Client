@@ -17,16 +17,18 @@ class FinishedModalVC: UIViewController {
   let yesButton = UIButton()
   let horizonView = UIView()
   let verticalView = UIView()
+  var splitedCharacterName = ""
+  var characterEnum = 0
   
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupUI()
+    requestGetTodayCharacter()
   }
   
   // MARK: - @objc
   @objc func yesButtonClicked(_ sender: UIButton) {
-    print("clicked")
+    postEndTodayCharacter()
     self.dismiss(animated: true, completion: nil)
     NotificationCenter.default.post(name: NSNotification.Name("didTapYesButton"), object: nil)
   }
@@ -60,7 +62,7 @@ class FinishedModalVC: UIViewController {
       }
     }
     view.add(questionLabel) {
-      $0.text = "오늘 바람이를 완성하지 못했어요!\n정말 마무리하시겠어요?"
+      $0.text = "오늘 "+"\(self.splitedCharacterName)"+"를 완성하지 못했어요!\n정말 마무리하시겠어요?"
       $0.textAlignment = .center
       $0.numberOfLines = 0
       $0.textColor = .white
@@ -73,7 +75,7 @@ class FinishedModalVC: UIViewController {
     view.add(yesButton) {
       $0.backgroundColor = .grey600
       $0.setTitle("네", for: .normal)
-      $0.setTitleColor(.purple, for: .normal)
+      $0.setTitleColor(Character.color[self.characterEnum], for: .normal)
       $0.titleLabel?.font = .title4
       $0.roundCorners(cornerRadius: 12, maskedCorners: [.layerMaxXMaxYCorner])
       $0.addTarget(self, action: #selector(self.yesButtonClicked(_:)), for: .touchUpInside)
@@ -114,6 +116,54 @@ class FinishedModalVC: UIViewController {
         $0.bottom.equalTo(self.questionView.snp.bottom)
         $0.centerX.equalTo(self.questionView.snp.centerX)
         $0.width.equalTo(0.5)
+      }
+    }
+  }
+}
+
+extension FinishedModalVC {
+  
+  func postEndTodayCharacter() {
+    GetTodayCharacter.shared.postEndTodayCharacter { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        print(response.message)
+        print("success")
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
+      }
+    }
+  }
+  
+  func requestGetTodayCharacter() {
+    GetTodayCharacter.shared.getTodayCharacter { networkResult in
+      switch networkResult {
+      case .success(let result):
+        guard let response = result as? TodayCharacterRequestModel else { return }
+        if let userData = response.data {
+          if let dataenum = userData.dataEnum {
+            self.characterEnum = dataenum
+          } else { print("error") }
+          let stringArray = userData.name.split(separator: " ")
+          self.splitedCharacterName = String(stringArray.last!)
+          self.setupUI()
+        }
+        print(response.message)
+      case .requestErr(let msg):
+        print("requestErr \(msg)")
+      case .pathErr:
+        print("pathErr")
+      case .serverErr:
+        print("serverErr")
+      case .networkFail:
+        print("networkFail")
       }
     }
   }

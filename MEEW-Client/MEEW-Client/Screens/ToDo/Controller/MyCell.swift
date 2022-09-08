@@ -46,7 +46,7 @@ class MyCell: UICollectionViewCell {
       $0.snp.makeConstraints {
         $0.centerY.equalTo(self.backView.snp.centerY)
         $0.centerX.equalTo(self.backView.snp.centerX)
-        
+        $0.width.height.equalTo(160-26)
       }
     }
   }
