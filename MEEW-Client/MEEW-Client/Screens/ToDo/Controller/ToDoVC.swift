@@ -33,6 +33,7 @@ class ToDoVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     appendArrayUIProperties()
+    layout()
     requestGetTodayCharacter()
     setNotification()
   }
@@ -85,7 +86,8 @@ class ToDoVC: UIViewController {
     }
     let url = URL(string: self.todayCharacterInfo.imageURL)
     do {
-      let data = try Data(contentsOf: url!)
+      guard let url = url else { return }
+      let data = try Data(contentsOf: url)
       imageView.image = UIImage(data: data)
     } catch { }
     view.add(characterLabel) {
@@ -144,6 +146,7 @@ class ToDoVC: UIViewController {
         $0.top.equalTo(self.checkBoxView.snp.bottom).offset(68)
         $0.leading.equalTo(self.view.snp.leading).offset(20)
         $0.trailing.equalTo(self.view.snp.trailing).offset(-20)
+        $0.width.equalTo(335)
       }
     }
     view.add(originalButton) {
