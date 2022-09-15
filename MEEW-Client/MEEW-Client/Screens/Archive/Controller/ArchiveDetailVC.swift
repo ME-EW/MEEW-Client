@@ -15,6 +15,8 @@ final class ArchiveDetailVC: BaseVC {
     let rootView = ArchiveDetailView()
     lazy var datePicker = UIDatePicker()
     
+    var data: Specific? { didSet { rootView.tableView.reloadData() } }
+    
     override func loadView() {
         self.view = rootView
     }
@@ -24,6 +26,7 @@ final class ArchiveDetailVC: BaseVC {
         
         configureTableView()
         configureTarget()
+        requestArchive()
     }
     
     private func configureTableView() {
@@ -46,14 +49,14 @@ final class ArchiveDetailVC: BaseVC {
 extension ArchiveDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return data?.fail?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArchiveTodoTVC.reuseIdentifier) as? ArchiveTodoTVC else {
             return UITableViewCell()
         }
-        
+        cell.configure(data?.fail?[indexPath.row])
         return cell
     }
 }
@@ -66,5 +69,20 @@ extension ArchiveDetailVC {
     
     @objc func close() {
         dismiss(animated: true)
+    }
+    
+    private func requestArchive() {
+        ArchiveService.shared.fetchSpecificArchive(for: "2022-09-11") { response in
+            switch response {
+            case .success(let result):
+                guard let response = result as? SpecificArchiveDTO else { return }
+                if let data = response.data {
+                    self.data = data
+                }
+            default:
+                print("error")
+                return
+            }
+        }
     }
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+import SnapKit
+import Then
+import Kingfisher
+
 final class ArchiveTVC: UITableViewCell {
     
     private lazy var characterImageView = UIImageView().then {
@@ -30,6 +34,12 @@ final class ArchiveTVC: UITableViewCell {
     
     private let lineView = UIView().then {
         $0.backgroundColor = .grey500
+    }
+    
+    private lazy var dateFormatter = DateFormatter().then {
+        $0.dateFormat = "YYYY.MM.dd"
+        $0.locale = Locale(identifier: "ko_KR")
+        $0.timeZone = TimeZone(identifier: "ko_KR")
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -85,5 +95,27 @@ final class ArchiveTVC: UITableViewCell {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.lessThanOrEqualToSuperview()
         }
+    }
+    
+    func configure(_ data: Recent?) {
+        let df = DateFormatter()
+        df.dateFormat = "YYYY-MM-dd'T'hh:mm:ss.sss'Z'"
+        guard let date = df.date(from: data?.date ?? "") else { return }
+        guard let imgURL = data?.imgURL else { return }
+
+        characterNameLabel.text = data?.name
+        timeLabel.text = dateFormatter.string(from: date)
+        characterImageView.kf.setImage(with: URL(string: imgURL))
+    }
+    
+    func configure(withAll data: All?) {
+        let df = DateFormatter()
+        df.dateFormat = "YYYY-MM-dd'T'hh:mm:ss.sss'Z'"
+        guard let date = df.date(from: data?.date ?? "") else { return }
+        guard let imgURL = data?.imgURL else { return }
+
+        characterNameLabel.text = data?.name
+        timeLabel.text = dateFormatter.string(from: date)
+        characterImageView.kf.setImage(with: URL(string: imgURL))
     }
 }

@@ -84,4 +84,9 @@ extension ArchiveBannerView {
             $0.bottom.equalToSuperview().inset(33)
         }
     }
+    
+    func configure(_ data: Today?) {
+        characterNameLabel.text = data?.name
+        characterDescriptionLabel.text = data?.desc
+    }
 }

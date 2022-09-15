@@ -49,6 +49,10 @@
 		BD772D5728B75C3B006CBD6B /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */; };
 		BD772D5928B75F7F006CBD6B /* ArchiveTodoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */; };
 		BD772D5C28B797E5006CBD6B /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5B28B797E5006CBD6B /* DatePickerView.swift */; };
+		BD92EF9D28D3156C000C4A4F /* ArchiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EF9C28D3156C000C4A4F /* ArchiveService.swift */; };
+		BD92EFA028D316B1000C4A4F /* RecentArchiveDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EF9F28D316B1000C4A4F /* RecentArchiveDTO.swift */; };
+		BD92EFA228D34685000C4A4F /* AllArchiveDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EFA128D34685000C4A4F /* AllArchiveDTO.swift */; };
+		BD92EFA428D360B2000C4A4F /* SpecificArchiveDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EFA328D360B2000C4A4F /* SpecificArchiveDTO.swift */; };
 		BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA4628508CAB00883B32 /* NavigationBarView.swift */; };
 		BDABFA492850928600883B32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA482850928600883B32 /* SettingViewController.swift */; };
 		BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABFA4A2850930700883B32 /* SettingViewController.storyboard */; };
@@ -125,6 +129,10 @@
 		BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
 		BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTodoTVC.swift; sourceTree = "<group>"; };
 		BD772D5B28B797E5006CBD6B /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		BD92EF9C28D3156C000C4A4F /* ArchiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveService.swift; sourceTree = "<group>"; };
+		BD92EF9F28D316B1000C4A4F /* RecentArchiveDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentArchiveDTO.swift; sourceTree = "<group>"; };
+		BD92EFA128D34685000C4A4F /* AllArchiveDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArchiveDTO.swift; sourceTree = "<group>"; };
+		BD92EFA328D360B2000C4A4F /* SpecificArchiveDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificArchiveDTO.swift; sourceTree = "<group>"; };
 		BDABFA4628508CAB00883B32 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		BDABFA482850928600883B32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BDABFA4A2850930700883B32 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
@@ -382,9 +390,11 @@
 		BD45C40F2749472900229D35 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C421274948BA00229D35 /* Controller */,
-				BD45C42F274978C900229D35 /* View */,
+				BD92EF9E28D316A5000C4A4F /* Model */,
 				BDC5CC8F28AD4D4800CBDE12 /* Cell */,
+				BD45C421274948BA00229D35 /* Controller */,
+				BD92EF9B28D31542000C4A4F /* Service */,
+				BD45C42F274978C900229D35 /* View */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -449,6 +459,24 @@
 				BD772D5B28B797E5006CBD6B /* DatePickerView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BD92EF9B28D31542000C4A4F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD92EF9C28D3156C000C4A4F /* ArchiveService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD92EF9E28D316A5000C4A4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD92EF9F28D316B1000C4A4F /* RecentArchiveDTO.swift */,
+				BD92EFA128D34685000C4A4F /* AllArchiveDTO.swift */,
+				BD92EFA328D360B2000C4A4F /* SpecificArchiveDTO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BDABFA4228508A5000883B32 /* Setting */ = {
@@ -705,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD92EF9D28D3156C000C4A4F /* ArchiveService.swift in Sources */,
 				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
 				BD339A0327493ABF00021E91 /* AppDelegate.swift in Sources */,
 				BD4C26842853170000EFAEE5 /* ProfileEditViewController.swift in Sources */,
@@ -718,6 +747,7 @@
 				BD3B547628520928003D91D3 /* SettingRow.swift in Sources */,
 				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
 				BDC5CC9B28AD4E8C00CBDE12 /* ArchiveEmptyView.swift in Sources */,
+				BD92EFA428D360B2000C4A4F /* SpecificArchiveDTO.swift in Sources */,
 				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
 				6FDCA78B2827E9F100BB0836 /* ToDoVC.swift in Sources */,
 				F2EC3A0F2749A1D400805FE3 /* CharacterListService.swift in Sources */,
@@ -739,6 +769,7 @@
 				6F3134AE27FF02A400FE1EB4 /* JoinVC.swift in Sources */,
 				BDC5CC9728AD4E1600CBDE12 /* ArchiveHeaderView.swift in Sources */,
 				6FDCA78E2828005E00BB0836 /* UIButton+.swift in Sources */,
+				BD92EFA028D316B1000C4A4F /* RecentArchiveDTO.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
 				BDABFA492850928600883B32 /* SettingViewController.swift in Sources */,
 				BD339A3327493E5700021E91 /* APIConstants.swift in Sources */,
@@ -750,6 +781,7 @@
 				BD772D5528B75C02006CBD6B /* ArchiveDetailVC.swift in Sources */,
 				BDC5CC9D28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift in Sources */,
 				BD339A3027493D6500021E91 /* Reusable.swift in Sources */,
+				BD92EFA228D34685000C4A4F /* AllArchiveDTO.swift in Sources */,
 				6F257EEC2749A3E00055EE43 /* GetToDoService.swift in Sources */,
 				BDC5CC9528AD4DE700CBDE12 /* ArchiveAllVC.swift in Sources */,
 				6F94BF57283768A600345FFA /* ContentVC.swift in Sources */,

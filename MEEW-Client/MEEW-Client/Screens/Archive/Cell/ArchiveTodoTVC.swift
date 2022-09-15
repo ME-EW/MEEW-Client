@@ -62,5 +62,9 @@ final class ArchiveTodoTVC: UITableViewCell {
             $0.trailing.equalToSuperview().inset(16)
         }
     }
+    
+    func configure(_ data: SpecificTask?) {
+        todoLabel.text = data?.content
+    }
 }
 

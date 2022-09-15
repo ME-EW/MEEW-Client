@@ -14,7 +14,8 @@ final class ArchiveAllVC: BaseVC {
     
     // MARK: - Properties
     
-    var data: [Any] = ["1", "2", "3"]
+    var data: [All] = [] { didSet { tableView.reloadData() } }
+    var month: [Int] = [] { didSet { tableView.reloadData() } }
     
     // MARK: - UI Properties
     
@@ -31,6 +32,35 @@ final class ArchiveAllVC: BaseVC {
         configureLayout()
         configureTableView()
         dismissController()
+        requestAllArchive()
+    }
+    
+    private func requestAllArchive(page: Int = 1) {
+        ArchiveService.shared.fetchAllArchive(page: page) { response in
+            switch response {
+            case .success(let result):
+                guard let response = result as? AllArchiveDTO else { return }
+                if let data = response.data,
+                   let all = data.all {
+                    self.data = all
+                    self.month = all.compactMap {
+                        let df = DateFormatter()
+                        df.dateFormat = "YYYY-MM-dd'T'hh:mm:ss.sss'Z'"
+                        return df.date(from: $0.date)
+                    }.map {
+                        return Calendar.current.dateComponents([.month], from: $0).month!
+                    }.reduce(into: [Int]()) { result, currentValue in
+                        if (result.isEmpty || result.last != currentValue) {
+                            result.append(currentValue)
+                        }
+                    }
+                }
+                
+            default:
+                print("Error")
+                return
+            }
+        }
     }
 }
 
@@ -96,7 +126,7 @@ extension ArchiveAllVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         tableView.backgroundView = data.isEmpty ? emptyView : nil
-        return 3
+        return month.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,6 +135,7 @@ extension ArchiveAllVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArchiveTVC.reuseIdentifier) as! ArchiveTVC
+        cell.configure(withAll: data[indexPath.row])
         return cell
     }
 }

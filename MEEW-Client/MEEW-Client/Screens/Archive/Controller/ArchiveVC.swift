@@ -14,7 +14,8 @@ final class ArchiveVC: BaseVC {
     
     // MARK: - Properties
     
-    var data: [Any] = ["1", "2", "3"]
+    var data: [Recent] = [] { didSet { tableView.reloadData() } }
+    var today: Today? { didSet { archiveBannerView.configure(today) } }
     
     // MARK: - UI Properties
     
@@ -36,6 +37,24 @@ final class ArchiveVC: BaseVC {
         configureLayout()
         configureTableView()
         archiveHeaderView.delegate = self
+        
+        requestRecentArchive()
+    }
+    
+    private func requestRecentArchive() {
+        ArchiveService.shared.fetchRecentArchive { response in
+            switch response {
+            case .success(let result):
+                guard let response = result as? RecentArchiveDTO else { return }
+                if let data = response.data,
+                   let recent = data.recent {
+                    self.today = data.today
+                    self.data = recent
+                }
+            default:
+                return
+            }
+        }
     }
 }
 
@@ -92,6 +111,7 @@ extension ArchiveVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArchiveTVC.reuseIdentifier) as! ArchiveTVC
+        cell.configure(data[indexPath.row])
         return cell
     }
 }

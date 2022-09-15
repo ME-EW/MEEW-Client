@@ -128,4 +128,8 @@ final class ArchiveDetailView: UIView {
             $0.bottom.equalToSuperview().inset(16)
         }
     }
+    
+    func configure(_ data: Specific) {
+        nameLabel.text = data.name
+    }
 }
