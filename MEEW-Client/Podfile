@@ -12,6 +12,10 @@ target 'MEEW-Client' do
   # Pods for Network
   pod 'Alamofire', '~> 5.1' 
 
+  # Pods for alert
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging' 
+
   # Pods for Image caching
   pod 'Kingfisher', '~> 5.0'
 end
