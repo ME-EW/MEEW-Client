@@ -24,3 +24,10 @@ enum APIConstants {
     //MARK: - SelectURL
     static let readCharacterURL = baseURL + "/personality/list"
 }
+
+extension APIConstants {
+    //MARK: - ArchiveURL
+    static let recentArchiveURL = baseURL + "/personality/recent"
+    static let allArchiveURL = baseURL + "/personality/all"
+    static let archiveForDateURL = baseURL + "/personality/date"
+}

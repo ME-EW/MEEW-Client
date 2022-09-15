@@ -42,10 +42,6 @@
 		BD3B547828520D14003D91D3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B547728520D14003D91D3 /* InfoView.swift */; };
 		BD45C412274947B500229D35 /* SelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C411274947B500229D35 /* SelectVC.storyboard */; };
 		BD45C415274947C600229D35 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C414274947C600229D35 /* SelectVC.swift */; };
-		BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD45C41C2749482100229D35 /* ResultVC.storyboard */; };
-		BD45C41F2749482800229D35 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C41E2749482800229D35 /* ResultVC.swift */; };
-		BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C423274962F300229D35 /* MEEWPopUp.xib */; };
-		BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C425274962FA00229D35 /* MEEWPopUp.swift */; };
 		BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C427274968FB00229D35 /* UIApplication+.swift */; };
 		BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42927496A8700229D35 /* AppDelegate+.swift */; };
 		BD45C42C27496BA000229D35 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C42B27496BA000229D35 /* UIView+.swift */; };
@@ -53,9 +49,25 @@
 		BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD45C4342749937A00229D35 /* CompletePopUp.xib */; };
 		BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD45C4362749938400229D35 /* CompletePopUp.swift */; };
 		BD4C26842853170000EFAEE5 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C26832853170000EFAEE5 /* ProfileEditViewController.swift */; };
+		BD772D5528B75C02006CBD6B /* ArchiveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5428B75C02006CBD6B /* ArchiveDetailVC.swift */; };
+		BD772D5728B75C3B006CBD6B /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */; };
+		BD772D5928B75F7F006CBD6B /* ArchiveTodoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */; };
+		BD772D5C28B797E5006CBD6B /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5B28B797E5006CBD6B /* DatePickerView.swift */; };
+		BD92EF9D28D3156C000C4A4F /* ArchiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EF9C28D3156C000C4A4F /* ArchiveService.swift */; };
+		BD92EFA028D316B1000C4A4F /* RecentArchiveDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EF9F28D316B1000C4A4F /* RecentArchiveDTO.swift */; };
+		BD92EFA228D34685000C4A4F /* AllArchiveDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EFA128D34685000C4A4F /* AllArchiveDTO.swift */; };
+		BD92EFA428D360B2000C4A4F /* SpecificArchiveDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92EFA328D360B2000C4A4F /* SpecificArchiveDTO.swift */; };
 		BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA4628508CAB00883B32 /* NavigationBarView.swift */; };
 		BDABFA492850928600883B32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABFA482850928600883B32 /* SettingViewController.swift */; };
 		BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABFA4A2850930700883B32 /* SettingViewController.storyboard */; };
+		BDC5CC8E28AD4D1600CBDE12 /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC8D28AD4D1600CBDE12 /* ArchiveVC.swift */; };
+		BDC5CC9128AD4D8C00CBDE12 /* ArchiveTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9028AD4D8C00CBDE12 /* ArchiveTVC.swift */; };
+		BDC5CC9328AD4DC900CBDE12 /* ArchiveBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9228AD4DC900CBDE12 /* ArchiveBannerView.swift */; };
+		BDC5CC9528AD4DE700CBDE12 /* ArchiveAllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9428AD4DE700CBDE12 /* ArchiveAllVC.swift */; };
+		BDC5CC9728AD4E1600CBDE12 /* ArchiveHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9628AD4E1600CBDE12 /* ArchiveHeaderView.swift */; };
+		BDC5CC9928AD4E2500CBDE12 /* ArchiveAllHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9828AD4E2500CBDE12 /* ArchiveAllHeaderView.swift */; };
+		BDC5CC9B28AD4E8C00CBDE12 /* ArchiveEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9A28AD4E8C00CBDE12 /* ArchiveEmptyView.swift */; };
+		BDC5CC9D28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5CC9C28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift */; };
 		BDE6507427DB5DB2005048D3 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */; };
 		BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */; };
 		F203E64128AD5C1200F620A6 /* AlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F203E64028AD5C1200F620A6 /* AlertViewController.storyboard */; };
@@ -122,10 +134,6 @@
 		BD3B547728520D14003D91D3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		BD45C411274947B500229D35 /* SelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectVC.storyboard; sourceTree = "<group>"; };
 		BD45C414274947C600229D35 /* SelectVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; tabWidth = 4; };
-		BD45C41C2749482100229D35 /* ResultVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultVC.storyboard; sourceTree = "<group>"; };
-		BD45C41E2749482800229D35 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
-		BD45C423274962F300229D35 /* MEEWPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MEEWPopUp.xib; path = "MEEW-Client/Screens/Result/MEEWPopUp.xib"; sourceTree = SOURCE_ROOT; };
-		BD45C425274962FA00229D35 /* MEEWPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MEEWPopUp.swift; path = "MEEW-Client/Screens/Result/MEEWPopUp.swift"; sourceTree = SOURCE_ROOT; };
 		BD45C427274968FB00229D35 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		BD45C42927496A8700229D35 /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
 		BD45C42B27496BA000229D35 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -133,11 +141,25 @@
 		BD45C4342749937A00229D35 /* CompletePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletePopUp.xib; sourceTree = "<group>"; };
 		BD45C4362749938400229D35 /* CompletePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUp.swift; sourceTree = "<group>"; };
 		BD4C26832853170000EFAEE5 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		BD772D5428B75C02006CBD6B /* ArchiveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailVC.swift; sourceTree = "<group>"; };
+		BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
+		BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTodoTVC.swift; sourceTree = "<group>"; };
+		BD772D5B28B797E5006CBD6B /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		BD92EF9C28D3156C000C4A4F /* ArchiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveService.swift; sourceTree = "<group>"; };
+		BD92EF9F28D316B1000C4A4F /* RecentArchiveDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentArchiveDTO.swift; sourceTree = "<group>"; };
+		BD92EFA128D34685000C4A4F /* AllArchiveDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArchiveDTO.swift; sourceTree = "<group>"; };
+		BD92EFA328D360B2000C4A4F /* SpecificArchiveDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificArchiveDTO.swift; sourceTree = "<group>"; };
 		BDABFA4628508CAB00883B32 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		BDABFA482850928600883B32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BDABFA4A2850930700883B32 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
-		BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
-		BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		BDC5CC8D28AD4D1600CBDE12 /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
+		BDC5CC9028AD4D8C00CBDE12 /* ArchiveTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTVC.swift; sourceTree = "<group>"; };
+		BDC5CC9228AD4DC900CBDE12 /* ArchiveBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveBannerView.swift; sourceTree = "<group>"; };
+		BDC5CC9428AD4DE700CBDE12 /* ArchiveAllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveAllVC.swift; sourceTree = "<group>"; };
+		BDC5CC9628AD4E1600CBDE12 /* ArchiveHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveHeaderView.swift; sourceTree = "<group>"; };
+		BDC5CC9828AD4E2500CBDE12 /* ArchiveAllHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveAllHeaderView.swift; sourceTree = "<group>"; };
+		BDC5CC9A28AD4E8C00CBDE12 /* ArchiveEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEmptyView.swift; sourceTree = "<group>"; };
+		BDC5CC9C28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLevelProgressView.swift; sourceTree = "<group>"; };
 		CD5A903C280A765B3BA5AEA8 /* Pods-MEEW-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MEEW-Client.release.xcconfig"; path = "Target Support Files/Pods-MEEW-Client/Pods-MEEW-Client.release.xcconfig"; sourceTree = "<group>"; };
 		F203E64028AD5C1200F620A6 /* AlertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertViewController.storyboard; sourceTree = "<group>"; };
 		F203E64228AD5C3000F620A6 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +263,7 @@
 				BD45C40D274946BF00229D35 /* Select */,
 				F2E1CAC4281FC3CE00E4B1FD /* Nickname */,
 				BD45C40E2749472700229D35 /* ToDo */,
-				BD45C40F2749472900229D35 /* Result */,
+				BD45C40F2749472900229D35 /* Archive */,
 				BDABFA4228508A5000883B32 /* Setting */,
 				F203E63C28AD5BB900F620A6 /* Alert */,
 			);
@@ -401,14 +423,16 @@
 			path = ToDo;
 			sourceTree = "<group>";
 		};
-		BD45C40F2749472900229D35 /* Result */ = {
+		BD45C40F2749472900229D35 /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				BD92EF9E28D316A5000C4A4F /* Model */,
+				BDC5CC8F28AD4D4800CBDE12 /* Cell */,
 				BD45C421274948BA00229D35 /* Controller */,
-				BD45C420274948B300229D35 /* Storyboard */,
+				BD92EF9B28D31542000C4A4F /* Service */,
 				BD45C42F274978C900229D35 /* View */,
 			);
-			path = Result;
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		BD45C4102749476200229D35 /* Storyboard */ = {
@@ -439,18 +463,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BD45C420274948B300229D35 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				BD45C41C2749482100229D35 /* ResultVC.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		BD45C421274948BA00229D35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C41E2749482800229D35 /* ResultVC.swift */,
+				BDC5CC8D28AD4D1600CBDE12 /* ArchiveVC.swift */,
+				BDC5CC9428AD4DE700CBDE12 /* ArchiveAllVC.swift */,
+				BD772D5428B75C02006CBD6B /* ArchiveDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -458,8 +476,6 @@
 		BD45C4222749629100229D35 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BD45C423274962F300229D35 /* MEEWPopUp.xib */,
-				BD45C425274962FA00229D35 /* MEEWPopUp.swift */,
 				BD45C42D27496C4700229D35 /* PopUpVC.swift */,
 				BD45C4342749937A00229D35 /* CompletePopUp.xib */,
 				BD45C4362749938400229D35 /* CompletePopUp.swift */,
@@ -470,10 +486,33 @@
 		BD45C42F274978C900229D35 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BDE6507227DB5DB2005048D3 /* ReportTableViewCell.swift */,
-				BDE6507327DB5DB2005048D3 /* ReportTableViewCell.xib */,
+				BDC5CC9228AD4DC900CBDE12 /* ArchiveBannerView.swift */,
+				BDC5CC9628AD4E1600CBDE12 /* ArchiveHeaderView.swift */,
+				BDC5CC9828AD4E2500CBDE12 /* ArchiveAllHeaderView.swift */,
+				BDC5CC9A28AD4E8C00CBDE12 /* ArchiveEmptyView.swift */,
+				BDC5CC9C28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift */,
+				BD772D5628B75C3B006CBD6B /* ArchiveDetailView.swift */,
+				BD772D5B28B797E5006CBD6B /* DatePickerView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BD92EF9B28D31542000C4A4F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD92EF9C28D3156C000C4A4F /* ArchiveService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD92EF9E28D316A5000C4A4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD92EF9F28D316B1000C4A4F /* RecentArchiveDTO.swift */,
+				BD92EFA128D34685000C4A4F /* AllArchiveDTO.swift */,
+				BD92EFA328D360B2000C4A4F /* SpecificArchiveDTO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BDABFA4228508A5000883B32 /* Setting */ = {
@@ -512,6 +551,15 @@
 				BD3B547728520D14003D91D3 /* InfoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BDC5CC8F28AD4D4800CBDE12 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BDC5CC9028AD4D8C00CBDE12 /* ArchiveTVC.swift */,
+				BD772D5828B75F7F006CBD6B /* ArchiveTodoTVC.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EF375EDFD0003B058BCD97D5 /* Pods */ = {
@@ -695,7 +743,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD45C424274962F300229D35 /* MEEWPopUp.xib in Resources */,
 				BD339A1C27493B9200021E91 /* BaseVC.storyboard in Resources */,
 				F2EC39F9274962CD00805FE3 /* Color.xcassets in Resources */,
 				6F3134AF27FF02A400FE1EB4 /* JoinVC.xib in Resources */,
@@ -706,9 +753,7 @@
 				F203E64128AD5C1200F620A6 /* AlertViewController.storyboard in Resources */,
 				F203E64528AD5FED00F620A6 /* AlertTableViewCell.xib in Resources */,
 				BD45C4352749937A00229D35 /* CompletePopUp.xib in Resources */,
-				BDE6507527DB5DB2005048D3 /* ReportTableViewCell.xib in Resources */,
 				BD339A0F27493AC300021E91 /* LaunchScreen.storyboard in Resources */,
-				BD45C41D2749482100229D35 /* ResultVC.storyboard in Resources */,
 				BDABFA4B2850930700883B32 /* SettingViewController.storyboard in Resources */,
 				F2EC39FD2749636B00805FE3 /* Spoqa Han Sans Neo Light.otf in Resources */,
 				6F8A3B7927FEE48E000FBABE /* Montserrat-Bold.ttf in Resources */,
@@ -771,6 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD92EF9D28D3156C000C4A4F /* ArchiveService.swift in Sources */,
 				F2AC126A28AE2FCD00B844AC /* AlertTableViewCell.swift in Sources */,
 				BD339A3727493F3A00021E91 /* GenericResponse.swift in Sources */,
 				F203E64328AD5C3000F620A6 /* AlertViewController.swift in Sources */,
@@ -779,6 +825,7 @@
 				6F65C67B2829113B00DD017A /* FinishedModalVC.swift in Sources */,
 				6F65C67F2829320600DD017A /* BottomSheetVC.swift in Sources */,
 				F2EC3A112749A47B00805FE3 /* CharacterRequestDataModel.swift in Sources */,
+				BD772D5928B75F7F006CBD6B /* ArchiveTodoTVC.swift in Sources */,
 				BD45C4372749938400229D35 /* CompletePopUp.swift in Sources */,
 				F2C6AAD8284A358A00613BF7 /* LoadingView.swift in Sources */,
 				6F2AB35828BCA7D00054B4BB /* TabbarViewController.swift in Sources */,
@@ -786,11 +833,15 @@
 				6F74466328B6205B008A3A7A /* GetTodayCharacter.swift in Sources */,
 				BD3B547628520928003D91D3 /* SettingRow.swift in Sources */,
 				F2EC3A0727496AA000805FE3 /* SelectCharacterCVC.swift in Sources */,
+				BDC5CC9B28AD4E8C00CBDE12 /* ArchiveEmptyView.swift in Sources */,
+				BD92EFA428D360B2000C4A4F /* SpecificArchiveDTO.swift in Sources */,
 				F2EC3A0A27496CD200805FE3 /* SelectCharcterDataModel.swift in Sources */,
 				6FDCA78B2827E9F100BB0836 /* ToDoVC.swift in Sources */,
 				F2EC3A0F2749A1D400805FE3 /* CharacterListService.swift in Sources */,
 				BD45C42A27496A8700229D35 /* AppDelegate+.swift in Sources */,
 				BD339A0527493ABF00021E91 /* SceneDelegate.swift in Sources */,
+				BDC5CC8E28AD4D1600CBDE12 /* ArchiveVC.swift in Sources */,
+				BD772D5728B75C3B006CBD6B /* ArchiveDetailView.swift in Sources */,
 				BD45C428274968FB00229D35 /* UIApplication+.swift in Sources */,
 				F2C6770A27C7DA320020B8F4 /* SelectCarouselLayout.swift in Sources */,
 				F2E1CACA281FC63500E4B1FD /* NicknameVC.swift in Sources */,
@@ -801,11 +852,16 @@
 				BD45C426274962FA00229D35 /* MEEWPopUp.swift in Sources */,
 				6F74466528B621A8008A3A7A /* TodayCharacterRequestModel.swift in Sources */,
 				BD45C42E27496C4700229D35 /* PopUpVC.swift in Sources */,
+				BD772D5C28B797E5006CBD6B /* DatePickerView.swift in Sources */,
+				BDC5CC9128AD4D8C00CBDE12 /* ArchiveTVC.swift in Sources */,
 				BDABFA4728508CAB00883B32 /* NavigationBarView.swift in Sources */,
 				BD45C42C27496BA000229D35 /* UIView+.swift in Sources */,
+				BDC5CC9928AD4E2500CBDE12 /* ArchiveAllHeaderView.swift in Sources */,
 				6F3134AE27FF02A400FE1EB4 /* JoinVC.swift in Sources */,
+				BDC5CC9728AD4E1600CBDE12 /* ArchiveHeaderView.swift in Sources */,
 				6F2AB33B28BA4AC90054B4BB /* CharacterService.swift in Sources */,
 				6FDCA78E2828005E00BB0836 /* UIButton+.swift in Sources */,
+				BD92EFA028D316B1000C4A4F /* RecentArchiveDTO.swift in Sources */,
 				BD339A2A27493C6200021E91 /* Font.swift in Sources */,
 				BDABFA492850928600883B32 /* SettingViewController.swift in Sources */,
 				6F2AB33928BA49CD0054B4BB /* ChracterRequestModel.swift in Sources */,
@@ -816,7 +872,15 @@
 				BD339A2827493C5600021E91 /* Palette.swift in Sources */,
 				BD45C415274947C600229D35 /* SelectVC.swift in Sources */,
 				6F673C042837F26400B7E0D3 /* MyCell.swift in Sources */,
+				BD772D5528B75C02006CBD6B /* ArchiveDetailVC.swift in Sources */,
+				BDC5CC9D28ADB9EE00CBDE12 /* ArchiveLevelProgressView.swift in Sources */,
 				BD339A3027493D6500021E91 /* Reusable.swift in Sources */,
+				BD92EFA228D34685000C4A4F /* AllArchiveDTO.swift in Sources */,
+				6F257EEC2749A3E00055EE43 /* GetToDoService.swift in Sources */,
+				BDC5CC9528AD4DE700CBDE12 /* ArchiveAllVC.swift in Sources */,
+				6F94BF57283768A600345FFA /* ContentVC.swift in Sources */,
+				6F257EEE2749A54B0055EE43 /* DataModel.swift in Sources */,
+				BDC5CC9328AD4DC900CBDE12 /* ArchiveBannerView.swift in Sources */,
 				BD45C41F2749482800229D35 /* ResultVC.swift in Sources */,
 				6F94BF57283768A600345FFA /* ContentVC.swift in Sources */,
 			);
@@ -977,11 +1041,11 @@
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ResultVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1011,11 +1075,11 @@
 				INFOPLIST_FILE = "MEEW-Client/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ResultVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
